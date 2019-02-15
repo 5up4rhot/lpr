@@ -1,0 +1,33 @@
+/* PAGE TITLE */
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
+
+.pagetitle {
+    height: 30%;
+}
+.pagetitle-cover {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )
+}
+
+/* QUESTIONS AND ANSWERS */
+
+.qa-question:before {
+  content: "В";
+  color: #ff5e3a;
+  padding-right: 5px;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.qa-answer:before {
+  content: "О";
+  color: blue;
+  padding-right: 5px;
+  padding-left: 1em;
+  text-indent: -1em;
+}

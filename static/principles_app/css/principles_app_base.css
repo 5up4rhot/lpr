@@ -1,0 +1,158 @@
+/* NEWS LINK IN NAVBAR */
+#principles{
+  border-bottom: 2px solid #000;
+}
+#principles:hover{
+  border-bottom: 2px solid #ff5e3a;
+}
+
+
+
+/* NARROWER */
+.narrower{
+  padding: 0;
+  color: #000;
+}
+.narrower h2{
+  color: blue;
+}
+}
+@media (min-width: 998px) {
+  .narrower{
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .narrower{
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+}
+
+
+
+
+
+/* PROGRAM TOPICS PLATES */
+.program-box{
+  font-size: 1.2rem;
+  height: 250px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all .35s;
+}
+
+.program-box:hover,
+.program-box:focus{
+  transform: scale(1.06);
+  z-index: 1;
+  text-decoration: none;
+  color: #fff;
+}
+
+#law{
+  background-color: #ff8000;
+}
+#law:hover,
+#law:focus{
+  background-color: #FF972E;
+}
+
+#justice{
+  background-color: #851e52;
+}
+#justice:hover,
+#justice:focus{
+  background-color: #9B4671;
+}
+
+#social{
+  background-color: #d3560e;
+  DB7439
+}
+#social:hover,
+#social:focus{
+  background-color: #DB7439;
+}
+
+#economic{
+  background-color: #2b7191;
+}
+#economic:hover,
+#economic:focus{
+  background-color: #518AA5;
+}
+
+#military{
+  background-color: #521168;
+}
+#military:hover,
+#military:focus{
+  background-color: #713C83;
+}
+
+#fp{
+  background-color: #41a9bf;
+}
+#fp:hover,
+#fp:focus{
+  background-color: #63B8CA;
+}
+
+
+
+/* BOTTOM NAVIGATION LINKS */
+.navigationlinks{
+  text-decoration: none;
+  color: rgba(0,0,0,0.5);
+}
+.navigationlinks h2{
+  color:blue;
+}
+.navigationlinks:hover,
+.navigationlinks:focus {
+  text-decoration: none;
+  color: rgba(0,0,0,0.5);
+}
+.navigationlinks:hover h2,
+.navigationlinks:hover .arrow,
+.navigationlinks:focus h2,
+.navigationlinks:focus .arrow{
+color: #ff6f43;
+}
+.arrow{
+  color: rgba(0,0,0,0.5);
+}
+.arrow-next{
+  float:right;
+}
+.arrow-previous{
+  float:left;
+}
+
+#navigation-container{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+
+@media (max-width: 575px){
+  #navigation-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  h2{
+    font-size: 1.6rem;
+  }
+  .program-box{
+    height: 130px;
+    font-size: 1rem;
+  }
+}

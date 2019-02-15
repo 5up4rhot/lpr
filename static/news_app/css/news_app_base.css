@@ -1,0 +1,47 @@
+/* NEWS LINK IN NAVBAR */
+#news{
+  border-bottom: 2px solid #000;
+}
+#news:hover{
+  border-bottom: 2px solid #ff5e3a;
+}
+
+
+/* GENERAL */
+.post{
+  line-height: 1.7;
+}
+
+
+/* TITLE */
+.posttitle{
+  font-family: 'Merriweather', serif;
+  line-height: 1.3;
+  margin-bottom: 1.4rem;
+}
+@media (min-width: 769px) {
+  .posttitle{
+    font-size: 2rem;
+  }
+  .postdescription{
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .posttitle{
+    font-size: 1.5rem;
+  }
+  .postdescription{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .posttitle{
+    font-size: 1.2rem;
+  }
+  .postdescription{
+    font-size: 1rem;
+  }
+}

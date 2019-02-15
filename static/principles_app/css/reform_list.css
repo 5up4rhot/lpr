@@ -1,0 +1,33 @@
+/* PAGE TITLE */
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
+
+.pagetitle {
+    height: 30%;
+}
+.pagetitle-cover {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )
+}
+
+
+/* DOWLOAD PROGRAM BUTTON */
+
+.download{
+   outline: none !important;
+   box-shadow: none;
+   border: none;
+   background-color:#7373FF;
+}
+.download:hover{
+  background-color:#5050B2;
+}
+.download:focus, .download:active{
+   outline: none !important;
+   bx-shadow: none;
+   border: none;
+}

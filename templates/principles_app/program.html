@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block head %}
+<!-- Custom css -->
+<link rel="stylesheet" href="/static/principles_app/css/principles_app_base.css">
+<link rel="stylesheet" href="/static/principles_app/css/program.css">
+<title>Декларация о принципах - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block bodyopentag %}
+<body data-spy="scroll" data-target="#toc" data-offset="0">
+{% endblock %}
+
+
+{% block content %}
+<section class="container">
+  <h2 class="reform-header reform-header-small my-3 my-md-4 mt-sm-5">{{ title }}</h2>
+  <div class="row">
+    <div class="col-lg-4">
+      <div id="toc" class="list-group">
+        {% for reform in reforms %}
+        <a class="list-group-item list-group-item-action" href="#item{{ reform.pk }}">{{ reform.subheader }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-7">
+        <h2 class="reform-header reform-header-large my-4 mt-sm-5">{{ title }}</h2>
+        {% for reform in reforms %}
+        <div class="my-3 my-lg-5">
+          <h4 class="reform-subheader  mb-2" id="item{{ reform.pk }}">{{ reform.subheader }}</h4>
+          <h6>
+            <a class="toclink" href="#toc">Содержание</a>
+          </h6>
+          <div class="reform-content">{{ reform.content|safe }}</div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="program container">
+  <div class="row justify-content-center my-5">
+    <a href="{% url 'principles_app:constitutional' %}" id="law" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-university"></i>
+        <br>
+        Констутиционно-правовые реформы
+      </div>
+    </a>
+    <a href="{% url 'principles_app:justice' %}" id="justice" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-balance-scale"></i>
+        <br>
+        Судебно-правоохранительная реформа
+      </div>
+    </a>
+    <a href="{% url 'principles_app:social' %}" id="social" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-users"></i>
+        <br>
+        Социальные рефомы
+      </div>
+    </a>
+    <a href="{% url 'principles_app:economic' %}" id="economic" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-ruble-sign"></i>
+        <br>
+        Экономические реформы
+      </div>
+    </a>
+    <a href="{% url 'principles_app:military' %}" id="military" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-shield-alt"></i>
+        <br>
+        Военно-промышленная реформа
+      </div>
+    </a>
+    <a href="{% url 'principles_app:fp' %}" id="fp" class="program-box col-md-4 col-sm-6">
+      <div class="">
+        <i class="m-3 fa-2x fas fa-globe"></i>
+        <br>
+        Внешнеполитическая реформа
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<div id="navigation-container" class="container shadow-lg">
+  <div class="row">
+    <a href="{% url 'principles_app:declaration' %}" class="col-md-6 order-last order-md-first navigationlinks">
+      <div class="p-2 p-md-3 text-right">
+              <h4>Предыдущее</h4>
+              <h2 class="mt-3"><i class="arrow arrow-previous fas fa-arrow-left"></i>Декларация о принципах</h2>
+      </div>
+    </a>
+    <a href="{% url 'principles_app:platform' %}" class="col-md-6 order-first order-md-last navigationlinks">
+      <div class="p-2 p-md-3 text-left">
+              <h4>Следующее</h4>
+              <h2 class="mt-3">Платформа партии<i class="arrow arrow-next fas fa-arrow-right"></i></h2>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}

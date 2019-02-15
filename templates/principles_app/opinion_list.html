@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block head %}
+<!-- Custom css -->
+<link rel="stylesheet" href="/static/principles_app/css/principles_app_base.css">
+<link rel="stylesheet" href="/static/principles_app/css/platform.css">
+<title>Декларация о принципах - Либертарианская Партия России</title>
+{% endblock %}
+
+
+{% block content %}
+
+<section class='pagetitle'>
+  <div class="pagetitle-cover">
+    <div class="pagetitle-content-box">
+      <h1>Платформа партии</h1>
+    </div>
+  </div>
+</section>
+
+{% for opinion in opinions %}
+<section class="container mt-5">
+  <div class="narrower">
+    <h4 class="opinion-title">{{ opinion.subject }}</h4>
+    <div class="mt-3">
+      {{ opinion.content|safe }}
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+<div id="navigation-container" class="container shadow-lg">
+  <div class="row">
+    <a href="{% url 'principles_app:declaration' %}" class="col-md-6 order-last order-md-first navigationlinks">
+      <div class="p-2 p-md-3 text-right">
+        <h4>Предыдущее</h4>
+        <h2 class="mt-3"><i class="arrow arrow-previous fas fa-arrow-left"></i>Программа партии</h2>
+      </div>
+    </a>
+    <a href="{% url 'principles_app:platform' %}" class="col-md-6 order-first order-md-last navigationlinks">
+      <div class="p-2 p-md-3 text-left">
+        <h4>Следующее</h4>
+        <h2 class="mt-3">Ответы на популярные вопросы<i class="arrow arrow-next fas fa-arrow-right"></i></h2>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}

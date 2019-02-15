@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block head %}
+<!-- Custom css -->
+<link rel="stylesheet" href="/static/principles_app/css/principles_app_base.css">
+<link rel="stylesheet" href="/static/principles_app/css/index.css">
+<title>Наши принципы - Либертарианская Партия России</title>
+{% endblock %}
+
+
+{% block content %}
+
+<section class='pagetitle'>
+  <div class="pagetitle-cover">
+    <div class="pagetitle-content-box">
+      <h1>Либертарианские принципы</h1>
+    </div>
+  </div>
+</section>
+
+
+<section class="text-center container mt-3 mb-5">
+  <div class="row justify-content-around">
+    <a class="col-12 px-0 py-2 mt-sm-2 mx-sm-3 col-sm-auto menu-option " href="{% url 'principles_app:declaration' %}">Декларация о принципах</a>
+    <a class="col-12 px-0 py-2 mt-sm-2 mx-sm-3 col-sm-auto menu-option " href="{% url 'principles_app:program' %}">Программа партии</a>
+    <a class="col-12 px-0 py-2 mt-sm-2 mx-sm-3 col-sm-auto menu-option " href="{% url 'principles_app:platform' %}">Платформа партии</a>
+    <a class="col-12 px-0 py-2 mt-sm-2 mx-sm-3 col-sm-auto menu-option " href="{% url 'principles_app:questions' %}">Ответы на популярные вопросы</a>
+  </div>
+</section>
+
+
+<section class="about container mt-5">
+  <div class="narrower">
+    <h2>Что такое либертартарианство?</h2>
+    <p class="my-4">Либертарианство - политическая и правовая философия, согласно которой человек принадлежит только самому себе и свободен распоряжаться собой и своим имуществом любыми способами, не наносящими прямого ущерба другим людям и их имуществу. Ни другие индивиды, ни коллективы (включая государство) не вправе препятствовать человеку в его свободной ненасильственной деятельности.</p>
+    <p>Либертарианская партия России ставит своей целью проведение в России реформ, направленных на воплощение либертарианских принципов в общественной жизни.</p>
+  </div>
+</section>
+
+
+
+<section class="principleslist container">
+  <h2 class="my-4 text-center">Декларация о принципах</h2>
+  <ul class="list-unstyled">
+    {% for principle in principles_list_collapsed %}
+    <li>
+      <p>{{ principle.content }}</p>
+    </li>
+    {% endfor %}
+    <div class="collapse" id="collapsePrinciples">
+      {% for principle in principles_list_full %}
+      <li>
+        <p>{{ principle.content }}</p>
+      </li>
+      {% endfor %}
+    </div>
+  </ul>
+  <button class="btn-emailnewsletter p-2 d-block mx-auto" id="collapselistbutton" data-text-swap="Скрыть" type="button" data-toggle="collapse" data-target="#collapsePrinciples" aria-expanded="false" aria-controls="collapsePrinciples">
+    Показать еще
+  </button>
+</section>
+
+
+<section class="program container">
+  <div class="narrower">
+    <h2 class="my-4">Программа партии</h2>
+    <p>Наша Программа предлагает конкретные шаги для практического воплощения принципов и ценностей, изложенных в Платформе Либертарианской партии России. Она может быть реализована исключительно ненасильственными методами, как то:</p>
+  </div>
+  <div class="row justify-content-center my-5">
+    <a href="{% url 'principles_app:constitutional' %}" id="law" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-university"></i>
+        <br>
+        Констутиционно-правовые реформы
+      </div>
+    </a>
+    <a href="#" id="justice" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-balance-scale"></i>
+        <br>
+        Судебно-правоохранительная реформа
+      </div>
+    </a>
+    <a href="#" id="social" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-users"></i>
+        <br>
+        Социальные рефомы
+      </div>
+    </a>
+    <a href="#" id="economic" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-ruble-sign"></i>
+        <br>
+        Экономические реформы
+      </div>
+    </a>
+    <a href="#" id="military" class="program-box col-md-4 col-sm-6">
+      <div>
+        <i class="m-3 fa-2x fas fa-shield-alt"></i>
+        <br>
+        Военно-промышленная реформа
+      </div>
+    </a>
+    <a href="#" id="fp" class="program-box col-md-4 col-sm-6">
+      <div class="">
+        <i class="m-3 fa-2x fas fa-globe"></i>
+        <br>
+        Внешнеполитическая реформа
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<section id="platformandquestions" class="container">
+  <div class="row m-2 justify-content-around">
+    <a href="" class="platformquestions my-3 col-md-5" id="platform">
+      <h2>Платфорама партии</h2>
+    </a>
+    <a href="" class="platformquestions my-3 col-md-5" id="questions">
+      <h2>Ответы на популярные вопросы</h2>
+    </a>
+  </div>
+</section>
+
+
+
+<script type="text/javascript">
+  var button = document.getElementById("collapselistbutton");
+  button.addEventListener('click', function() {
+    if (button.getAttribute("data-text-swap") == button.innerHTML) {
+      button.innerHTML = button.getAttribute("data-text-original");
+    } else {
+      button.setAttribute("data-text-original", button.innerHTML);
+      button.innerHTML = button.getAttribute("data-text-swap");
+    }
+  }, false);
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center my-5">
+  <h4>Вы успешно вышли.</h4>
+  <a class="my-3 btn btn-lg btn-primary" role="button" href="{% url 'accounts_app:login'%}">Вернуться на страницу входа</a>
+</div>
+{% endblock %}
