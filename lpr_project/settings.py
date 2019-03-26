@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     # ckeditor
     'ckeditor',
     'ckeditor_uploader',
-
+    # django-sass-processor
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -126,15 +127,26 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
+
+
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+# SASS_PROCESSOR_ROOT = STATIC_ROOT:
+SASS_PROCESSOR_ROOT = STATICFILES_DIRS[0]
+
 # MEDIA FILES SETTINGS
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # CKEDITOR SETTINGS
 CKEDITOR_UPLOAD_PATH = 'news/images/'
@@ -150,19 +162,20 @@ CKEDITOR_BROWSE_SHOW_DIRS = True
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar_YourCustomToolbarConfig': [
-            {'name': 'styles', 'items': ['Format',]},
+            {'name': 'styles', 'items': ['Format', ]},
             {'name': 'basicstyles',
              'items': ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat']},
-            {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
-            {'name': 'document', 'items': ['Source',]},
+            {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste',
+                                            'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+            {'name': 'document', 'items': ['Source', ]},
             {'name': 'editing', 'items': ['Find', 'Replace', '-', 'SelectAll']},
             {'name': 'paragraph',
              'items': ['NumberedList', 'BulletedList', 'Blockquote', 'CreateDiv', '-',
-                       'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',]},
+                       'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', ]},
             {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
             {'name': 'insert',
              'items': ['Image', 'Iframe']},
-            {'name': 'tools', 'items': ['ShowBlocks',]},
+            {'name': 'tools', 'items': ['ShowBlocks', ]},
         ],
         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
         'width': '100%',
@@ -185,9 +198,6 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
-
-
-
 
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)

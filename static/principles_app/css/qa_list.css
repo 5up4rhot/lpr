@@ -16,18 +16,20 @@ body{
 
 /* QUESTIONS AND ANSWERS */
 
+.qa-list{
+    list-style: none;
+}
+
 .qa-question:before {
   content: "В";
   color: #ff5e3a;
-  padding-right: 5px;
-  padding-left: 1em;
-  text-indent: -1em;
+  padding-right: 10px;
+  font-weight: bold;
 }
 
 .qa-answer:before {
   content: "О";
   color: blue;
-  padding-right: 5px;
-  padding-left: 1em;
-  text-indent: -1em;
+  padding-right: 10px;
+  font-weight: bold;
 }

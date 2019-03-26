@@ -1,0 +1,86 @@
+[[package]]
+category = "main"
+description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
+name = "django"
+optional = false
+python-versions = ">=3.5"
+version = "2.1.7"
+
+[package.dependencies]
+pytz = "*"
+
+[[package]]
+category = "main"
+description = "Django admin CKEditor integration."
+name = "django-ckeditor"
+optional = false
+python-versions = "*"
+version = "5.6.1"
+
+[package.dependencies]
+django-js-asset = "*"
+
+[[package]]
+category = "main"
+description = "script tag with additional attributes for django.forms.Media"
+name = "django-js-asset"
+optional = false
+python-versions = "*"
+version = "1.2.2"
+
+[[package]]
+category = "main"
+description = "SASS processor to compile SCSS files into *.css, while rendering, or offline."
+name = "django-sass-processor"
+optional = false
+python-versions = "*"
+version = "0.7.2"
+
+[[package]]
+category = "main"
+description = "Sass for Python: A straightforward binding of libsass for Python."
+name = "libsass"
+optional = false
+python-versions = "*"
+version = "0.18.0"
+
+[package.dependencies]
+six = "*"
+
+[[package]]
+category = "main"
+description = "Python Imaging Library (Fork)"
+name = "pillow"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "5.4.1"
+
+[[package]]
+category = "main"
+description = "World timezone definitions, modern and historical"
+name = "pytz"
+optional = false
+python-versions = "*"
+version = "2018.9"
+
+[[package]]
+category = "main"
+description = "Python 2 and 3 compatibility utilities"
+name = "six"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*"
+version = "1.12.0"
+
+[metadata]
+content-hash = "5357a39ac34117ed642cfdf5648950c704007dfe3bafdc4ccdb2dac51f7102e5"
+python-versions = "^3.7"
+
+[metadata.hashes]
+django = ["275bec66fd2588dd517ada59b8bfb23d4a9abc5a362349139ddda3c7ff6f5ade", "939652e9d34d7d53d74d5d8ef82a19e5f8bb2de75618f7e5360691b6e9667963"]
+django-ckeditor = ["266353b93991babb399a62a25bc0cbb945f95901693a4f07c9506edabd6a0cd0"]
+django-js-asset = ["8ec12017f26eec524cab436c64ae73033368a372970af4cf42d9354fcb166bdd", "c163ae80d2e0b22d8fb598047cd0dcef31f81830e127cfecae278ad574167260"]
+django-sass-processor = ["0381585a23c0f31a387cb53cf38f744e4d97d8ac3b9b19ec423dd6bfa714ecff"]
+libsass = ["2ae3b061a7d250fb47e5fdad1a8191600ca15dc604e76b109b6d3bf8e08fd2ed", "2ee186aa682a035a53c557b7e61ce562a1114f1a1a992d0ba962cbc3e82c490c", "366f4fd5a5eab4a519beb583e9fa78718cf2c0f40e92ed835d7ed23b82e5d954", "5511b3c62e8d97daf929c63bd516b794f0a06acd09dd261445d864e48290551b", "7462da168c8fb997b31cb4dc3ee5adb9af2d106f7b92c2d57a1c68a56ae5a3a0", "84a16ec5cf7842ff5bc2caed2c032ed624d587699797bc2a4d4a8e41f579b6e7", "8fc0360ee99224f7a3cb09987e641171d34180759f467ba3d15934102ade396f", "a6c5535a21a07d769151453270bc6a8373b821d1d2fd9810d84fccfe315ab188", "b375bfbf3c86ec0f4a27f266b44b2753a4b8cab7e73649eed7afcad84bc56257", "b548af46c1a606aed93da2566901146005d6065f73fefc63d256ba62ba1f803d", "bb30fc7125350c64925a98cb90da7979f76bb0ea1a0157e8aeb268f8da38e296", "c2f386677514f9fc758631328bd318dd3e9d839ad7b6e248ec4535a191bfd271", "d1f301637ad5768aecc81d17dcf40a68f2e11b7ca8b427dbb9f8972c150d303e", "e0cf54dddf2cc6e373005bed6e46ccdce1f3a77bd169ab505c3a8ad9023eee5f", "e8941881063691d50f9cc8b8d6d8fd7bec86a8c461b2a4fc87188a5fc44d6ba4", "f4b29b0c70d753c754a58aaad7c31ad3309ca4a26f9aa64e695157251f6832ad"]
+pillow = ["01a501be4ae05fd714d269cb9c9f145518e58e73faa3f140ddb67fae0c2607b1", "051de330a06c99d6f84bcf582960487835bcae3fc99365185dc2d4f65a390c0e", "07c35919f983c2c593498edcc126ad3a94154184899297cc9d27a6587672cbaa", "0ae5289948c5e0a16574750021bd8be921c27d4e3527800dc9c2c1d2abc81bf7", "0b1efce03619cdbf8bcc61cfae81fcda59249a469f31c6735ea59badd4a6f58a", "0cf0208500df8d0c3cad6383cd98a2d038b0678fd4f777a8f7e442c5faeee81d", "163136e09bd1d6c6c6026b0a662976e86c58b932b964f255ff384ecc8c3cefa3", "18e912a6ccddf28defa196bd2021fe33600cbe5da1aa2f2e2c6df15f720b73d1", "24ec3dea52339a610d34401d2d53d0fb3c7fd08e34b20c95d2ad3973193591f1", "267f8e4c0a1d7e36e97c6a604f5b03ef58e2b81c1becb4fccecddcb37e063cc7", "3273a28734175feebbe4d0a4cde04d4ed20f620b9b506d26f44379d3c72304e1", "39fbd5d62167197318a0371b2a9c699ce261b6800bb493eadde2ba30d868fe8c", "4132c78200372045bb348fcad8d52518c8f5cfc077b1089949381ee4a61f1c6d", "4baab2d2da57b0d9d544a2ce0f461374dd90ccbcf723fe46689aff906d43a964", "4c678e23006798fc8b6f4cef2eaad267d53ff4c1779bd1af8725cc11b72a63f3", "4d4bc2e6bb6861103ea4655d6b6f67af8e5336e7216e20fff3e18ffa95d7a055", "505738076350a337c1740a31646e1de09a164c62c07db3b996abdc0f9d2e50cf", "5233664eadfa342c639b9b9977190d64ad7aca4edc51a966394d7e08e7f38a9f", "52e2e56fc3706d8791761a157115dc8391319720ad60cc32992350fda74b6be2", "5337ac3280312aa065ed0a8ec1e4b6142e9f15c31baed36b5cd964745853243f", "5ccd97e0f01f42b7e35907272f0f8ad2c3660a482d799a0c564c7d50e83604d4", "5d95cb9f6cced2628f3e4de7e795e98b2659dfcc7176ab4a01a8b48c2c2f488f", "634209852cc06c0c1243cc74f8fdc8f7444d866221de51125f7b696d775ec5ca", "75d1f20bd8072eff92c5f457c266a61619a02d03ece56544195c56d41a1a0522", "7eda4c737637af74bac4b23aa82ea6fbb19002552be85f0b89bc27e3a762d239", "801ddaa69659b36abf4694fed5aa9f61d1ecf2daaa6c92541bbbbb775d97b9fe", "825aa6d222ce2c2b90d34a0ea31914e141a85edefc07e17342f1d2fdf121c07c", "87fe838f9dac0597f05f2605c0700b1926f9390c95df6af45d83141e0c514bd9", "9c215442ff8249d41ff58700e91ef61d74f47dfd431a50253e1a1ca9436b0697", "a3d90022f2202bbb14da991f26ca7a30b7e4c62bf0f8bf9825603b22d7e87494", "a631fd36a9823638fe700d9225f9698fb59d049c942d322d4c09544dc2115356", "a6523a23a205be0fe664b6b8747a5c86d55da960d9586db039eec9f5c269c0e6", "a756ecf9f4b9b3ed49a680a649af45a8767ad038de39e6c030919c2f443eb000", "ac036b6a6bac7010c58e643d78c234c2f7dc8bb7e591bd8bc3555cf4b1527c28", "b117287a5bdc81f1bac891187275ec7e829e961b8032c9e5ff38b70fd036c78f", "ba04f57d1715ca5ff74bb7f8a818bf929a204b3b3c2c2826d1e1cc3b1c13398c", "ba6ef2bd62671c7fb9cdb3277414e87a5cd38b86721039ada1464f7452ad30b2", "c8939dba1a37960a502b1a030a4465c46dd2c2bca7adf05fa3af6bea594e720e", "cd878195166723f30865e05d87cbaf9421614501a4bd48792c5ed28f90fd36ca", "cee815cc62d136e96cf76771b9d3eb58e0777ec18ea50de5cfcede8a7c429aa8", "d1722b7aa4b40cf93ac3c80d3edd48bf93b9208241d166a14ad8e7a20ee1d4f3", "d7c1c06246b05529f9984435fc4fa5a545ea26606e7f450bdbe00c153f5aeaad", "db418635ea20528f247203bf131b40636f77c8209a045b89fa3badb89e1fcea0", "e1555d4fda1db8005de72acf2ded1af660febad09b4708430091159e8ae1963e", "e9c8066249c040efdda84793a2a669076f92a301ceabe69202446abb4c5c5ef9", "e9f13711780c981d6eadd6042af40e172548c54b06266a1aabda7de192db0838", "f0e3288b92ca5dbb1649bd00e80ef652a72b657dc94989fa9c348253d179054b", "f227d7e574d050ff3996049e086e1f18c7bd2d067ef24131e50a1d3fe5831fbc", "f62b1aeb5c2ced8babd4fbba9c74cbef9de309f5ed106184b12d9778a3971f15", "f71ff657e63a9b24cac254bb8c9bd3c89c7a1b5e00ee4b3997ca1c18100dac28", "fc9a12aad714af36cf3ad0275a96a733526571e52710319855628f476dcb144e"]
+pytz = ["32b0891edff07e28efe91284ed9c31e123d84bea3fd98e1f72be2508f43ef8d9", "d5f05e487007e29e03409f9398d074e158d920d36eb82eaf66fb1136b0c5374c"]
+six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]

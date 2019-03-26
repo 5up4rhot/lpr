@@ -25,10 +25,10 @@
   <div class="narrower">
     <h4>{{ lib_title }}</h4>
     {% for QA in lib %}
-    <div class="mt-4">
-      <p class="qa-question">{{ QA.question }}</p>
-      <p class="qa-answer mt-0 pt-0">{{ QA.answer }}</p>
-    </div>
+    <ul class="mt-4 qa-list">
+      <li class="qa-question">{{ QA.question }}</li>
+      <li class="qa-answer mt-0 pt-0">{{ QA.answer }}</li>
+  </ul>
     {% endfor %}
   </div>
 </section>
