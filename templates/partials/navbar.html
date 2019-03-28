@@ -1,43 +1,45 @@
 {% load static %}
 <nav class="navbar fixed-top navbar-expand-lg border-bottom">
 
-  <a class="navbar-brand pb-0" href="{% url 'home_app:index' %}">
-    <img src="{% static 'img/lpr_logo.png' %}" class="navbar-image d-inline-block align-top" alt="lpr logo">
-    <div class="navbar-text align-top">
-      ЛИБЕРТАРИАНСКАЯ<br>ПАРТИЯ РОССИИ
-    </div>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars"></i>
-  </button>
+    <a class="navbar-brand" href="{% url 'home_app:index' %}">
+        <img src="{% static 'img/lpr_logo.png' %}" class="navbar-image d-inline-block align-top" alt="lpr logo">
+        <div class="navbar-text">
+            ЛИБЕРТАРИАНСКАЯ<br>ПАРТИЯ РОССИИ
+        </div>
+    </a>
+    <button class="navbar-toggler hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a id="about" class="nav-link px-0 mx-2 my-1" href="#">Кто мы</a>
-      </li>
-      <li class="nav-item">
-        <a id="principles" class="nav-link px-0 mx-2 my-1" href="{% url 'principles_app:index' %}">Наши принципы</a>
-      </li>
-      <li class="nav-item">
-        <a id="contacts" class="nav-link px-0 mx-2 my-1" href="#">Контакты</a>
-      </li>
-      <li class="nav-item">
-        <a id="news" class="nav-link px-0 mx-2 my-1" href="{% url 'news_app:post_list' %}">Новости</a>
-      </li>
-      <div class="cta-toggled">
-        <li class="nav-item d-inline-block mx-auto">
-          <a id="join" class="nav-link nav-link-cta mx-2 my-2" href=#>Вступить</a>
-        </li>
-        <li class="nav-item d-inline-block mx-auto">
-          <a id="donate" class="nav-link nav-link-cta mx-2 my-2" href=#>Поддержать</a>
-        </li>
-      </div>
-      {% if user.is_authenticated %}
-      <li class="nav-item">
-        <a class="nav-link px-0 mx-2 my-1" href="{% url 'news_app:current_user_post_list' %}"><i class="fas fa-user-circle fa-lg"></i></a>
-      </li>
-      {% endif %}
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="menu-active-list">
+                <li class="nav-item">
+                    <a id="about" class="nav-link" href="#">Кто мы</a>
+                </li>
+                <li class="nav-item">
+                    <a id="principles" class="nav-link" href="{% url 'principles_app:index' %}">Наши принципы</a>
+                </li>
+                <li class="nav-item">
+                    <a id="contacts" class="nav-link" href="#">Контакты</a>
+                </li>
+                <li class="nav-item">
+                    <a id="news" class="nav-link" href="{% url 'news_app:post_list' %}">Новости</a>
+                </li>
+            </div>
+            <li class="nav-item">
+                <a id="join" class="nav-link cta-toggle" href=#>Вступить</a>
+            </li>
+            <li class="nav-item">
+                <a id="donate" class="nav-link cta-toggle" href=#>Поддержать</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'news_app:current_user_post_list' %}"><i class="fas fa-user-circle fa-lg"></i></a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
 </nav>
