@@ -1,54 +1,40 @@
 {% load static %}
 <div class="container">
-  <footer class="my-5 py-3 border-md-top">
-    <div class="row">
-      <div class="my-2 col-lg-3 col-md-6 order-4 order-md-3 order-lg-1">
-        <div class="row">
-          <div class="col-2 col-sm-3">
-            <img class="d-inline-block" src="{% static 'img/lpr_logo.png' %}" height="50" width="50" alt="lpr logo">
-          </div>
-          <div class="col-10 col-sm-9">
-            <small class="d-inline-block text-muted">&copy; 2019 Либертарианская<br>Партия России</small>
-            <div class="social-media my-2">
-              <a href="https://vk.com/lpr_public"><i class="social-media-icon fab fa-vk fa-lg"></i></a>
-              <a href="https://telegram.me/Libertarians"><i class="social-media-icon fab fa-telegram-plane fa-lg"></i></a>
-              <a href="https://twitter.com/libertarian_rus"><i class="social-media-icon fab fa-twitter fa-lg"></i></a>
-              <a href="https://www.youtube.com/channel/UCWjEiMNZv4g3P9BWbrtMjyA"><i class="social-media-icon fab fa-youtube fa-lg"></i></a>
-              <a href="https://www.instagram.com/libertarian_rus/"><i class="social-media-icon fab fa-instagram fa-lg"></i></a>
-              <a href="https://www.facebook.com/libertarian.ru"><i class="social-media-icon fab fa-facebook-f fa-lg"></i></a>
+    <footer>
+        <div class="sources">
+            <img class="sources-logo" src="{% static 'img/lpr_logo.png' %}" alt="lpr logo">
+            <small class="sources-small">&copy; 2019 Либертарианская Партия России</small>
+            <div class="sources-media">
+                <a href="https://vk.com/lpr_public"><i class="sources-media-icon fab fa-vk fa-lg"></i></a>
+                <a href="https://telegram.me/Libertarians"><i class="sources-media-icon fab fa-telegram-plane fa-lg"></i></a>
+                <a href="https://twitter.com/libertarian_rus"><i class="sources-media-icon fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.youtube.com/channel/UCWjEiMNZv4g3P9BWbrtMjyA"><i class="sources-media-icon fab fa-youtube fa-lg"></i></a>
+                <a href="https://www.instagram.com/libertarian_rus/"><i class="sources-media-icon fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.facebook.com/libertarian.ru"><i class="sources-media-icon fab fa-facebook-f fa-lg"></i></a>
             </div>
-            <small><a class="text-muted" href="#">In English</a></small>
-          </div>
         </div>
-      </div>
-      <div class="my-2 col-lg-3 col-md-6 order-3 order-md-4 order-lg-2 text-lg-center">
-        <form class="" action="index.html" method="post">
-          <div class="form-group">
-            <label for="emailnewsletter">Держите меня в курсе событий!</label>
-            <input type="email" class="form-control mb-2" id="emailnewsletter" aria-describedby="emailHelp" placeholder="Введите ваш email...">
-            <button class="btn-emailnewsletter p-2" type="submit" name="button">Подписаться</button>
-          </div>
+
+        <form class="subscribe form-group" action="index.html" method="post">
+                <label class="h3 subscribe-label" for="subscribe-input">Получайте последние новости!</label>
+                <input type="email" class="form-control" id="subscribe-input" placeholder="Введите ваш email">
+                <button class="btn subscribe-button" type="submit" name="button">Подписаться</button>
         </form>
-      </div>
-      <div class="my-2 col-lg-3 col-md-6 order-1 order-lg-3 ">
-        <div class="row">
-          <div class="col-md-9 offset-md-3">
-            <h5>Разное</h5>
-            <ul class="list-unstyled text-small border-md-top">
-              <li><a class="text-muted" href="#">Отделения</a></li>
-              <li><a class="text-muted" href="#">Атрибутика</a></li>
-              <li><a class="text-muted" href="#">Полезные ссылки</a></li>
+
+        <div class="other">
+            <h3>Разное</h3>
+            <ul class="footer-list">
+                <li><a class="footer-list-element" href="#">Отделения</a></li>
+                <li><a class="footer-list-element" href="#">Атрибутика</a></li>
+                <li><a class="footer-list-element" href="#">Полезные ссылки</a></li>
             </ul>
-          </div>
         </div>
-      </div>
-      <div class="my-2 col-lg-3 col-md-6 order-2 order-lg-4">
-        <h5>Проекты</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Чтения Айн Рэнд</a></li>
-          <li><a class="text-muted" href="#">Чтения Адама Смита</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+
+        <div class="projects">
+            <h3>Проекты</h3>
+            <ul class="footer-list">
+                <li><a class="footer-list-element" href="#">Чтения Айн Рэнд</a></li>
+                <li><a class="footer-list-element" href="#">Чтения Адама Смита</a></li>
+            </ul>
+        </div>
+    </footer>
 </div>

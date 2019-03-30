@@ -1,27 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'home_app/scss/index.scss' %}">
+{% endblock %}
 
 {% block head %}
-<!-- Custom css -->
-<link rel="stylesheet" href="{% static 'home_app/css/index.css' %}">
 <title>Главная - Либертарианская Партия России</title>
 {% endblock %}
 
-
-
 {% block content %}
 
-<section class='pagetitle'>
-    <div class="pagetitle-cover">
-        <div class="pagetitle-content-box">
-            <h1 class="titlebig">минимум государства - максимум свободы.</h1>
-            <h1 class="titlesmall">минимум государства - </h1><h1 class="titlesmall mt-2">максимум свободы.</h1>
-        </div>
-    </div>
-</section>
-
-<section class="plan">
-
-</section>
+{% include 'partials/pagetitle.html' %}
 
 {% endblock %}

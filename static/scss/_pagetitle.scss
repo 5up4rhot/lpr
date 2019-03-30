@@ -1,0 +1,59 @@
+$pagetitle-content: "минимум государства - максимум свободы." !default;
+$pagetitle-height: 100% !default;
+$pagetitle-color: #000 !default;
+$pagetitle-border-color: #fff !default;
+$pagetitle-background-color: #fff !default;
+$pagetitle-background-image: "guys.jpg" !default;
+
+html, body{
+  height: 100%;
+}
+.pagetitle {
+    display: flex;
+    height: 100%;
+    width: auto;
+    border: 3rem solid $pagetitle-border-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("/static/home_app/img/"+$pagetitle-background-image);
+    @include media-breakpoint-down(xl) {
+        border-width: 2.5rem;
+    }
+    @include media-breakpoint-down(md) {
+        border-width: 2rem;
+    }
+    @include media-breakpoint-down(sm) {
+        border-width: 1.5rem;
+    }
+}
+.pagetitle-content-box {
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+        margin: 0 20%;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 0 15%;
+    }
+}
+.pagetitle-content {
+    display: inline;
+    color: $pagetitle-color;
+    background-color: $pagetitle-background-color;
+    padding: 0.5rem;
+    font-size: 3.5rem;
+    &::after {
+	content:$pagetitle-content;
+    }
+    @include media-breakpoint-down(lg) {
+        padding: 0.4rem;
+        font-size: 3.2rem;
+    }
+    @include media-breakpoint-down(sm) {
+        line-height: 1.8;
+        padding: 0.2rem;
+        font-size: 3rem;
+    }
+}

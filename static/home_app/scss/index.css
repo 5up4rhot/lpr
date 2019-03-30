@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -307,4 +308,53 @@ footer {
   .footer-list-element:hover, .footer-list-element:visited {
     color: gray; }
 
-/*# sourceMappingURL=base.css.map */
+html, body {
+  height: 100%; }
+
+.pagetitle {
+  display: flex;
+  height: 100%;
+  width: auto;
+  border: 3rem solid #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/home_app/img/guys.jpg");
+  border-width: 2.5rem; }
+  @media (max-width: 991.98px) {
+    .pagetitle {
+      border-width: 2rem; } }
+  @media (max-width: 767.98px) {
+    .pagetitle {
+      border-width: 1.5rem; } }
+
+.pagetitle-content-box {
+  text-align: center; }
+  @media (max-width: 767.98px) {
+    .pagetitle-content-box {
+      margin: 0 20%; } }
+  @media (max-width: 575.98px) {
+    .pagetitle-content-box {
+      margin: 0 15%; } }
+
+.pagetitle-content {
+  display: inline;
+  color: #000;
+  background-color: #fff;
+  padding: 0.5rem;
+  font-size: 3.5rem; }
+  .pagetitle-content::after {
+    content: "минимум государства - максимум свободы."; }
+  @media (max-width: 1199.98px) {
+    .pagetitle-content {
+      padding: 0.4rem;
+      font-size: 3.2rem; } }
+  @media (max-width: 767.98px) {
+    .pagetitle-content {
+      line-height: 1.8;
+      padding: 0.2rem;
+      font-size: 3rem; } }
+
+/*# sourceMappingURL=index.css.map */
