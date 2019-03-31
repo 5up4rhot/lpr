@@ -3,14 +3,14 @@ $pagetitle-height: 100% !default;
 $pagetitle-color: #000 !default;
 $pagetitle-border-color: #fff !default;
 $pagetitle-background-color: #fff !default;
-$pagetitle-background-image: "guys.jpg" !default;
+$pagetitle-background-image: "/static/home_app/img/guys.jpg" !default;
 
 html, body{
   height: 100%;
 }
 .pagetitle {
     display: flex;
-    height: 100%;
+    height: $pagetitle-height;
     width: auto;
     border: 3rem solid $pagetitle-border-color;
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@ html, body{
     justify-content: center;
     align-items: center;
     background-size: cover;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("/static/home_app/img/"+$pagetitle-background-image);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url($pagetitle-background-image);
     @include media-breakpoint-down(xl) {
         border-width: 2.5rem;
     }

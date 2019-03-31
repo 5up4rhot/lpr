@@ -1,50 +1,48 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'news_app/scss/post_list.scss' %}">
+{% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'news_app/css/news_app_base.css' %}">
-<link rel="stylesheet" href="{% static 'news_app/css/post_list.css' %}">
-
+<title>Новости - Либертарианская Партия России</title>
 {% endblock %}
 
 {% block content %}
 
-<section class='pagetitle'>
-    <div class="pagetitle-cover">
-        <div class="pagetitle-content-box">
-            <h1>Новости</h1>
-        </div>
-    </div>
-</section>
+{% include 'partials/pagetitle.html' %}
 
 {% for post in posts %}
 {% if post.image %}
-<div class="post shadow-lg container mb-5 mt-sm-2">
-  <a href="{{ post.get_absolute_url }}" class="post-wrapper row p-lg-4 p-md-3 p-0">
-    <div class="postimg-wrapper col-lg-5 ">
-      <div  class="postlistimg" style="background-image: url('{% get_media_prefix %}{{ post.image }}')"></div>
+<div class="container">
+  <a href="{{ post.get_absolute_url }}" class="post-w-img">
+    <div class="post-img-wrapper">
+      <div  class="post-img" style="background-image: url('{% get_media_prefix %}{{ post.image }}')"></div>
     </div>
-    <div class="col-lg-7 mt-md-3 mt-ms-2 mt-1 px-2 px-sm-3 px-lg-4">
-      <p class="posttitle h2">{{ post.title }}</p>
-      <p class="postdescription h6">{{ post.description }}</p>
+    <div class="post-wrapper-w-img">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <h4 class="post-description">{{ post.description }}</h4>
       {% if post.updated %}
-          <p class="mt-3 mb-0 pb-0"><small class="text-muted">Обновлено {{ post.updatetime }} <span class="ml-3">{{ post.author.first_name }} {{ post.author.last_name }}</span></small></p>
+          <p class="post-info">Обновлено {{ post.updatetime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
       {% else %}
-          <p class="mt-3 mb-0 pb-0"><small class="text-muted">{{ post.publishtime }} <span class="ml-3">{{ post.author.first_name }} {{ post.author.last_name }}</span></small></p>
+          <p class="post-info">{{ post.publishtime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
       {% endif %}
     </div>
   </a>
 </div>
 {% else %}
-<div class="post shadow-lg container mb-5 mt-sm-2 p-0">
-  <a href="{{ post.get_absolute_url }}" class="post-wrapper p-0 m-0">
-    <div class="p-lg-5 p-md-4 p-sm-3 p-2">
-      <p class="posttitle h2">{{ post.title }}</p>
-      <p class="postdescription h6">{{ post.description }}</p>
+<div class="container">
+  <a href="{{ post.get_absolute_url }}" class="post">
+    <div class="post-wrapper">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <h4 class="post-description">{{ post.description }}</h4>
       {% if post.updated %}
-          <p class="mt-3 mb-0 pb-0"><small class="text-muted">Обновлено {{ post.updatetime }} <span class="ml-3">{{ post.author.first_name }} {{ post.author.last_name }}</span></small></p>
+          <p class="post-info">Обновлено {{ post.updatetime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
       {% else %}
-          <p class="mt-3 mb-0 pb-0"><small class="text-muted">{{ post.publishtime }} <span class="ml-3">{{ post.author.first_name }} {{ post.author.last_name }}</span></small></p>
+          <p class="post-info">{{ post.publishtime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
       {% endif %}
     </div>
   </a>

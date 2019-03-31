@@ -162,11 +162,11 @@ body {
 /********** FOOTER **********/
 footer {
     display: grid;
-    margin: 3rem 4rem 6rem;
+    margin: 9rem 4rem;
     grid-column-gap: 3rem;
     grid-template: "src sub other proj" 13rem / 24rem 5fr 3fr 3fr;
     @include media-breakpoint-down(lg) {
-        margin: 3rem 0 6rem;
+        margin: 6rem 0;
     }
     @include media-breakpoint-down(md) {
         justify-content: center;
@@ -176,7 +176,7 @@ footer {
     }
     @include media-breakpoint-down(xs) {
         justify-content: start;
-        margin-bottom: 3rem;
+        margin: 3rem 0;
         grid-gap: 2rem 0;
         grid-template: "other" 10rem
                        "proj" 8rem

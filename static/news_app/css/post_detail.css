@@ -74,27 +74,3 @@ color: #ff6f43;
     margin-top: 50px;
     margin-bottom: 50px;
   }
-
-  
-  /* NARROWER */
-  .narrower{
-    padding: 0;
-    color: #000;
-  }
-  .narrower h2{
-    color: blue;
-  }
-  }
-  @media (min-width: 998px) {
-    .narrower{
-      padding-left: 150px;
-      padding-right: 150px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .narrower{
-      padding-left: 250px;
-      padding-right: 250px;
-    }
-  }
