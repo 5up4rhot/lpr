@@ -8,5 +8,8 @@ $pagetitle-background-color: $primary-color;
 $pagetitle-background-image: "/static/news_app/img/newspaper.jpg";
 @import "static/scss/pagetitle";
 
-/********** POSTS **********/
+/********** POST LIST **********/
 @import "postcolumn";
+
+/********** PAGINATION **********/
+@import "static/scss/pagination";

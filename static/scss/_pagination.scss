@@ -1,0 +1,55 @@
+.custom-link {
+    padding: 1.5rem 2.5rem;
+    font-size: 2rem;
+    @include media-breakpoint-down(md) {
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+    }
+    @include media-breakpoint-down(sm) {
+        padding: 0.7rem 1.7rem;
+        font-size: 1.6rem;
+    }
+    @include media-breakpoint-down(xs) {
+        padding: 0.6rem 1.6rem;
+        font-size: 1.5rem;
+    }
+    color: lighten($secondary-color, 20%);
+
+    &:hover {
+        color: lighten($secondary-color, 20%);
+    }
+
+    &:focus {
+        -webkit-box-shadow: 0 0 0 0.2rem hsla(240, 100%, 70%, 0.5);
+                box-shadow: 0 0 0 0.2rem hsla(240, 100%, 70%, 0.5);
+    }
+}
+
+.custom-previous::before {
+    content: "Предыдущая";
+    @include media-breakpoint-down(sm) {
+        content: "\00ab";
+    }
+}
+
+.custom-next::before {
+    content: "Следующая";
+    @include media-breakpoint-down(sm) {
+        content: "\00bb";
+    }
+}
+
+.custom-item.active .custom-link {
+    background-color: lighten($secondary-color, 20%);
+    border-color: lighten($secondary-color, 20%);
+}
+
+.custom-item:first-child .custom-link {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.custom-item:last-child .custom-link {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

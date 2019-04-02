@@ -29,6 +29,9 @@ $nav-background-color: #fff;
 /********** GENERAL **********/
 html {
     font-size: 62.5%; // sets 1rem = 10px
+    .btn{
+        font-size: 100%;
+    }
 }
 
 body {
@@ -143,7 +146,8 @@ body {
 
 .navbar-toggler {
     outline: none !important;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     margin: 0.5rem 1rem 0 0;
 }
 // menu link active state
@@ -162,20 +166,24 @@ body {
 /********** FOOTER **********/
 footer {
     display: grid;
-    margin: 9rem 4rem;
+    margin: 14rem 4rem 10rem;
     grid-column-gap: 3rem;
     grid-template: "src sub other proj" 13rem / 24rem 5fr 3fr 3fr;
     @include media-breakpoint-down(lg) {
         margin: 6rem 0;
     }
     @include media-breakpoint-down(md) {
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         grid-gap: 3rem 7rem;
         grid-template: "sub other" 13rem
                        "src proj" 8rem / 27rem 18rem;
     }
     @include media-breakpoint-down(xs) {
-        justify-content: start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start;
         margin: 3rem 0;
         grid-gap: 2rem 0;
         grid-template: "other" 10rem
@@ -239,7 +247,8 @@ footer {
     &:focus {
         border-color: lighten($secondary-color, 20%);
         outline: 0;
-        box-shadow: 0 0 0 0.2rem lighten($secondary-color, 40%);
+        -webkit-box-shadow: 0 0 0 0.2rem lighten($secondary-color, 40%);
+                box-shadow: 0 0 0 0.2rem lighten($secondary-color, 40%);
     }
     @include media-breakpoint-down(xs) {
         margin-left: 0;
@@ -261,7 +270,8 @@ footer {
     &:focus {
         border-color: $primary-color;
         outline: 0;
-        box-shadow: 0 0 0 0.2rem lighten($primary-color, 30%);
+        -webkit-box-shadow: 0 0 0 0.2rem lighten($primary-color, 30%);
+                box-shadow: 0 0 0 0.2rem lighten($primary-color, 30%);
     }
 }
 

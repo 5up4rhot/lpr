@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'news_app/scss/profile_post_preview.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Предпросмотр - {{ post.title }} - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- {# TABLE #} -->
+<div class="container mt-3">
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Дата создания</th>
+                    <th scope="col">Дата публикации</th>
+                    <th scope="col">Последнее обновление</th>
+                    <th scope="col">Статус</th>
+                    <th scope="col">Показывать обновление</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ post.createtime }}</td>
+                    <td>{{ post.publishtime }}</td>
+                    <td>{{ post.updatetime }}</td>
+                    <td>{{ post.status }}</td>
+                    <td>{{ post.updated }}</td>
+                    <td><a role="button" href="{% url 'news_app:update_post' post.pk %}" class="btn btn-lg btn-warning">Изменить</a></td>
+                    <td><a role="button" href="{% url 'news_app:delete_post' post.pk %}" class="btn btn-lg btn-danger">Удалить</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- {# IN NEWS LIST #} -->
+<section class="news-list">
+    {% if post.image %}
+    <div class="container">
+        <a href="{{ post.get_absolute_url }}" class="post-w-img">
+            <div class="post-img-wrapper">
+                <div class="post-img" style="background-image: url('{% get_media_prefix %}{{ post.image }}')"></div>
+            </div>
+            <div class="post-wrapper-w-img">
+                <h2 class="post-title">{{ post.title }}</h2>
+                <h4 class="post-description">{{ post.description }}</h4>
+                {% if post.updated %}
+                <p class="post-info">Обновлено {{ post.updatetime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
+                {% else %}
+                <p class="post-info">{{ post.publishtime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
+                {% endif %}
+            </div>
+        </a>
+    </div>
+    {% else %}
+    <div class="container">
+        <a href="{{ post.get_absolute_url }}" class="post">
+            <div class="post-wrapper">
+                <h2 class="post-title">{{ post.title }}</h2>
+                <h4 class="post-description">{{ post.description }}</h4>
+                {% if post.updated %}
+                <p class="post-info">Обновлено {{ post.updatetime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
+                {% else %}
+                <p class="post-info">{{ post.publishtime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
+                {% endif %}
+            </div>
+        </a>
+    </div>
+    {% endif %}
+</section>
+
+<!-- {# DETAIL PAGE #} -->
+<section class="news-detail">
+    <div class="container">
+        <div class="post">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <h4 class="post-description">{{ post.description }}</h4>
+            {% if post.updated %}
+            <p class="post-info">Обновлено {{ post.updatetime }}<a href="{% url 'news_app:user_post_list' post.author.pk %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></p>
+            {% else %}
+            <p class="post-info">{{ post.publishtime }}<a href="{% url 'news_app:user_post_list' post.author.pk %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></p>
+            {% endif %}
+            {% if post.image %}
+            <div class="post-img" style="background-image: url('{% get_media_prefix %}{{ post.image }}')" alt="post image"></div>
+            {% endif %}
+            <hr>
+            <div class="post-body">{{ post.body|safe }}</div>
+            <hr>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

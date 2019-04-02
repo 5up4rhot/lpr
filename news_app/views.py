@@ -27,11 +27,11 @@ def post_detail(request, year, month, day, slug_url):
 class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = 'posts'
-    paginate_by = 12
+    paginate_by = 3
     template_name = 'news_app/post_list.html'
 
 
-class UserPostListView(ListView):
+class AuthorPostListView(ListView):
     model = Post
     context_object_name = 'posts'
     template_name = 'news_app/post_list.html'
@@ -43,19 +43,20 @@ class UserPostListView(ListView):
 
 
 # for aurhors:
-class CurrentUserPostListView(LoginRequiredMixin, ListView):
+class ProfilePostListView(LoginRequiredMixin, ListView):
     model = Post
     context_object_name = 'current_user_posts'
-    template_name = 'news_app/current_user_post_list.html'
+    template_name = 'news_app/profile_post_list.html'
     paginate_by = 20
 
     def get_queryset(self):
         return Post.objects.filter(author__id=self.request.user.id).order_by('-createtime')
 
 
-class CurrentUserPostDetailView(LoginRequiredMixin, DetailView):
+class ProfilePostDetailView(LoginRequiredMixin, DetailView):
     model = Post
-    template_name = 'news_app/current_user_post_detail.html'
+    template_name = 'news_app/profile_post_preview.html'
+
     def get_queryset(self):
         return Post.objects.filter(author__id=self.request.user.id)
 
@@ -82,6 +83,7 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
 
     def get_queryset(self):
         return Post.objects.filter(author__id=self.request.user.id)
+
 
 class DeletePostView(LoginRequiredMixin, DeleteView):
     template_name = 'news_app/post_delete.html'

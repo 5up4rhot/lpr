@@ -1,0 +1,19 @@
+<ul class="pagination justify-content-center">
+    {% if page.has_previous %}
+    <li class="page-item custom-item"><a class="page-link custom-link custom-previous" href="?page={{ page.previous_page_number }}"></a></li>
+    <li class="page-item custom-item"><a class="page-link custom-link" href="?page=1">1</a></li>
+    <li class="page-item custom-item disabled">
+        <span class="page-link custom-link">...</span>
+    </li>
+    {% endif %}
+    <li class="page-item custom-item active">
+        <span class="page-link custom-link">{{ page.number }}</span>
+    </li>
+    {% if page.has_next %}
+    <li class="page-item custom-item disabled">
+        <span class="page-link custom-link">...</span>
+    </li>
+    <li class="page-item custom-item"><a class="page-link custom-link" href="?page={{ page.paginator.num_pages }}">{{ page.paginator.num_pages }}</a></li>
+    <li class="page-item custom-item"><a class="page-link custom-link custom-next" href="?page={{ page.next_page_number }}"></a></li>
+    {% endif %}
+</ul>

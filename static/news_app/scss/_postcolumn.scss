@@ -3,17 +3,20 @@
     color: inherit;
     padding: 2.7rem;
     margin: 0 0 5rem 0;
-    box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
     @include media-breakpoint-down(lg) {
         margin-bottom: 4rem;
     }
     @include media-breakpoint-down(md) {
-        box-shadow: 0 0.3rem 0.7rem 0 rgba(0, 0, 0, 0.18), 0 0.4rem 1.5rem 0 rgba(0, 0, 0, 0.17);
+        -webkit-box-shadow: 0 0.3rem 0.7rem 0 rgba(0, 0, 0, 0.18), 0 0.4rem 1.5rem 0 rgba(0, 0, 0, 0.17);
+                box-shadow: 0 0.3rem 0.7rem 0 rgba(0, 0, 0, 0.18), 0 0.4rem 1.5rem 0 rgba(0, 0, 0, 0.17);
         padding: 2rem;
         margin-bottom: 3rem;
     }
     @include media-breakpoint-down(sm) {
-        box-shadow: 0 0.2rem 0.7rem 0 rgba(0, 0, 0, 0.16), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0 0.2rem 0.7rem 0 rgba(0, 0, 0, 0.16), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.15);
+                box-shadow: 0 0.2rem 0.7rem 0 rgba(0, 0, 0, 0.16), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.15);
         padding: 1rem;
         margin-bottom: 2rem;
     }
@@ -34,6 +37,7 @@
 .post-title{
     font-family: $title-font;
     font-size: 3.5rem;
+    -webkit-transition: all .5s;
     transition: all .5s;
     margin-bottom: 2rem;
     line-height: 1.2;
@@ -106,7 +110,8 @@
     grid-template: "pic wrapper" auto / 40% auto;
     &:hover, &:focus{
         .post-img{
-            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
         }
     }
     @include media-breakpoint-down(lg) {
@@ -148,5 +153,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    -webkit-transition: all .7s;
     transition: all .7s;
 }

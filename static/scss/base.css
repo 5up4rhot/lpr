@@ -9,8 +9,13 @@
   padding: 0px 0px;
   display: inline-block;
   cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
   transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -44,8 +49,13 @@
     background-color: #000;
     border-radius: 4px;
     position: absolute;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
     transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.15s;
     transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease;
     transition-timing-function: ease; }
   .hamburger-inner::before, .hamburger-inner::after {
     content: "";
@@ -59,25 +69,39 @@
    * Squeeze
    */
 .hamburger--squeeze .hamburger-inner {
+  -webkit-transition-duration: 0.075s;
   transition-duration: 0.075s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--squeeze .hamburger-inner::before {
+    -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
     transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
   .hamburger--squeeze .hamburger-inner::after {
-    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+    -webkit-transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
 .hamburger--squeeze.is-active .hamburger-inner {
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  -webkit-transition-delay: 0.12s;
   transition-delay: 0.12s;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   .hamburger--squeeze.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
+    -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
     transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
   .hamburger--squeeze.is-active .hamburger-inner::after {
     bottom: 0;
+    -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    -webkit-transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 /********** BREAKPOINTS CHEATSHEET **********/
 /*
@@ -99,6 +123,8 @@
 /********** GENERAL **********/
 html {
   font-size: 62.5%; }
+  html .btn {
+    font-size: 100%; }
 
 body {
   padding-top: 7.425rem;
@@ -195,6 +221,7 @@ body {
 
 .navbar-toggler {
   outline: none !important;
+  -webkit-box-shadow: none;
   box-shadow: none;
   margin: 0.5rem 1rem 0 0; }
 
@@ -210,21 +237,25 @@ body {
 /********** FOOTER **********/
 footer {
   display: grid;
-  margin: 3rem 4rem 6rem;
+  margin: 14rem 4rem 10rem;
   grid-column-gap: 3rem;
   grid-template: "src sub other proj" 13rem / 24rem 5fr 3fr 3fr; }
   @media (max-width: 1199.98px) {
     footer {
-      margin: 3rem 0 6rem; } }
+      margin: 6rem 0; } }
   @media (max-width: 991.98px) {
     footer {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
       grid-gap: 3rem 7rem;
       grid-template: "sub other" 13rem "src proj" 8rem / 27rem 18rem; } }
   @media (max-width: 575.98px) {
     footer {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
       justify-content: start;
-      margin-bottom: 3rem;
+      margin: 3rem 0;
       grid-gap: 2rem 0;
       grid-template: "other" 10rem "proj" 8rem "sub" 13rem "src" 6rem / auto; } }
 
@@ -273,6 +304,7 @@ footer {
   #subscribe-input:focus {
     border-color: #6666ff;
     outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem #ccccff;
     box-shadow: 0 0 0 0.2rem #ccccff; }
   @media (max-width: 575.98px) {
     #subscribe-input {
@@ -290,6 +322,7 @@ footer {
   .subscribe-button:focus {
     border-color: #f56342;
     outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem #fddbd3;
     box-shadow: 0 0 0 0.2rem #fddbd3; }
 
 .other {

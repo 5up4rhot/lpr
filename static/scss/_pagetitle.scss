@@ -9,15 +9,22 @@ html, body{
   height: 100%;
 }
 .pagetitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: $pagetitle-height;
     width: auto;
     border: 3rem solid $pagetitle-border-color;
     background-repeat: no-repeat;
     background-position: center;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-size: cover;
+    background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4)) ), url($pagetitle-background-image);
     background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url($pagetitle-background-image);
     @include media-breakpoint-down(xl) {
         border-width: 2.5rem;

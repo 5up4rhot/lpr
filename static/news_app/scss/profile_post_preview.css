@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -124,6 +123,8 @@
 /********** GENERAL **********/
 html {
   font-size: 62.5%; }
+  html .btn {
+    font-size: 100%; }
 
 body {
   padding-top: 7.425rem;
@@ -339,60 +340,217 @@ footer {
   .footer-list-element:hover, .footer-list-element:visited {
     color: gray; }
 
-html, body {
-  height: 100%; }
+/********** POST LIST **********/
+.news-list {
+  margin: 5rem 0;
+  /***** GENERAL *****/
+  /***** POST W/OUT IMAGE *****/
+  /***** POST W/IMAGE *****/ }
+  .news-list .post, .news-list .post-w-img {
+    color: inherit;
+    padding: 2.7rem;
+    margin: 0 0 5rem 0;
+    -webkit-box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19); }
+    @media (max-width: 1199.98px) {
+      .news-list .post, .news-list .post-w-img {
+        margin-bottom: 4rem; } }
+    @media (max-width: 991.98px) {
+      .news-list .post, .news-list .post-w-img {
+        -webkit-box-shadow: 0 0.3rem 0.7rem 0 rgba(0, 0, 0, 0.18), 0 0.4rem 1.5rem 0 rgba(0, 0, 0, 0.17);
+        box-shadow: 0 0.3rem 0.7rem 0 rgba(0, 0, 0, 0.18), 0 0.4rem 1.5rem 0 rgba(0, 0, 0, 0.17);
+        padding: 2rem;
+        margin-bottom: 3rem; } }
+    @media (max-width: 767.98px) {
+      .news-list .post, .news-list .post-w-img {
+        -webkit-box-shadow: 0 0.2rem 0.7rem 0 rgba(0, 0, 0, 0.16), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0.2rem 0.7rem 0 rgba(0, 0, 0, 0.16), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.15);
+        padding: 1rem;
+        margin-bottom: 2rem; } }
+    @media (max-width: 575.98px) {
+      .news-list .post, .news-list .post-w-img {
+        padding: 0.5rem; } }
+    .news-list .post:hover, .news-list .post-w-img:hover, .news-list .post:focus, .news-list .post-w-img:focus {
+      text-decoration: none;
+      color: inherit; }
+      .news-list .post:hover .post-title, .news-list .post-w-img:hover .post-title, .news-list .post:focus .post-title, .news-list .post-w-img:focus .post-title {
+        color: #f56342; }
+  .news-list .post-title {
+    font-family: "Merriweather", serif;
+    font-size: 3.5rem;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    margin-bottom: 2rem;
+    line-height: 1.2; }
+    @media (max-width: 1199.98px) {
+      .news-list .post-title {
+        font-size: 3rem;
+        margin-bottom: 1.8rem; } }
+    @media (max-width: 991.98px) {
+      .news-list .post-title {
+        font-size: 2.7rem;
+        margin-bottom: 1.6rem; } }
+    @media (max-width: 767.98px) {
+      .news-list .post-title {
+        font-size: 2.3rem;
+        margin-bottom: 1.4rem; } }
+    @media (max-width: 575.98px) {
+      .news-list .post-title {
+        font-size: 1.9rem;
+        margin-bottom: 1.2rem; } }
+  .news-list .post-description {
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3; }
+    @media (max-width: 1199.98px) {
+      .news-list .post-description {
+        font-size: 1.8rem;
+        margin-bottom: 1.3rem; } }
+    @media (max-width: 991.98px) {
+      .news-list .post-description {
+        font-size: 1.6rem;
+        margin-bottom: 1.1rem; } }
+    @media (max-width: 767.98px) {
+      .news-list .post-description {
+        margin-bottom: 0.9rem; } }
+    @media (max-width: 575.98px) {
+      .news-list .post-description {
+        font-size: 1.4rem;
+        margin-bottom: 0.7rem; } }
+  .news-list .post-info {
+    color: gray;
+    font-size: 1.4rem;
+    margin: 0; }
+    @media (max-width: 1199.98px) {
+      .news-list .post-info {
+        font-size: 1.3rem; } }
+    @media (max-width: 991.98px) {
+      .news-list .post-info {
+        font-size: 1.2rem; } }
+    @media (max-width: 575.98px) {
+      .news-list .post-info {
+        font-size: 1.1rem; } }
+    .news-list .post-info span {
+      margin-left: 2rem; }
+  .news-list .post {
+    display: block; }
+  .news-list .post-w-img {
+    display: grid;
+    grid-template: "pic wrapper" auto / 40% auto; }
+    .news-list .post-w-img:hover .post-img, .news-list .post-w-img:focus .post-img {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2); }
+    @media (max-width: 1199.98px) {
+      .news-list .post-w-img {
+        grid-template: "pic wrapper" auto / 40% auto; } }
+    @media (max-width: 991.98px) {
+      .news-list .post-w-img {
+        grid-template: "pic" 25rem "wrapper" auto / auto; } }
+    @media (max-width: 767.98px) {
+      .news-list .post-w-img {
+        grid-template: "pic" 20rem "wrapper" auto / auto; } }
+    @media (max-width: 767.98px) {
+      .news-list .post-w-img {
+        grid-template: "pic" 18rem "wrapper" auto / auto; } }
+  .news-list .post-wrapper-w-img {
+    grid-area: wrapper;
+    margin-left: 3rem; }
+    @media (max-width: 991.98px) {
+      .news-list .post-wrapper-w-img {
+        margin: 1rem 0 0 0; } }
+  .news-list .post-img-wrapper {
+    grid-area: pic;
+    overflow: hidden; }
+  .news-list .post-img {
+    height: 100%;
+    width: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: all .7s;
+    transition: all .7s; }
+    @media (min-width: 992px) {
+      .news-list .post-img {
+        min-height: 25rem; } }
 
-.pagetitle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  width: auto;
-  border: 3rem solid #fff;
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-size: cover;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("/static/home_app/img/guys.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/home_app/img/guys.jpg");
-  border-width: 2.5rem; }
-  @media (max-width: 991.98px) {
-    .pagetitle {
-      border-width: 2rem; } }
-  @media (max-width: 767.98px) {
-    .pagetitle {
-      border-width: 1.5rem; } }
+/********** POST DETAIL **********/
+.news-detail {
+  margin: 5rem 0; }
+  .news-detail .post-title {
+    font-family: "Merriweather", serif;
+    font-size: 3.5rem;
+    margin: 3rem 0;
+    line-height: 1.2; }
+    @media (max-width: 1199.98px) {
+      .news-detail .post-title {
+        font-size: 3rem;
+        margin: 2.5rem 0; } }
+    @media (max-width: 991.98px) {
+      .news-detail .post-title {
+        font-size: 2.7rem;
+        margin: 2rem 0; } }
+    @media (max-width: 767.98px) {
+      .news-detail .post-title {
+        font-size: 2.3rem;
+        margin: 1.5rem 0; } }
+    @media (max-width: 575.98px) {
+      .news-detail .post-title {
+        font-size: 1.9rem;
+        margin: 1rem 0; } }
+  .news-detail .post-description {
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3; }
+    @media (max-width: 1199.98px) {
+      .news-detail .post-description {
+        font-size: 1.8rem;
+        margin-bottom: 1.3rem; } }
+    @media (max-width: 991.98px) {
+      .news-detail .post-description {
+        font-size: 1.6rem;
+        margin-bottom: 1.1rem; } }
+    @media (max-width: 767.98px) {
+      .news-detail .post-description {
+        margin-bottom: 0.9rem; } }
+    @media (max-width: 575.98px) {
+      .news-detail .post-description {
+        font-size: 1.4rem;
+        margin-bottom: 0.7rem; } }
+  .news-detail .post-info {
+    color: gray;
+    font-size: 1.4rem;
+    margin: 0 0 2rem; }
+    @media (max-width: 1199.98px) {
+      .news-detail .post-info {
+        font-size: 1.3rem; } }
+    @media (max-width: 991.98px) {
+      .news-detail .post-info {
+        font-size: 1.2rem; } }
+    @media (max-width: 575.98px) {
+      .news-detail .post-info {
+        font-size: 1.1rem; } }
+    .news-detail .post-info a {
+      text-decoration: none;
+      color: inherit;
+      margin-left: 2rem; }
+      .news-detail .post-info a:hover, .news-detail .post-info a:focus {
+        color: blue; }
+  .news-detail .post-img {
+    width: auto;
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 2rem; }
+    @media (max-width: 1199.98px) {
+      .news-detail .post-img {
+        height: 40vh; } }
+    @media (max-width: 991.98px) {
+      .news-detail .post-img {
+        height: 30vh; } }
+  .news-detail .post-body {
+    line-height: 1.8; }
+    .news-detail .post-body img {
+      max-width: 100%;
+      height: auto; }
 
-.pagetitle-content-box {
-  text-align: center; }
-  @media (max-width: 767.98px) {
-    .pagetitle-content-box {
-      margin: 0 20%; } }
-  @media (max-width: 575.98px) {
-    .pagetitle-content-box {
-      margin: 0 15%; } }
-
-.pagetitle-content {
-  display: inline;
-  color: #000;
-  background-color: #fff;
-  padding: 0.5rem;
-  font-size: 3.5rem; }
-  .pagetitle-content::after {
-    content: "минимум государства - максимум свободы."; }
-  @media (max-width: 1199.98px) {
-    .pagetitle-content {
-      padding: 0.4rem;
-      font-size: 3.2rem; } }
-  @media (max-width: 767.98px) {
-    .pagetitle-content {
-      line-height: 1.8;
-      padding: 0.2rem;
-      font-size: 3rem; } }
-
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=profile_post_preview.css.map */

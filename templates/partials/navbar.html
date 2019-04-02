@@ -37,7 +37,7 @@
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'news_app:current_user_post_list' %}"><i class="fas fa-user-circle fa-lg"></i></a>
+                <a class="nav-link" href="{% url 'news_app:profile_post_list' %}"><i class="fas fa-user-circle fa-lg"></i></a>
             </li>
             {% endif %}
         </ul>

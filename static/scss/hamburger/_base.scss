@@ -5,9 +5,17 @@
   display: inline-block;
   cursor: pointer;
 
+  -webkit-transition-property: opacity, -webkit-filter;
+
+  transition-property: opacity, -webkit-filter;
+
   transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
+
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
 
   // Normalize (<button>)
   font: inherit;
@@ -20,7 +28,8 @@
 
   &:hover {
     @if $hamburger-hover-use-filter == true {
-      filter: $hamburger-hover-filter;
+      -webkit-filter: $hamburger-hover-filter;
+              filter: $hamburger-hover-filter;
     }
     @else {
       opacity: $hamburger-hover-opacity;
@@ -30,7 +39,8 @@
   &.is-active {
     &:hover {
       @if $hamburger-hover-use-filter == true {
-        filter: $hamburger-active-hover-filter;
+        -webkit-filter: $hamburger-active-hover-filter;
+                filter: $hamburger-active-hover-filter;
       }
       @else {
         opacity: $hamburger-active-hover-opacity;
@@ -65,9 +75,14 @@
     background-color: $hamburger-layer-color;
     border-radius: $hamburger-layer-border-radius;
     position: absolute;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
     transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.15s;
+            transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
   }
 
   &::before,

@@ -12,9 +12,9 @@
 {% endblock %}
 
 {% block content %}
-
+<!-- Pagetitle -->
 {% include 'partials/pagetitle.html' %}
-
+<!-- News -->
 {% for post in posts %}
 {% if post.image %}
 <div class="container">
@@ -48,11 +48,9 @@
   </a>
 </div>
 {% endif %}
-
-
 {% endfor %}
-
 <!-- Pagination -->
-{% include 'news_app/pagination.html' with page=page_obj %}
-
+<div class="container">
+    {% include 'partials/pagination.html' with page=page_obj %}
+</div>
 {% endblock %}
