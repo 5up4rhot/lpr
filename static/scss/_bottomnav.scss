@@ -1,0 +1,29 @@
+.bottom-navigation{
+    display: flex;
+    justify-content:center;
+}
+.bottom-navigation-link{
+    border: 0.3rem solid lighten($secondary-color, 30%);
+    border-radius: 1rem;
+    width: 40%;
+    margin: 4rem;
+    padding: 3rem;
+    &:hover{
+        .bottom-navigation-link-wrap{
+            color: $primary-color;
+        }
+    }
+}
+.bottom-navigation-link-wrap{
+    color: #000;
+    font-size: 4rem;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+.bottom-navigation-prev{
+    text-align: right;
+}
+.bottom-navigation-next{
+    text-align: left;
+}
