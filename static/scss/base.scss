@@ -3,6 +3,7 @@ $main-font: 'Open Sans', sans-serif;
 $primary-color: hsl(11, 90%, 61%); // original(11,100,61)
 $secondary-color: blue;
 $muted-color: gray;
+$content-color: #333;
 $nav-height: 7.425rem;
 $nav-height-md: 6.925rem;
 $nav-height-sm: 6.625rem;
@@ -166,11 +167,11 @@ body {
 /********** FOOTER **********/
 footer {
     display: grid;
-    margin: 14rem 4rem 10rem;
+    margin: 2rem 4rem 10rem;
     grid-column-gap: 3rem;
     grid-template: "src sub other proj" 13rem / 24rem 5fr 3fr 3fr;
     @include media-breakpoint-down(lg) {
-        margin: 6rem 0;
+        margin: 2rem 0 6rem;
     }
     @include media-breakpoint-down(md) {
         -webkit-box-pack: center;
@@ -184,7 +185,7 @@ footer {
         -webkit-box-pack: start;
             -ms-flex-pack: start;
                 justify-content: start;
-        margin: 3rem 0;
+        margin: 2rem 0 3rem;
         grid-gap: 2rem 0;
         grid-template: "other" 10rem
                        "proj" 8rem

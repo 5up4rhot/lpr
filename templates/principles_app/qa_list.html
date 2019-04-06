@@ -1,107 +1,52 @@
-<!DOCTYPE html>
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
 
-{% block head %}
+{% block css %}
 <!-- Custom css -->
-<link rel="stylesheet" href="/static/principles_app/css/principles_app_base.css">
-<link rel="stylesheet" href="/static/principles_app/css/qa_list.css">
-<title>Декларация о принципах - Либертарианская Партия России</title>
+<link rel="stylesheet" href="{% sass_src 'principles_app/scss/qa_list.scss' %}">
 {% endblock %}
 
+{% block head %}
+<title>Вопросы и ответы - Либертарианская Партия России</title>
+{% endblock %}
 
 {% block content %}
 
-<section class='pagetitle'>
-  <div class="pagetitle-cover">
-    <div class="pagetitle-content-box">
-      <h1>Ответы на поплуярные вопросы</h1>
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+
+
+{% regroup qa_list_all by get_subject_display as qa_list_defined_subj %}
+
+<div class="container">
+    <div class="narrower">
+        {% for qa_list in qa_list_defined_subj %}
+        <h1 class="narrower-title">{{ qa_list.grouper }}</h1>
+        {% for qa in qa_list.list %}
+        <p class="qa-question">{{ qa.question }}</p>
+        <p class="narrower-content">{{ qa.answer }}</p>
+        {% endfor %}
+        {% endfor %}
     </div>
-  </div>
-</section>
+</div>
 
 
-
-<section class="qa container mt-4 mt-sm-5">
-  <div class="narrower">
-    <h4>{{ lib_title }}</h4>
-    {% for QA in lib %}
-    <ul class="mt-4 qa-list">
-      <li class="qa-question">{{ QA.question }}</li>
-      <li class="qa-answer mt-0 pt-0">{{ QA.answer }}</li>
-  </ul>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="qa container mt-4 mt-sm-5">
-  <div class="narrower">
-    <h4>{{ soc_title }}</h4>
-    {% for QA in soc %}
-    <div class="mt-3">
-      <ul class="qa-question">
-        <li>{{ QA.question }}</li>
-      </ul>
-      <ul class="qa-answer">
-        <li>{{ QA.answer }}</li>
-      </ul>
+<!-- Bottomnav -->
+<section class="bottomnav">
+    <div class="container">
+        <div class="bottom-navigation">
+            <a href="{% url 'principles_app:platform' %}" class="bottom-navigation-link bottom-navigation-prev shadow">
+                <p>Предыдущее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <i class="fas fa-arrow-left"></i>
+                    <p class="bottom-navigation-prev-content">Платформа партии</p>
+                </div>
+            </a>
+        </div>
     </div>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="qa container mt-4 mt-sm-5">
-  <div class="narrower">
-    <h4>{{ weapon_title }}</h4>
-    {% for QA in weapon %}
-    <div class="mt-3">
-      <ul class="qa-question">
-        <li>{{ QA.question }}</li>
-      </ul>
-      <ul class="qa-answer">
-        <li>{{ QA.answer }}</li>
-      </ul>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="qa container mt-4 mt-sm-5">
-  <div class="narrower">
-    <h4>{{ copyright_title }}</h4>
-    {% for QA in copyright %}
-    <div class="mt-3">
-      <ul class="qa-question">
-        <li>{{ QA.question }}</li>
-      </ul>
-      <ul class="qa-answer">
-        <li>{{ QA.answer }}</li>
-      </ul>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="qa container mt-4 mt-sm-5">
-  <div class="narrower">
-    <h4>{{ terms_title }}</h4>
-    {% for QA in terms %}
-    <div class="mt-3">
-      <ul class="qa-question">
-        <li>{{ QA.question }}</li>
-      </ul>
-      <ul class="qa-answer">
-        <li>{{ QA.answer }}</li>
-      </ul>
-    </div>
-    {% endfor %}
-  </div>
 </section>
 
 
-<a href="{% url 'principles_app:platform' %}" class="navigationlinks">
-  <div class="p-2 p-md-3 my-5 container shadow-lg">
-    <h4 class="text-right">Предыдущее</h4>
-    <h2 class="mt-3 text-right"><i class="arrow arrow-previous fas fa-arrow-left"></i>Платформа партии</h2>
-  </div>
-</a>
 {% endblock %}

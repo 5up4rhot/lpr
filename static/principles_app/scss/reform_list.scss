@@ -1,0 +1,67 @@
+@import "static/scss/base.scss";
+/********** PAGETITLE **********/
+$pagetitle-content: "Программа ЛПР";
+$pagetitle-height: 40%;
+$pagetitle-color: #fff;
+$pagetitle-background-color: $primary-color;
+$pagetitle-background-image: "/static/principles_app/img/pero.webp";
+@import "static/scss/pagetitle";
+
+/********** DISCLAMER **********/
+.disclaimer{
+    font-size: 1.8rem;
+    color: $content-color;
+    line-height: 1.5;
+}
+/********** PROGRAM GRID **********/
+@import "static/scss/program_grid.scss";
+
+.program-lg {
+    margin-top: 5rem;
+    @include media-breakpoint-down(md) {
+        margin-top: 4rem;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-top: 3rem;
+    }
+    @include media-breakpoint-down(xs) {
+        margin-top: 2rem;
+    }
+}
+
+.program-sm {
+    display: none;
+}
+
+/**********  DOWLOAD BUTTON **********/
+.download{
+    display: block;
+    width: 26rem;
+    font-size: 2rem !important;
+    margin: 5rem auto;
+    padding: 1.3rem;
+    @include media-breakpoint-down(md) {
+        margin: 3rem auto;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 2rem auto;
+    }
+}
+
+/********** BOTTOMNAV **********/
+@import "static/scss/bottomnav";
+.bottomnav{
+    margin: 7rem 0 ;
+    @include media-breakpoint-down(lg) {
+        margin: 6rem 0;
+    }
+    @include media-breakpoint-down(md) {
+        margin: 5rem 0;
+    }
+    @include media-breakpoint-down(sm) {
+        margin: 4rem 0;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 3rem 0;
+    }
+}

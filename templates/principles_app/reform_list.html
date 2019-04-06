@@ -1,99 +1,63 @@
-<!DOCTYPE html>
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
+{% load sass_tags %}
 
-
-{% block head %}
+{% block css %}
 <!-- Custom css -->
-<link rel="stylesheet" href="/static/principles_app/css/principles_app_base.css">
-<link rel="stylesheet" href="/static/principles_app/css/reform_list.css">
-<title>Декларация о принципах - Либертарианская Партия России</title>
+<link rel="stylesheet" href="{% sass_src 'principles_app/scss/reform_list.scss' %}">
 {% endblock %}
 
+{% block head %}
+<title>Программа - Либертарианская Партия России</title>
+{% endblock %}
 
 {% block content %}
-<section class='pagetitle'>
-  <div class="pagetitle-cover">
-    <div class="pagetitle-content-box">
-      <h1>Программа ЛПР</h1>
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<div class="container">
+        <div class="disclaimer">
+            <p>Наша Программа предлагает конкретные шаги для практического воплощения принципов и ценностей, изложенных в Платформе Либертарианской партии России. Она может быть реализована исключительно ненасильственными методами, как то:</p>
+            <ul>
+                <li>просветительская и образовательная деятельность, включая общественно-политические конференции и издание соответствующей литературы;</li>
+                <li>участие в выборах всех уровней для реализации либертарианских реформ локально и в общероссийском масштабе;</li>
+                <li>информационная деятельность в интернете, в частности через социальные сети;</li>
+                <li>участие в дебатах с оппонентами;</li>
+                <li>подготовка аналитических докладов по актуальным проблемам;</li>
+                <li>участие в коалициях с другими политическими силами по общим вопросам.</li>
+            </ul>
+            <p>Данный список не является исчерпывающим, он лишь очерчивает общий контур действий, оставляя возможность для расширения за счёт инициатив, выдвигаемых членами партии и её сторонниками.</p>
+            <p>Все предлагаемые нами меры разделяются на два больших блока - первоочередные реформы, которые могут быть проведены либертарианцами быстро и эффективно в случае их прихода к власти, и долгосрочные, для реализации которых потребуется
+                кардинальная перестройка всех существующих институтов, сопровождаемая широкой разъяснительной работой относительно целесообразности и тактики реформ.</p>
+        </div>
+</div>
+
+<!-- Pogram grid -->
+{% include 'partials/program_grid.html' %}
+
+<!-- Download button -->
+<a class="download btn btn-outline-secondary" href="{% static 'principles_app/files/LPR-program.pdf' %}" download>Скачать в формате pdf</a>
+
+<!-- Bottomnav -->
+<section class="bottomnav">
+    <div class="container">
+        <div class="bottom-navigation">
+            <a href="{% url 'principles_app:declaration' %}" class="bottom-navigation-link bottom-navigation-prev shadow">
+                <p>Предыдущее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <i class="fas fa-arrow-left"></i>
+                    <p class="bottom-navigation-prev-content">Декларация о принципах</p>
+                </div>
+            </a>
+            <a href="{% url 'principles_app:platform' %}" class="bottom-navigation-link bottom-navigation-next shadow">
+                <p>Следующее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <p class="bottom-navigation-next-content">Платформа партии</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
     </div>
-  </div>
 </section>
-
-
-<section class="program container">
-  <div class="narrower">
-    <!-- <h2 class="my-4 mt-sm-5">Программа партии</h2> -->
-    <p>Наша Программа предлагает конкретные шаги для практического воплощения принципов и ценностей, изложенных в Платформе Либертарианской партии России. Она может быть реализована исключительно ненасильственными методами, как то:</p>
-  </div>
-  <div class="row justify-content-center my-5">
-    <a href="{% url 'principles_app:constitutional' %}" id="law" class="program-box col-md-4 col-sm-6">
-      <div>
-        <i class="m-3 fa-2x fas fa-university"></i>
-        <br>
-        Констутиционно-правовые реформы
-      </div>
-    </a>
-    <a href="{% url 'principles_app:justice' %}" id="justice" class="program-box col-md-4 col-sm-6">
-      <div>
-        <i class="m-3 fa-2x fas fa-balance-scale"></i>
-        <br>
-        Судебно-правоохранительная реформа
-      </div>
-    </a>
-    <a href="{% url 'principles_app:social' %}" id="social" class="program-box col-md-4 col-sm-6">
-      <div>
-        <i class="m-3 fa-2x fas fa-users"></i>
-        <br>
-        Социальные рефомы
-      </div>
-    </a>
-    <a href="{% url 'principles_app:economic' %}" id="economic" class="program-box col-md-4 col-sm-6">
-      <div>
-        <i class="m-3 fa-2x fas fa-ruble-sign"></i>
-        <br>
-        Экономические реформы
-      </div>
-    </a>
-    <a href="{% url 'principles_app:military' %}" id="military" class="program-box col-md-4 col-sm-6">
-      <div>
-        <i class="m-3 fa-2x fas fa-shield-alt"></i>
-        <br>
-        Военно-промышленная реформа
-      </div>
-    </a>
-    <a href="{% url 'principles_app:fp' %}" id="fp" class="program-box col-md-4 col-sm-6">
-      <div class="">
-        <i class="m-3 fa-2x fas fa-globe"></i>
-        <br>
-        Внешнеполитическая реформа
-      </div>
-    </a>
-  </div>
-</section>
-
-<div class="container text-center mt-5">
-  <a class="download btn btn-lg btn-primary" href="{% static 'principles_app/files/LPR-program.pdf' %}" download>Скачать в формате pdf</a>
-</div>
-
-
-
-<div id="navigation-container" class="container shadow-lg">
-  <div class="row">
-    <a href="{% url 'principles_app:declaration' %}" class="col-md-6 order-last order-md-first navigationlinks">
-      <div class="p-2 p-md-3 text-right">
-        <h4>Предыдущее</h4>
-        <h2 class="mt-3"><i class="arrow arrow-previous fas fa-arrow-left"></i>Декларация о принципах</h2>
-      </div>
-    </a>
-    <a href="{% url 'principles_app:platform' %}" class="col-md-6 order-first order-md-last navigationlinks">
-      <div class="p-2 p-md-3 text-left">
-        <h4>Следующее</h4>
-        <h2 class="mt-3">Платформа партии<i class="arrow arrow-next fas fa-arrow-right"></i></h2>
-      </div>
-    </a>
-  </div>
-</div>
-
 
 {% endblock %}

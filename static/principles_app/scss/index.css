@@ -238,12 +238,12 @@ body {
 /********** FOOTER **********/
 footer {
   display: grid;
-  margin: 14rem 4rem 10rem;
+  margin: 2rem 4rem 10rem;
   grid-column-gap: 3rem;
   grid-template: "src sub other proj" 13rem / 24rem 5fr 3fr 3fr; }
   @media (max-width: 1199.98px) {
     footer {
-      margin: 6rem 0; } }
+      margin: 2rem 0 6rem; } }
   @media (max-width: 991.98px) {
     footer {
       -webkit-box-pack: center;
@@ -256,7 +256,7 @@ footer {
       -webkit-box-pack: start;
       -ms-flex-pack: start;
       justify-content: start;
-      margin: 3rem 0;
+      margin: 2rem 0 3rem;
       grid-gap: 2rem 0;
       grid-template: "other" 10rem "proj" 8rem "sub" 13rem "src" 6rem / auto; } }
 
@@ -398,53 +398,6 @@ html, body {
       padding: 0.2rem;
       font-size: 3rem; } }
 
-/********** PAGINATION **********/
-.custom-link {
-  padding: 1.5rem 2.5rem;
-  font-size: 2rem;
-  color: #6666ff; }
-  @media (max-width: 991.98px) {
-    .custom-link {
-      padding: 1rem 2rem;
-      font-size: 1.8rem; } }
-  @media (max-width: 767.98px) {
-    .custom-link {
-      padding: 0.7rem 1.7rem;
-      font-size: 1.6rem; } }
-  @media (max-width: 575.98px) {
-    .custom-link {
-      padding: 0.6rem 1.6rem;
-      font-size: 1.5rem; } }
-  .custom-link:hover {
-    color: #6666ff; }
-  .custom-link:focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(102, 102, 255, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(102, 102, 255, 0.5); }
-
-.custom-previous::before {
-  content: "Предыдущая"; }
-  @media (max-width: 767.98px) {
-    .custom-previous::before {
-      content: "\00ab"; } }
-
-.custom-next::before {
-  content: "Следующая"; }
-  @media (max-width: 767.98px) {
-    .custom-next::before {
-      content: "\00bb"; } }
-
-.custom-item.active .custom-link {
-  background-color: #6666ff;
-  border-color: #6666ff; }
-
-.custom-item:first-child .custom-link {
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem; }
-
-.custom-item:last-child .custom-link {
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem; }
-
 /********** MENU LINKS **********/
 .principles {
   margin: 1rem 0; }
@@ -530,34 +483,34 @@ html, body {
       font-size: 2.2rem; } }
 
 .narrower-content {
-  font-size: 1.6rem;
-  line-height: 1.8; }
+  font-size: 1.7rem;
+  line-height: 1.7; }
 
 /********** MARGIN **********/
 .about,
 .platform-questions,
 .principles-list {
-  margin: 10rem 0 0; }
+  margin: 10rem 0; }
   @media (max-width: 1199.98px) {
     .about,
     .platform-questions,
     .principles-list {
-      margin: 8rem 0 0; } }
+      margin: 8rem 0; } }
   @media (max-width: 991.98px) {
     .about,
     .platform-questions,
     .principles-list {
-      margin: 6rem 0 0; } }
+      margin: 6rem 0; } }
   @media (max-width: 767.98px) {
     .about,
     .platform-questions,
     .principles-list {
-      margin: 5rem 0 0; } }
+      margin: 5rem 0; } }
   @media (max-width: 575.98px) {
     .about,
     .platform-questions,
     .principles-list {
-      margin: 3rem 0 0; } }
+      margin: 3rem 0; } }
 
 /********** PRINCIPLES LIST **********/
 .principles-list-title {
@@ -581,7 +534,8 @@ html, body {
       font-size: 2.2rem; } }
 
 .principles-list-list {
-  list-style: none; }
+  list-style: none;
+  font-size: 1.7rem; }
   .principles-list-list li {
     margin: 1.5rem 0; }
     .principles-list-list li::before {
@@ -603,16 +557,16 @@ html, body {
   #principles-list-button:focus, #principles-list-button:hover {
     text-decoration: none; }
 
-/********** PROGRAM **********/
+/********** PROGRAM GRID **********/
 .program {
   display: grid;
-  grid-template: 25rem 25rem / 33.3% 33.3% 33.3%; }
+  grid-template: 25rem 25rem / 33.33% 33.33% 33.33%; }
   @media (max-width: 991.98px) {
     .program {
       grid-template: 20rem 20rem 20rem / 50% 50%; } }
   @media (max-width: 575.98px) {
     .program {
-      grid-template: 10rem 10rem 10rem 10rem 10rem 10rem / 100%; } }
+      grid-template: repeat(6, 17rem)/100%; } }
 
 .program-box {
   display: -webkit-box;
@@ -657,10 +611,13 @@ html, body {
 .program-box-wrapper {
   text-align: center; }
   .program-box-wrapper p {
-    padding: 0 2rem; }
+    margin: 0 2rem; }
     @media (max-width: 575.98px) {
       .program-box-wrapper p {
-        padding: 0 6rem; } }
+        margin: 0 6rem; } }
+    @media (max-width: 360px) {
+      .program-box-wrapper p {
+        margin: 0 3rem; } }
 
 .program-box-icon {
   margin-bottom: 2.5rem; }

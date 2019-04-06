@@ -1,0 +1,160 @@
+@import "static/scss/base.scss";
+/********** PAGETITLE **********/
+$pagetitle-content: "Программа ЛПР";
+$pagetitle-height: 30%;
+$pagetitle-color: #fff;
+$pagetitle-background-color: $primary-color;
+$pagetitle-background-image: "/static/principles_app/img/pero.webp";
+@import "static/scss/pagetitle";
+/********** PROGRAM **********/
+body {
+    position: relative;
+}
+
+.reform {
+    display: grid;
+    grid-template: "nothin header" auto
+                   "toc cont" auto / 30% 65%;
+    grid-column-gap: 5%;
+    @include media-breakpoint-down(md) {
+        display: block;
+    }
+}
+
+#reform-toc {
+    grid-area: toc;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+    height: 100vh;
+    margin-top: 6rem;
+    @include media-breakpoint-down(md) {
+        position: static;
+        height: auto;
+        margin: -7.5rem 0 2rem;
+        padding-top: 7.5rem;
+    }
+}
+
+#reform-cont {
+    grid-area: cont;
+}
+
+.reform-header {
+    grid-area: header;
+    color: blue;
+    font-family: $title-font;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    @include media-breakpoint-down(lg) {
+        font-size: 3.3rem;
+        margin-bottom: 1.8rem;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 3rem;
+        margin-bottom: 1.6rem;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 2.8rem;
+        margin-bottom: 1.4rem;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 2.7rem;
+        margin-bottom: 1.2rem;
+    }
+}
+
+.reform-cont-single{
+    margin: 0 0 3rem;
+}
+
+.reform-subheader {
+    color: $primary-color;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    padding-top: 9rem;
+    margin-top: -9rem;
+    @include media-breakpoint-down(lg) {
+        font-size: 2.7rem;
+        margin-bottom: 1.2rem;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 2.3rem;
+        margin-bottom: 0.8rem;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 2.2rem;
+        margin-bottom: 0.7rem;
+    }
+}
+
+.reform-toclink {
+    color: $muted-color;
+    text-decoration: underline;
+    display: none;
+    &:focus,&:hover {
+        color: $muted-color;
+    }
+    @include media-breakpoint-down(md) {
+        display: inherit;
+    }
+}
+
+.reform-cont-wrap {
+    font-size: 1.7rem;
+    color: $content-color;
+}
+
+.list-group-item.active,
+.list-group-item.active:focus,
+.list-group-item.active:hover {
+    color: #fff;
+    background-color: lighten($secondary-color, 20%);
+    border-color: lighten($secondary-color, 20%);
+}
+
+/********** PROGRAM GRID **********/
+@import "static/scss/program_grid.scss";
+
+.program-lg {
+    margin-top: 5rem;
+    @include media-breakpoint-down(md) {
+        margin-top: 4rem;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-top: 3rem;
+    }
+    @include media-breakpoint-down(xs) {
+        display: none;
+    }
+}
+
+.program-sm {
+    display: none;
+    @include media-breakpoint-down(xs) {
+        margin-top: 2rem;
+        display: inherit;
+    }
+}
+
+/********** BOTTOMNAV **********/
+@import "static/scss/bottomnav";
+.bottomnav{
+    margin: 7rem 0 ;
+    @include media-breakpoint-down(lg) {
+        margin: 6rem 0;
+    }
+    @include media-breakpoint-down(md) {
+        margin: 5rem 0;
+    }
+    @include media-breakpoint-down(sm) {
+        margin: 4rem 0;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 3rem 0;
+    }
+}

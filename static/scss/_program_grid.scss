@@ -9,12 +9,12 @@ $reform-colors: (
 
 .program {
     display: grid;
-    grid-template: 25rem 25rem / 33.3% 33.3% 33.3%;
+    grid-template: 25rem 25rem / 33.33% 33.33% 33.33%;
     @include media-breakpoint-down(md) {
         grid-template: 20rem 20rem 20rem / 50% 50%;
     }
     @include media-breakpoint-down(xs) {
-        grid-template: 10rem 10rem 10rem 10rem 10rem 10rem / 100%;
+        grid-template: repeat(6, 17rem) / 100%;
     }
 }
 
@@ -67,9 +67,12 @@ $reform-colors: (
     text-align: center;
 
     p {
-        padding: 0 2rem;
+        margin: 0 2rem;
         @include media-breakpoint-down(xs) {
-            padding: 0 6rem;
+            margin: 0 6rem;
+        }
+        @media (max-width: 360px){
+            margin: 0 3rem;
         }
     }
 }

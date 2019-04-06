@@ -1,3 +1,16 @@
+.pagination-wrap{
+    margin: 6rem 0 10rem;
+    @include media-breakpoint-down(md) {
+        margin: 4rem 0 8rem;
+    }
+    @include media-breakpoint-down(sm) {
+        margin: 3rem 0 6rem;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 2rem 0 4rem;
+    }
+}
+
 .custom-link {
     padding: 1.5rem 2.5rem;
     font-size: 2rem;

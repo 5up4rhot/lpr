@@ -27,9 +27,17 @@
 </div>
 
 <!-- Navigation links -->
-<div class="container">
-    {% include 'partials/bottomnav.html' %}
-</div>
-
-
+<section class="bottomnav">
+    <div class="container">
+        <div class="bottom-navigation">
+            <a href="{% url 'principles_app:program' %}" class="bottom-navigation-link bottom-navigation-next shadow">
+                <p>Следующее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <p class="bottom-navigation-next-content">Программа партии</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
 {% endblock %}

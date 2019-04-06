@@ -50,7 +50,9 @@
 {% endif %}
 {% endfor %}
 <!-- Pagination -->
-<div class="container">
-    {% include 'partials/pagination.html' with page=page_obj %}
+<div class="pagination-wrap">
+    <div class="container">
+        {% include 'partials/pagination.html' with page=page_obj %}
+    </div>
 </div>
 {% endblock %}

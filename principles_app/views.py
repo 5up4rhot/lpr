@@ -69,19 +69,6 @@ class OpinionListView(ListView):
 
 
 def qa(request):
-    lib = QA.objects.filter(subject="lib")
-    lib_title = 'Либертарианство'
-    soc = QA.objects.filter(subject="soc")
-    soc_title = 'Социальная поддержка'
-    weapon = QA.objects.filter(subject="weapon")
-    weapon_title = 'Оружие'
-    copyright = QA.objects.filter(subject="copyright")
-    copyright_title = 'Копирайт'
-    terms = QA.objects.filter(subject="terms")
-    terms_title = 'Терминология'
+    qa_list_all = QA.objects.order_by('subject')
     template = 'principles_app/qa_list.html'
-    return render(request, template, {'lib': lib, 'lib_title': lib_title,
-                                      'soc': soc, 'soc_title': soc_title,
-                                      'weapon': weapon, 'weapon_title': weapon_title,
-                                      'copyright': copyright, 'copyright_title': copyright_title,
-                                      'terms': terms, 'terms_title': terms_title})
+    return render(request, template, {'qa_list_all': qa_list_all})

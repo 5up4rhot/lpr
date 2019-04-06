@@ -8,9 +8,6 @@ $pagetitle-background-color: $primary-color;
 $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
 @import "static/scss/pagetitle";
 
-/********** PAGINATION **********/
-@import "static/scss/pagination";
-
 /********** MENU LINKS **********/
 .principles {
     margin: 1rem 0;
@@ -80,18 +77,18 @@ $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
 .about,
 .platform-questions,
 .principles-list {
-    margin: 10rem 0 0;
+    margin: 10rem 0;
     @include media-breakpoint-down(lg) {
-        margin: 8rem 0 0;
+        margin: 8rem 0;
     }
     @include media-breakpoint-down(md) {
-        margin: 6rem 0 0;
+        margin: 6rem 0;
     }
     @include media-breakpoint-down(sm) {
-        margin: 5rem 0 0;
+        margin: 5rem 0;
     }
     @include media-breakpoint-down(xs) {
-        margin: 3rem 0 0;
+        margin: 3rem 0;
     }
 }
 
@@ -119,6 +116,7 @@ $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
 }
 .principles-list-list{
     list-style: none;
+    font-size: 1.7rem;
     li {
         margin: 1.5rem 0;
         &::before {
@@ -137,8 +135,8 @@ $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
     margin: 2rem auto;
     padding: 0.5rem;
     text-align: center;
-    color: gray;
-    border: 0.1rem solid gray;
+    color: $muted-color;
+    border: 0.1rem solid $muted-color;
     border-radius: 0.25rem;
 
     &:focus,
@@ -146,8 +144,8 @@ $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
         text-decoration: none;
     }
 }
-/********** PROGRAM **********/
-@import "static/scss/program.scss";
+/********** PROGRAM GRID **********/
+@import "static/scss/program_grid.scss";
 
 .program-lg {
     margin-top: 5rem;
