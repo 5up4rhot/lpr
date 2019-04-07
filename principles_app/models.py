@@ -35,11 +35,11 @@ class Reform(models.Model):
 
 class QA(models.Model):
     subject_choices = (
-        ('lib', 'Либертарианство'),
-        ('soc', 'Социальная поддержка'),
-        ('weapon', 'Оружие'),
-        ('copyright', 'Копирайт'),
-        ('terms', 'Терминология'),
+        ('1_lib', 'Либертарианство'),
+        ('2_soc', 'Социальная поддержка'),
+        ('3_weapon', 'Оружие'),
+        ('4_copyright', 'Копирайт'),
+        ('5_terms', 'Терминология'),
     )
 
     subject = models.CharField(

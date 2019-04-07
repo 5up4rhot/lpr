@@ -398,6 +398,71 @@ html, body {
       padding: 0.2rem;
       font-size: 3rem; } }
 
+/********** MENU LINKS **********/
+.topper {
+  margin-bottom: 4rem; }
+  @media (max-width: 991.98px) {
+    .topper {
+      margin-bottom: 3rem; } }
+  @media (max-width: 767.98px) {
+    .topper {
+      margin-bottom: 2rem; } }
+  @media (max-width: 575.98px) {
+    .topper {
+      margin-bottom: 2rem; } }
+
+.topper-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.topper-menu-link {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  margin: 0 1rem;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+  -webkit-transition: 0.2s;
+  transition: 0.2s; }
+  .topper-menu-link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    margin-top: 2rem;
+    bottom: 0;
+    left: 0;
+    background-color: #f56342;
+    visibility: hidden;
+    -webkit-transform: scaleX(0.2);
+    transform: scaleX(0.2);
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s; }
+  .topper-menu-link:hover {
+    text-decoration: none;
+    color: #f56342; }
+    .topper-menu-link:hover::before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1); }
+  @media (max-width: 991.98px) {
+    .topper-menu-link {
+      transition: none;
+      font-size: 1.7rem; }
+      .topper-menu-link::before {
+        display: none; } }
+  @media (max-width: 767.98px) {
+    .topper-menu-link {
+      font-size: 1.6rem; } }
+
 /********** DISCLAMER **********/
 .disclaimer {
   font-size: 1.8rem;
@@ -530,8 +595,15 @@ html, body {
 
 /********** BOTTOMNAV **********/
 .bottom-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center; }
 
 .bottom-navigation-link {
@@ -568,8 +640,14 @@ html, body {
   line-height: 1.2;
   color: blue;
   font-size: 3.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline; }
   .bottom-navigation-link-wrap i {
     margin: 0 0.5rem; }

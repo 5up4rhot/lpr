@@ -16,16 +16,8 @@
 <!-- Pagetitle -->
 {% include 'partials/pagetitle.html' %}
 
-<section class="principles">
-    <div class="container">
-        <div class="principles-menu">
-            <a class="principles-menu-link" href="{% url 'principles_app:declaration' %}" data-hover="Декларация о принципах">Декларация о принципах</a>
-            <a class="principles-menu-link" href="{% url 'principles_app:program' %}" data-hover="Программа партии">Программа партии</a>
-            <a class="principles-menu-link" href="{% url 'principles_app:platform' %}" data-hover="Платформа партии">Платформа партии</a>
-            <a class="principles-menu-link" href="{% url 'principles_app:questions' %}" data-hover="Ответы на популярные вопросы">Ответы на популярные вопросы</a>
-        </div>
-    </div>
-</section>
+<!-- Principles menu -->
+{% include 'principles_app/_principles_menu.html' %}
 
 <section class="about">
     <div class="container">

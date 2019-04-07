@@ -238,12 +238,12 @@ body {
 /********** FOOTER **********/
 footer {
   display: grid;
-  margin: 0 4rem 10rem;
+  margin: 2rem 4rem 10rem;
   grid-column-gap: 3rem;
   grid-template: "src sub other proj" 13rem / 24rem 5fr 3fr 3fr; }
   @media (max-width: 1199.98px) {
     footer {
-      margin: 0 0 6rem; } }
+      margin: 2rem 0 6rem; } }
   @media (max-width: 991.98px) {
     footer {
       -webkit-box-pack: center;
@@ -256,7 +256,7 @@ footer {
       -webkit-box-pack: start;
       -ms-flex-pack: start;
       justify-content: start;
-      margin: 0 0 3rem;
+      margin: 2rem 0 3rem;
       grid-gap: 2rem 0;
       grid-template: "other" 10rem "proj" 8rem "sub" 13rem "src" 6rem / auto; } }
 
@@ -613,8 +613,15 @@ body {
 
 /********** BOTTOMNAV **********/
 .bottom-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center; }
 
 .bottom-navigation-link {
@@ -651,8 +658,14 @@ body {
   line-height: 1.2;
   color: blue;
   font-size: 3.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline; }
   .bottom-navigation-link-wrap i {
     margin: 0 0.5rem; }

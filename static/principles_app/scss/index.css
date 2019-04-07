@@ -399,10 +399,19 @@ html, body {
       font-size: 3rem; } }
 
 /********** MENU LINKS **********/
-.principles {
-  margin: 1rem 0; }
+.topper {
+  margin-bottom: 4rem; }
+  @media (max-width: 991.98px) {
+    .topper {
+      margin-bottom: 3rem; } }
+  @media (max-width: 767.98px) {
+    .topper {
+      margin-bottom: 2rem; } }
+  @media (max-width: 575.98px) {
+    .topper {
+      margin-bottom: 2rem; } }
 
-.principles-menu {
+.topper-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -413,7 +422,7 @@ html, body {
   -ms-flex-pack: distribute;
   justify-content: space-around; }
 
-.principles-menu-link {
+.topper-menu-link {
   font-size: 1.8rem;
   padding: 1rem 0;
   margin: 0 1rem;
@@ -423,7 +432,7 @@ html, body {
   font-weight: 700;
   -webkit-transition: 0.2s;
   transition: 0.2s; }
-  .principles-menu-link::before {
+  .topper-menu-link::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -437,18 +446,21 @@ html, body {
     transform: scaleX(0.2);
     -webkit-transition: all 0.2s ease-in-out 0s;
     transition: all 0.2s ease-in-out 0s; }
-  .principles-menu-link:hover {
+  .topper-menu-link:hover {
     text-decoration: none;
     color: #f56342; }
-    .principles-menu-link:hover::before {
+    .topper-menu-link:hover::before {
       visibility: visible;
       -webkit-transform: scaleX(1);
       transform: scaleX(1); }
   @media (max-width: 991.98px) {
-    .principles-menu-link {
-      font-size: 1.7rem; } }
+    .topper-menu-link {
+      transition: none;
+      font-size: 1.7rem; }
+      .topper-menu-link::before {
+        display: none; } }
   @media (max-width: 767.98px) {
-    .principles-menu-link {
+    .topper-menu-link {
       font-size: 1.6rem; } }
 
 /********** ABOUT **********/

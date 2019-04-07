@@ -16,6 +16,8 @@
 <!-- Pagetitle -->
 {% include 'partials/pagetitle.html' %}
 
+<!-- Principles menu -->
+{% include 'principles_app/_principles_menu.html' %}
 
 
 {% regroup qa_list_all by get_subject_display as qa_list_defined_subj %}
@@ -25,8 +27,8 @@
         {% for qa_list in qa_list_defined_subj %}
         <h1 class="narrower-title">{{ qa_list.grouper }}</h1>
         {% for qa in qa_list.list %}
-        <p class="qa-question">{{ qa.question }}</p>
-        <p class="narrower-content">{{ qa.answer }}</p>
+        <p class="qa-question">{{ qa.question }} <i class="fas fa-question"></i></p>
+        <p class="qa-answer">{{ qa.answer }}</p>
         {% endfor %}
         {% endfor %}
     </div>

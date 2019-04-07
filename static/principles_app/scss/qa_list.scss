@@ -7,14 +7,25 @@ $pagetitle-background-color: $primary-color;
 $pagetitle-background-image: "/static/principles_app/img/pero.webp";
 @import "static/scss/pagetitle";
 
+/********** MENU LINKS **********/
+@import "static/scss/topper_menu";
+
 /********** QA LIST **********/
 @import "narrower";
 .qa-question{
-    color: green;
-    text-decoration: underline;
-    text-decoration-style: underline;
+    color: $primary-color;
+    font-weight: bold;
+}
+.qa-answer{
+    color: $content-color;
 }
 
+.qa-answer, .qa-question{
+    font-size: 1.7rem;
+    @include media-breakpoint-down(xs) {
+        font-size: 1.6rem;
+    }
+}
 /********** BOTTOMNAV **********/
 @import "static/scss/bottomnav";
 .bottomnav{

@@ -7,6 +7,9 @@ $pagetitle-background-color: $primary-color;
 $pagetitle-background-image: "/static/principles_app/img/pero.webp";
 @import "static/scss/pagetitle";
 
+/********** MENU LINKS **********/
+@import "static/scss/topper_menu";
+
 /********** DISCLAMER **********/
 .disclaimer{
     font-size: 1.8rem;
