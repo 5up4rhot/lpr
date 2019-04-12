@@ -1,0 +1,12 @@
+@import "static/scss/base.scss";
+
+/********** PAGETITLE **********/
+$pagetitle-content: "Люди-либертарианцы";
+$pagetitle-height: 40%;
+$pagetitle-color: #fff;
+$pagetitle-background-color: $primary-color;
+// $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
+@import "static/scss/pagetitle";
+
+/********** MENU LINKS **********/
+@import "static/scss/topper_menu";

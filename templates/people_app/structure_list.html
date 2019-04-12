@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'people_app/scss/structure_list.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Люди - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<!-- Principles menu -->
+{% include 'people_app/_people_menu.html' %}
+
+
+<div class="container">
+    <section class="platform-questions">
+            <a href="{% url 'principles_app:platform' %}" class="platform-questions-button" id="platform">
+                <h1>Платфорама партии</h1>
+            </a>
+            <a href="{% url 'principles_app:questions' %}" class="platform-questions-button" id="questions">
+                <h1>Ответы на популярные вопросы</h1>
+            </a>
+    </section>
+</div>
+
+{% endblock %}

@@ -74,8 +74,8 @@
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--squeeze .hamburger-inner::before {
-    -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+    -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
   .hamburger--squeeze .hamburger-inner::after {
     -webkit-transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -92,8 +92,8 @@
   .hamburger--squeeze.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+    -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
   .hamburger--squeeze.is-active .hamburger-inner::after {
     bottom: 0;
     -webkit-transform: rotate(-90deg);
@@ -123,6 +123,8 @@
 /********** GENERAL **********/
 html {
   font-size: 62.5%; }
+  html .btn {
+    font-size: 100%; }
 
 body {
   padding-top: 7.425rem;
@@ -235,12 +237,12 @@ body {
 /********** FOOTER **********/
 footer {
   display: grid;
-  margin: 14rem 4rem 10rem;
+  margin: 2rem 4rem 10rem;
   grid-column-gap: 3rem;
   grid-template: "src sub other proj" 13rem / 24rem 5fr 3fr 3fr; }
   @media (max-width: 1199.98px) {
     footer {
-      margin: 6rem 0; } }
+      margin: 2rem 0 6rem; } }
   @media (max-width: 991.98px) {
     footer {
       -webkit-box-pack: center;
@@ -253,7 +255,7 @@ footer {
       -webkit-box-pack: start;
       -ms-flex-pack: start;
       justify-content: start;
-      margin: 3rem 0;
+      margin: 2rem 0 3rem;
       grid-gap: 2rem 0;
       grid-template: "other" 10rem "proj" 8rem "sub" 13rem "src" 6rem / auto; } }
 
@@ -415,7 +417,8 @@ footer {
       height: 30vh; } }
 
 .post-body {
-  line-height: 1.8; }
+  line-height: 1.8;
+  color: #333; }
   .post-body img {
     max-width: 100%;
     height: auto; }

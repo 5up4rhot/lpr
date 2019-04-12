@@ -4,7 +4,7 @@ import uuid
 import os
 
 # Slug generator import files
-from django.utils.text import slugify
+from uuslug import slugify
 
 
 # Slug generator
@@ -15,15 +15,14 @@ def get_unique_slug(instance):
     returns a unique slug as string.
     """
     slug = slugify(instance.title)
-    unique_slug = slug
     extension = 1
     ModelClass = instance.__class__
 
-    while ModelClass.objects.filter(slug=unique_slug).exists():
-        unique_slug = '{}-{}'.format(slug, extension)
+    while ModelClass.objects.filter(slug=slug).exists():
+        slug = '{}-{}'.format(slug, extension)
         extension += 1
 
-    return unique_slug
+    return slug
 
 
 # FilePATH generator

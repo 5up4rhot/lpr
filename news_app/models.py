@@ -27,9 +27,10 @@ class Post(models.Model):
     description = models.TextField(verbose_name='Описание', blank=True, null=True)
     image = models.ImageField(verbose_name='Картинка',
                               upload_to=get_file_path, blank=True, null=True)
-    slug = models.SlugField(verbose_name='URL', max_length=250,
-                            unique_for_date='publishtime')
-    author = models.ForeignKey(User, verbose_name='Автор', related_name='blog_posts', on_delete=models.DO_NOTHING)
+    slug = models.SlugField(verbose_name='Slug', max_length=250,
+                            unique_for_date='publishtime', blank=True)
+    author = models.ForeignKey(User, verbose_name='Автор',
+                               related_name='blog_posts', on_delete=models.DO_NOTHING)
     body = RichTextUploadingField(verbose_name='Содержание')
     publishtime = models.DateTimeField(verbose_name='Дата публикации', blank=True, null=True)
     createtime = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)

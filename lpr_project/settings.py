@@ -41,12 +41,15 @@ INSTALLED_APPS = [
     'home_app.apps.HomeAppConfig',
     'principles_app.apps.PrinciplesAppConfig',
     'news_app.apps.NewsAppConfig',
+    'people_app.apps.PeopleAppConfig',
     'accounts_app.apps.AccountsAppConfig',
     # ckeditor
     'ckeditor',
     'ckeditor_uploader',
     # django-sass-processor
     'sass_processor',
+    # django-cities-light
+    'cities_light',
 ]
 
 MIDDLEWARE = [
@@ -147,6 +150,11 @@ SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# DJANGO-CITIES-LIGHT SETTINGS
+CITIES_LIGHT_TRANSLATION_LANGUAGES = ['ru', 'en']
+CITIES_LIGHT_INCLUDE_COUNTRIES = ['RU']
+CITIES_LIGHT_INCLUDE_CITY_TYPES = ['PPL', 'PPLA', 'PPLA2', 'PPLA3',
+                                   'PPLA4', 'PPLC', 'PPLF', 'PPLG', 'PPLL', 'PPLR', 'PPLS', 'STLMT', ]
 
 # CKEDITOR SETTINGS
 CKEDITOR_UPLOAD_PATH = 'news/images/'

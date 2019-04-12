@@ -71,3 +71,13 @@
         font-size: 1.6rem;
     }
 }
+
+.attension{
+    color: red;
+    &::before {
+        background-color: red;
+    }
+    &:hover {
+        color: red;
+    }
+}
