@@ -18,7 +18,7 @@ class Department(models.Model):
     info = RichTextField(verbose_name='Информация', blank=True, null=True)
     logo = models.ImageField(verbose_name='Логотип',
                              upload_to=department_logo_directory_path, blank=True, null=True)
-    contacts = models.ManyToManyField('Profile', verbose_name='Контакты', blank=True)
+    contacts = models.ManyToManyField(Profile, verbose_name='Контакты', blank=True)
     website = models.URLField(verbose_name='Собственный сайт', blank=True, null=True)
     telegram_channel = models.URLField(verbose_name='Канал в telegram', blank=True, null=True)
     telegram_chat = models.URLField(verbose_name='Чат в telegram', blank=True, null=True)
