@@ -1,7 +1,7 @@
 <section class="topper">
     <div class="container">
         <div class="topper-menu">
-            <a class="topper-menu-link attension" href="{% url 'principles_app:declaration' %}">Отделения</a>
+            <a class="topper-menu-link" href="{% url 'principles_app:declaration' %}">Отделения</a>
             {%  for structure in structures %}
             <a class="topper-menu-link" href="{{ structure.get_absolute_url }}">{{ structure.name }}</a>
             {% endfor %}

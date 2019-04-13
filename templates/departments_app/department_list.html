@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'people_app/scss/department_list.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Отделения - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<section class="department-search">
+    <div class="container">
+        <div class="narrower">
+            <h1 class="narrower-title">Найди отделение ЛПР в своем регионе!</h1>
+            <p class="narrower-content"></p>
+            {% include 'people_app/_department_search.html' %}
+        </div>
+    </div>
+</section>

@@ -11,7 +11,7 @@ $pagetitle-background-image: "/static/principles_app/img/pero.webp";
 @import "static/scss/topper_menu";
 
 /********** QA LIST **********/
-@import "narrower";
+@import "static/scss/narrower";
 .qa-question{
     color: $primary-color;
     font-weight: bold;

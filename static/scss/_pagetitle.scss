@@ -3,7 +3,8 @@ $pagetitle-height: 100% !default;
 $pagetitle-color: #000 !default;
 $pagetitle-border-color: #fff !default;
 $pagetitle-background-color: #fff !default;
-$pagetitle-background-image: "/static/home_app/img/guys.jpg" !default;
+$pagetitle-background-image: "/static/home_app/img/bird.svg" !default;
+$pagetitle-background-size: cover !default;
 
 html, body{
   height: 100%;
@@ -23,7 +24,7 @@ html, body{
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-size: cover;
+    background-size: $pagetitle-background-size;
     background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4)) ), url($pagetitle-background-image);
     background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url($pagetitle-background-image);
     @include media-breakpoint-down(xl) {

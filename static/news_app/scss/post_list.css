@@ -124,8 +124,6 @@
 /********** GENERAL **********/
 html {
   font-size: 62.5%; }
-  html .btn {
-    font-size: 100%; }
 
 body {
   padding-top: 7.425rem;
@@ -553,7 +551,7 @@ html, body {
 .custom-link {
   padding: 1.5rem 2.5rem;
   font-size: 2rem;
-  color: #6666ff; }
+  color: #333; }
   @media (max-width: 991.98px) {
     .custom-link {
       padding: 1rem 2rem;
@@ -567,10 +565,10 @@ html, body {
       padding: 0.6rem 1.6rem;
       font-size: 1.5rem; } }
   .custom-link:hover {
-    color: #6666ff; }
+    color: #333; }
   .custom-link:focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(102, 102, 255, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(102, 102, 255, 0.5); }
+    -webkit-box-shadow: none;
+    box-shadow: none; }
 
 .custom-previous::before {
   content: "Предыдущая"; }
@@ -585,8 +583,8 @@ html, body {
       content: "\00bb"; } }
 
 .custom-item.active .custom-link {
-  background-color: #6666ff;
-  border-color: #6666ff; }
+  background-color: #333;
+  border-color: #333; }
 
 .custom-item:first-child .custom-link {
   border-top-left-radius: 0.5rem;

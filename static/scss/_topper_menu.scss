@@ -73,11 +73,5 @@
 }
 
 .attension{
-    color: red;
-    &::before {
-        background-color: red;
-    }
-    &:hover {
-        color: red;
-    }
+    color: $secondary-color;
 }

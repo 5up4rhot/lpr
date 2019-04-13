@@ -124,8 +124,6 @@
 /********** GENERAL **********/
 html {
   font-size: 62.5%; }
-  html .btn {
-    font-size: 100%; }
 
 body {
   padding-top: 7.425rem;
@@ -359,9 +357,9 @@ html, body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-size: cover;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("/static/home_app/img/guys.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/home_app/img/guys.jpg");
+  background-size: contain;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("/static/home_app/img/bird.svg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/home_app/img/bird.svg");
   border-width: 2.5rem; }
   @media (max-width: 991.98px) {
     .pagetitle {

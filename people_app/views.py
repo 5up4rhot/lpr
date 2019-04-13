@@ -1,4 +1,4 @@
-from .models import Profile, Structure, Department
+from .models import Profile, Structure
 # CBVs
 from django.views.generic import ListView, DetailView
 
@@ -17,14 +17,3 @@ class StructureDetailView(DetailView):
 class ProfileDetailView(DetailView):
     model = Profile
     template_name = 'people_app/profile_detail.html'
-
-
-class DepartmentListView(ListView):
-    model = Department
-    context_object_name = 'departments'
-    template_name = 'people_app/department_list.html'
-
-
-class DepartmentDetailView(DetailView):
-    model = Department
-    template_name = 'people_app/department_detail.html'

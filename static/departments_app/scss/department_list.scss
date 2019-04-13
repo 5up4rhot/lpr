@@ -1,0 +1,34 @@
+@import "static/scss/base.scss";
+
+/********** PAGETITLE **********/
+$pagetitle-content: "Отделения";
+$pagetitle-height: 40%;
+$pagetitle-color: #fff;
+$pagetitle-background-color: $primary-color;
+// $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
+$pagetitle-background-size: contain;
+@import "static/scss/pagetitle";
+
+/********** MENU LINKS **********/
+@import "static/scss/topper_menu";
+
+/********** DEPARTMENT SEARCH **********/
+@import "static/scss/narrower";
+@import "department_search";
+
+/********** MARGIN **********/
+.department-search{
+    margin: 10rem 0;
+    @include media-breakpoint-down(lg) {
+        margin: 8rem 0;
+    }
+    @include media-breakpoint-down(md) {
+        margin: 6rem 0;
+    }
+    @include media-breakpoint-down(sm) {
+        margin: 5rem 0;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 3rem 0;
+    }
+}

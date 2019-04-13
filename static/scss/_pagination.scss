@@ -26,15 +26,15 @@
         padding: 0.6rem 1.6rem;
         font-size: 1.5rem;
     }
-    color: lighten($secondary-color, 20%);
+    color: $content-color;
 
     &:hover {
-        color: lighten($secondary-color, 20%);
+        color: $content-color;
     }
 
     &:focus {
-        -webkit-box-shadow: 0 0 0 0.2rem hsla(240, 100%, 70%, 0.5);
-                box-shadow: 0 0 0 0.2rem hsla(240, 100%, 70%, 0.5);
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
 }
 
@@ -53,8 +53,8 @@
 }
 
 .custom-item.active .custom-link {
-    background-color: lighten($secondary-color, 20%);
-    border-color: lighten($secondary-color, 20%);
+    background-color: $content-color;
+    border-color: $content-color;
 }
 
 .custom-item:first-child .custom-link {

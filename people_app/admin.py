@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Department, Structure
+from .models import Profile, Structure
 # Register your models here.
 
 
@@ -9,5 +9,4 @@ class ProfileAdmin(admin.ModelAdmin):
 
 # +"second_name"+"patronymic",
 admin.site.register(Profile, ProfileAdmin)
-admin.site.register(Department)
 admin.site.register(Structure)

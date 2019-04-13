@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'principles_app.apps.PrinciplesAppConfig',
     'news_app.apps.NewsAppConfig',
     'people_app.apps.PeopleAppConfig',
+    'departments_app.apps.DepartmentsAppConfig',
     'accounts_app.apps.AccountsAppConfig',
     # ckeditor
     'ckeditor',

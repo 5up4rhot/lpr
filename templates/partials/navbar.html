@@ -17,16 +17,16 @@
         <ul class="navbar-nav ml-auto">
             <div class="menu-active-list">
                 <li class="nav-item">
-                    <a id="people" class="nav-link" href="{% url 'people_app:structure_list' %}">Люди</a>
+                    <a id="news" class="nav-link" href="{% url 'news_app:post_list' %}">Публикации</a>
+                </li>
+                <li class="nav-item">
+                    <a id="people" class="nav-link" href="{% url 'people_app:structure_list' %}">Лица</a>
                 </li>
                 <li class="nav-item">
                     <a id="principles" class="nav-link" href="{% url 'principles_app:index' %}">Принципы</a>
                 </li>
                 <li class="nav-item">
-                    <a id="contacts" class="nav-link" href="#">Контакты</a>
-                </li>
-                <li class="nav-item">
-                    <a id="news" class="nav-link" href="{% url 'news_app:post_list' %}">Новости</a>
+                    <a id="news" class="nav-link" href="{% url 'departments_app:department_list' %}">Отделения</a>
                 </li>
             </div>
             <li class="nav-item">

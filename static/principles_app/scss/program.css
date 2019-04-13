@@ -124,8 +124,6 @@
 /********** GENERAL **********/
 html {
   font-size: 62.5%; }
-  html .btn {
-    font-size: 100%; }
 
 body {
   padding-top: 7.425rem;
@@ -462,6 +460,9 @@ html, body {
   @media (max-width: 767.98px) {
     .topper-menu-link {
       font-size: 1.6rem; } }
+
+.attension {
+  color: blue; }
 
 /********** PROGRAM **********/
 body {
