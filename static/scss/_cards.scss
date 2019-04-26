@@ -1,0 +1,39 @@
+.basic-card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include media-breakpoint-down(sm){
+        justify-content: center;
+    }
+}
+.basic-card{
+    margin: 3rem;
+    display: inline-block;
+    width: 20rem;
+    @include media-breakpoint-down(md){
+        margin: 2rem 1rem;
+    }
+    @include media-breakpoint-down(sm){
+        margin: 1rem;
+        width: 85%;
+    }
+}
+.basic-card-image{
+    width: 20rem;
+    height: 20rem;
+}
+.basic-card-name{
+    color: $content-color1;
+    margin: 1rem 0;
+}
+.basic-card-info{
+    margin: 1rem 0;
+    color: $content-color3;
+}
+.basic-card-contacts{
+    margin: 1rem 0;
+    color: $content-color5;
+}
+.card-title{
+    color: $secondary-color;
+}

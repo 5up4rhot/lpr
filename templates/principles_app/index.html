@@ -46,6 +46,8 @@
             {% if forloop.counter > 4 %}
             <li>{{ principle.content }}</li>
             {% endif %}
+            {% empty %}
+            <li>no principles</li>
             {% endfor %}
         </ul>
     </div>

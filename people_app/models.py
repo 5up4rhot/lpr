@@ -3,7 +3,7 @@ from django.urls import reverse
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from cities_light.models import Country, Region, City
-from uuslug import slugify
+from slugify import slugify
 
 
 def profile_photo_directory_path(instance, filename):

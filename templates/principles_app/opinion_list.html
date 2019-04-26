@@ -27,6 +27,8 @@
                 {{ opinion.content|safe }}
             </div>
         </div>
+        {% empty %}
+        <h1>no opinions yet</h1>
         {% endfor %}
 </div>
 

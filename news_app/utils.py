@@ -4,7 +4,7 @@ import uuid
 import os
 
 # Slug generator import files
-from uuslug import slugify
+from slugify import slugify
 
 
 # Slug generator

@@ -35,7 +35,7 @@ $pagetitle-background-image: "/static/principles_app/img/pero.webp";
 }
 .opinion-content{
     font-size: 1.7rem;
-    color: $content-color;
+    color: $content-color3;
     line-height: 1.6;
     @include media-breakpoint-down(xs) {
         font-size: 1.6rem;

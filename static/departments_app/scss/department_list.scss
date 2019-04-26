@@ -13,22 +13,45 @@ $pagetitle-background-size: contain;
 @import "static/scss/topper_menu";
 
 /********** DEPARTMENT SEARCH **********/
-@import "static/scss/narrower";
 @import "department_search";
 
 /********** MARGIN **********/
-.department-search{
-    margin: 10rem 0;
+.departments-form, .departments{
+    margin-bottom: 10rem;
     @include media-breakpoint-down(lg) {
-        margin: 8rem 0;
+        margin-bottom: 8rem;
     }
     @include media-breakpoint-down(md) {
-        margin: 6rem 0;
+        margin-bottom: 6rem;;
     }
     @include media-breakpoint-down(sm) {
-        margin: 5rem 0;
+        margin-bottom: 3rem;
     }
     @include media-breakpoint-down(xs) {
-        margin: 3rem 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/********** DEPARTMENTS **********/
+.departments{
+    column-count: 3;
+    column-rule: 0.1rem solid $content-color5;
+    column-gap: 6rem;
+    text-align: center;
+    @include media-breakpoint-down(md) {
+        column-count: 2;
+    }
+    @include media-breakpoint-down(sm) {
+        column-count: 1;
+        text-align: left;
+    }
+}
+.department{
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    display: block;
+    color: $content-color4;
+    &:hover{
+        color: $content-color1;
     }
 }

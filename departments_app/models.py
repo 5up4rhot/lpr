@@ -3,7 +3,7 @@ from django.urls import reverse
 from ckeditor.fields import RichTextField
 from people_app.models import Profile
 from cities_light.models import Country, Region, City
-from uuslug import slugify
+from slugify import slugify
 
 
 def department_logo_directory_path(instance, filename):
@@ -11,6 +11,7 @@ def department_logo_directory_path(instance, filename):
 
 
 class Department(models.Model):
+    slug = models.SlugField(max_length=40, blank=True, null=True)
     county = models.ForeignKey(Country, verbose_name='Страна', on_delete=models.CASCADE)
     region = models.ForeignKey(Region, verbose_name='Регион', on_delete=models.CASCADE)
     city = models.ForeignKey(City, verbose_name='Город',
@@ -26,10 +27,14 @@ class Department(models.Model):
     fb_group = models.URLField(verbose_name='Группа Facebook', blank=True, null=True)
 
     def get_absolute_url(self):
-        return reverse('people_app:department_detail', args=[self.region])
+        return reverse('departments_app:department_detail', args=[self.slug])
 
     def __str__(self):
         if self.city:
-            return self.city
+            return self.city.name
         else:
-            return self.region
+            return self.region.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.region.name)
+        return super(Department, self).save(*args, **kwargs)

@@ -62,7 +62,7 @@ $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
         margin: 1.5rem 0;
         &::before {
             content: "●";
-            color: gray;
+            color: $content-color4;
             display: inline-block;
             width: 2.5rem;
             margin-left: -2.5rem;
@@ -76,8 +76,8 @@ $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
     margin: 2rem auto;
     padding: 0.5rem;
     text-align: center;
-    color: $muted-color;
-    border: 0.1rem solid $muted-color;
+    color: $content-color4;
+    border: 0.1rem solid $content-color4;
     border-radius: 0.25rem;
 
     &:focus,
@@ -123,10 +123,10 @@ $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
 }
 
 .platform-questions-button {
+    color: $content-color1;
     height: 27rem;
     width: 42rem;
     border: 2rem solid lighten($secondary-color, 20%);
-    color: #000;
     text-align: center;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;

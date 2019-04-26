@@ -24,6 +24,8 @@
         <ul class="declaration-list">
             {% for principle in principles %}
             <li>{{ principle.content }}</li>
+            {% empty %}
+            <li>No declaration yet</li>
             {% endfor %}
         </ul>
     </section>

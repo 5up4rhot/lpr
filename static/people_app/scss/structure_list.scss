@@ -12,36 +12,5 @@ $pagetitle-background-size: contain;
 /********** MENU LINKS **********/
 @import "static/scss/topper_menu";
 
-/********** STRUCTURES **********/
-@import "static/scss/narrower";
-.structure-info, .structure-title{
-    margin-bottom: 6rem;
-    @include media-breakpoint-down(lg) {
-        margin-bottom: 5rem;
-    }
-    @include media-breakpoint-down(md) {
-        margin-bottom: 4rem;
-    }
-    @include media-breakpoint-down(sm) {
-        margin-bottom: 3rem;
-    }
-    @include media-breakpoint-down(xs) {
-        margin-bottom: 2rem;
-    }
-}
-/********** MARGIN **********/
-.department-search{
-    margin: 10rem 0;
-    @include media-breakpoint-down(lg) {
-        margin: 8rem 0;
-    }
-    @include media-breakpoint-down(md) {
-        margin: 6rem 0;
-    }
-    @include media-breakpoint-down(sm) {
-        margin: 5rem 0;
-    }
-    @include media-breakpoint-down(xs) {
-        margin: 3rem 0;
-    }
-}
+/********** CARDS **********/
+@import "static/scss/cards";

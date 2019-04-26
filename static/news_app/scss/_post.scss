@@ -1,4 +1,5 @@
 .post-title {
+    color: $content-color2;
     font-family: $title-font;
     font-size: 3.5rem;
     margin: 3rem 0;
@@ -22,6 +23,7 @@
 }
 
 .post-description {
+    color: $content-color2;
     font-size: 2.3rem;
     margin-bottom: 1.5rem;
     line-height: 1.3;
@@ -43,7 +45,7 @@
 }
 
 .post-info {
-    color: $muted-color;
+    color: $content-color5;
     font-size: 1.4rem;
     margin: 0 0 2rem;
     @include media-breakpoint-down(lg) {
@@ -81,7 +83,7 @@
 
 .post-body {
     line-height:1.8;
-    color: $content-color;
+    color: $content-color3;
     img{
         max-width: 100%;
         height: auto;

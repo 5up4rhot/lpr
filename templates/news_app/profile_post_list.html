@@ -36,6 +36,8 @@
                     <td><a role="button" href="{% url 'news_app:update_post' post.pk %}" class="btn btn-warning btn-lg">Изменить</a></td>
                     <td><a role="button" href="{% url 'news_app:delete_post' post.pk %}" class="btn btn-danger btn-lg">Удалить</a></td>
                 </tr>
+                {% empty %}
+                <h1>No posts yet</h1>
                 {% endfor %}
             </tbody>
         </table>

@@ -13,8 +13,8 @@
 
 .bottom-navigation-link {
     font-size: 2rem;
-    color: $muted-color;
-    border: 0.1rem solid $muted-color;
+    color: $content-color5;
+    border: 0.1rem solid $content-color5;
     border-radius: 1rem;
     width: 43%;
     margin: 3%;
@@ -34,7 +34,7 @@
         margin: 3% 0;
     }
     &:focus,&:hover {
-        color: $muted-color;
+        color: $content-color5;
         text-decoration: none;
         .bottom-navigation-link-wrap {
             color: $primary-color;

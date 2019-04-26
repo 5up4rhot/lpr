@@ -97,11 +97,11 @@ body {
 }
 
 .reform-toclink {
-    color: $muted-color;
+    color: $content-color4;
     text-decoration: underline;
     display: none;
     &:focus,&:hover {
-        color: $muted-color;
+        color: $content-color4;
     }
     @include media-breakpoint-down(md) {
         display: inherit;
@@ -110,7 +110,7 @@ body {
 
 .reform-cont-wrap {
     font-size: 1.7rem;
-    color: $content-color;
+    color: $content-color3;
 }
 
 .list-group-item.active,

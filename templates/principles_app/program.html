@@ -28,6 +28,8 @@
         <div id="reform-toc" class="list-group">
             {% for reform in reforms %}
             <a class="list-group-item list-group-item-action" href="#item{{ reform.pk }}">{{ reform.subheader }}</a>
+            {% empty %}
+            <h1>no reforms yet</h1>
             {% endfor %}
         </div>
         <div id="reform-cont">
@@ -37,6 +39,8 @@
                 <a class="reform-toclink" href="#reform-toc">Содержание</a>
                 <div class="reform-cont-wrap">{{ reform.content|safe }}</div>
             </div>
+            {% empty %}
+            <h1>no reforms yet</h1>
             {% endfor %}
         </div>
     </section>
