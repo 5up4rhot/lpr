@@ -1,0 +1,11 @@
+@import "static/scss/base.scss";
+/********** POST LIST **********/
+.news-list{
+margin: 5rem 0;
+@import "postcolumn";
+}
+/********** POST DETAIL **********/
+.news-detail{
+margin: 5rem 0;
+@import "post";
+}

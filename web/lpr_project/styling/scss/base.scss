@@ -1,0 +1,296 @@
+$title-font: 'Merriweather', serif;
+$main-font: 'Open Sans', sans-serif;
+$primary-color: hsl(11, 90%, 61%); // original(11,100,61)
+$secondary-color: blue;
+$content-color1: #222222;
+$content-color2: #333333;
+$content-color3: #444444;
+$content-color4: #777777;
+$content-color5: #aaaaaa;
+$nav-height: 7.425rem;
+$nav-height-md: 6.925rem;
+$nav-height-sm: 6.625rem;
+$nav-background-color: #fff;
+@import "breakpoints";
+@import "hamburger/hamburgers";
+/********** BREAKPOINTS CHEATSHEET **********/
+/*
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+/********** GENERAL **********/
+html {
+    font-size: 62.5%; // sets 1rem = 10px
+}
+
+body {
+    padding-top: $nav-height;
+    font-family: $main-font;
+    background-color: #fff;
+    color: $content-color2;
+    font-size: 1.6rem;
+    @include media-breakpoint-down(md) {
+        padding-top: $nav-height-md;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-top: $nav-height-sm;
+    }
+}
+/********** NAVBAR **********/
+
+.navbar {
+    padding: 0 2%;
+    font-weight: bold;
+    background-color: $nav-background-color;
+}
+
+.navbar-image {
+    width: 6.7rem;
+    height: 6.7rem;
+    @include media-breakpoint-down(md) {
+        width: 6.2rem;
+        height: 6.2rem;
+    }
+    @include media-breakpoint-down(sm) {
+        width: 5.8rem;
+        height: 5.8rem;
+    }
+}
+
+.navbar-text {
+    font-family: $title-font;
+    font-size: 2rem;
+    vertical-align: top;
+    color: $content-color1;
+    margin-left: 0.5rem;
+    padding-bottom: 0;
+    @include media-breakpoint-down(md) {
+        font-size: 1.9rem;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 1.8rem;
+        margin-left: 0.3rem;
+    }
+}
+
+.nav-item {
+    text-align: center;
+    margin: auto;
+    @include media-breakpoint-down(md) {
+        margin: 0.5rem auto 0.5rem 4rem;
+    }
+}
+
+
+.nav-link {
+    color: $content-color1;
+    border-bottom: 0.2rem solid $nav-background-color;
+    padding: 0.8rem 0 !important;
+    margin: auto 1rem;
+    @include media-breakpoint-down(md) {
+        border: none;
+        font-size: 1.8rem;
+        padding: 0.8rem !important;
+        color: $content-color4;
+    }
+    &:hover {
+        color: $primary-color;
+        border-bottom: 0.2rem solid $primary-color;
+        @include media-breakpoint-down(md) {
+            border: none;
+            color: $content-color1;
+        }
+    }
+}
+
+// donate and join buttons
+
+.cta-toggle {
+    color: $content-color1;
+    border: 0.2rem solid lighten($secondary-color, 30%);
+    padding: 0.8rem !important;
+    @include media-breakpoint-down(md) {
+        border: none;
+        color: $content-color4;
+    }
+    &:hover {
+        color: $content-color1;
+        border: 0.2rem solid $secondary-color;
+        @include media-breakpoint-down(md) {
+            border: none;
+            color: $secondary-color;
+        }
+    }
+    &:active {
+        @include media-breakpoint-down(md) {
+            color: $secondary-color;
+        }
+    }
+}
+
+// hamburger icon
+
+.navbar-toggler {
+    outline: none !important;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: 0.5rem 1rem 0 0;
+}
+// menu link active state
+
+.menu-active-list {
+    display: contents;
+}
+
+.menu-active {
+    border-bottom: 0.2rem solid $content-color1;
+    @include media-breakpoint-down(md) {
+        border: none;
+        color: $content-color1;
+    }
+    &:hover {
+        color: $content-color1;
+        border-bottom: 0.2rem solid $content-color1;
+        @include media-breakpoint-down(md) {
+            border: none;
+        }
+    }
+}
+
+/********** FOOTER **********/
+footer {
+    color: $content-color1;
+    display: grid;
+    margin: 2rem 4rem 10rem;
+    grid-column-gap: 3rem;
+    grid-template: "src sub other proj" 13rem / 24rem 5fr 3fr 3fr;
+    @include media-breakpoint-down(lg) {
+        margin: 2rem 0 6rem;
+    }
+    @include media-breakpoint-down(md) {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        grid-gap: 3rem 7rem;
+        grid-template: "sub other" 13rem
+                       "src proj" 8rem / 27rem 18rem;
+    }
+    @include media-breakpoint-down(xs) {
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start;
+        margin: 2rem 0 3rem;
+        grid-gap: 2rem 0;
+        grid-template: "other" 10rem
+                       "proj" 8rem
+                       "sub" 13rem
+                       "src" 6rem / auto;
+    }
+}
+
+// logo, social-media links, copyright
+.sources{
+    line-height: 1.2;
+    grid-area: src;
+}
+.sources-logo{
+    width: 5rem;
+    height: 5rem;
+    float: left;
+    margin-right: 1rem;
+}
+.sources-media{
+    clear: both;
+    margin: 1rem 0 0 6rem;
+    @include media-breakpoint-down(md) {
+        clear: none;
+    }
+}
+
+.sources-media-icon {
+    margin: 0 0.3rem;
+    color: $content-color4;
+    &:hover {
+        color: $primary-color;
+    }
+    &:visited {
+        color: $content-color4;
+    }
+}
+
+// email newsleter
+.subscribe{
+    text-align: center;
+    grid-area: sub;
+    @include media-breakpoint-down(xs) {
+        text-align: left;
+    }
+}
+
+%form-size{
+    margin: 0.5rem auto 0;
+    width: 26rem;
+    height: 4.1rem;
+}
+
+#subscribe-input{
+    @extend %form-size;
+    font-size: 1.6rem;
+    &:focus {
+        border-color: $content-color3;
+        box-shadow: none !important;
+    }
+    @include media-breakpoint-down(xs) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+.subscribe-button {
+    @extend %form-size;
+    font-size: 1.6rem;
+    color: $content-color2;
+    border: 0.2rem solid lighten($primary-color, 20%);
+    background-color: $nav-background-color;
+    &:hover, &:active {
+            border: 0.2rem solid $primary-color;
+            cursor: pointer;
+    }
+    &:focus {
+        border-color: $primary-color;
+        outline: 0;
+        -webkit-box-shadow: 0 0 0 0.2rem lighten($primary-color, 30%);
+                box-shadow: 0 0 0 0.2rem lighten($primary-color, 30%);
+    }
+}
+
+// other and projects
+.other{
+    grid-area: other;
+}
+.projects{
+    grid-area: proj;
+}
+.footer-list{
+    list-style: none;
+    padding-left: 0;
+}
+.footer-list-element{
+    color: $content-color4;
+    &:hover, &:visited{
+        color: $content-color4;
+    }
+}

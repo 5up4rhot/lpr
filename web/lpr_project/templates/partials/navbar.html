@@ -1,0 +1,45 @@
+{% load static %}
+<nav class="navbar fixed-top navbar-expand-lg border-bottom">
+
+    <a class="navbar-brand" href="{% url 'home_app:index' %}">
+        <img src="{% static 'img/lpr_logo.png' %}" class="navbar-image d-inline-block align-top" alt="lpr logo">
+        <div class="navbar-text">
+            ЛИБЕРТАРИАНСКАЯ<br>ПАРТИЯ РОССИИ
+        </div>
+    </a>
+    <button class="navbar-toggler hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="menu-active-list">
+                <li class="nav-item">
+                    <a id="people" class="nav-link" href="{% url 'people_app:structure_list' %}">Лица</a>
+                </li>
+                <li class="nav-item">
+                    <a id="principles" class="nav-link" href="{% url 'principles_app:index' %}">Принципы</a>
+                </li>
+                <li class="nav-item">
+                    <a id="news" class="nav-link" href="{% url 'departments_app:department_list' %}">Отделения</a>
+                </li>
+                <li class="nav-item">
+                    <a id="news" class="nav-link" href="{% url 'news_app:post_list' %}">Публикации</a>
+                </li>
+            </div>
+            <li class="nav-item">
+                <a id="join" class="nav-link cta-toggle" href=#>Вступить</a>
+            </li>
+            <li class="nav-item">
+                <a id="donate" class="nav-link cta-toggle" href=#>Поддержать</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'news_app:profile_post_list' %}"><i class="fas fa-user-circle fa-lg"></i></a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

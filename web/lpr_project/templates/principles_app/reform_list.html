@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'principles_app/scss/reform_list.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Программа - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<!-- Principles menu -->
+{% include 'principles_app/_principles_menu.html' %}
+
+<div class="container">
+        <div class="disclaimer">
+            <p>Наша Программа предлагает конкретные шаги для практического воплощения принципов и ценностей, изложенных в Платформе Либертарианской партии России. Она может быть реализована исключительно ненасильственными методами, как то:</p>
+            <ul>
+                <li>просветительская и образовательная деятельность, включая общественно-политические конференции и издание соответствующей литературы;</li>
+                <li>участие в выборах всех уровней для реализации либертарианских реформ локально и в общероссийском масштабе;</li>
+                <li>информационная деятельность в интернете, в частности через социальные сети;</li>
+                <li>участие в дебатах с оппонентами;</li>
+                <li>подготовка аналитических докладов по актуальным проблемам;</li>
+                <li>участие в коалициях с другими политическими силами по общим вопросам.</li>
+            </ul>
+            <p>Данный список не является исчерпывающим, он лишь очерчивает общий контур действий, оставляя возможность для расширения за счёт инициатив, выдвигаемых членами партии и её сторонниками.</p>
+            <p>Все предлагаемые нами меры разделяются на два больших блока - первоочередные реформы, которые могут быть проведены либертарианцами быстро и эффективно в случае их прихода к власти, и долгосрочные, для реализации которых потребуется
+                кардинальная перестройка всех существующих институтов, сопровождаемая широкой разъяснительной работой относительно целесообразности и тактики реформ.</p>
+        </div>
+</div>
+
+<!-- Pogram grid -->
+{% include 'partials/program_grid.html' %}
+
+<!-- Download button -->
+<a class="download btn btn-outline-secondary" href="{% static 'principles_app/files/LPR-program.pdf' %}" download>Скачать в формате pdf</a>
+
+<!-- Bottomnav -->
+<section class="bottomnav">
+    <div class="container">
+        <div class="bottom-navigation">
+            <a href="{% url 'principles_app:declaration' %}" class="bottom-navigation-link bottom-navigation-prev shadow">
+                <p>Предыдущее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <i class="fas fa-arrow-left"></i>
+                    <p class="bottom-navigation-prev-content">Декларация о принципах</p>
+                </div>
+            </a>
+            <a href="{% url 'principles_app:platform' %}" class="bottom-navigation-link bottom-navigation-next shadow">
+                <p>Следующее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <p class="bottom-navigation-next-content">Платформа партии</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+@import "static/scss/base.scss";
+
+/********** PAGETITLE **********/
+$pagetitle-content: "Лица партии";
+$pagetitle-height: 40%;
+$pagetitle-color: #fff;
+$pagetitle-background-color: $primary-color;
+// $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
+$pagetitle-background-size: contain;
+@import "static/scss/pagetitle";
+
+/********** MENU LINKS **********/
+@import "static/scss/topper_menu";
+
+/********** CARDS **********/
+@import "static/scss/cards";

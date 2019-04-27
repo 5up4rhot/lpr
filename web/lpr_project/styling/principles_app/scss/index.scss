@@ -1,0 +1,180 @@
+@import "static/scss/base.scss";
+
+/********** PAGETITLE **********/
+$pagetitle-content: "Либертарианские принципы";
+$pagetitle-height: 40%;
+$pagetitle-color: #fff;
+$pagetitle-background-color: $primary-color;
+$pagetitle-background-image: "/static/principles_app/img/ancap.svg";
+@import "static/scss/pagetitle";
+
+/********** MENU LINKS **********/
+@import "static/scss/topper_menu";
+
+/********** ABOUT **********/
+@import "static/scss/narrower";
+
+/********** MARGIN **********/
+.about,
+.platform-questions,
+.principles-list {
+    margin: 10rem 0;
+    @include media-breakpoint-down(lg) {
+        margin: 8rem 0;
+    }
+    @include media-breakpoint-down(md) {
+        margin: 6rem 0;
+    }
+    @include media-breakpoint-down(sm) {
+        margin: 5rem 0;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 3rem 0;
+    }
+}
+
+/********** PRINCIPLES LIST **********/
+
+.principles-list-title {
+    color: $primary-color;
+    margin: 0 0 2rem;
+    text-align: center;
+    font-size: 3rem;
+    @include media-breakpoint-down(lg) {
+        font-size: 2.8rem;
+    }
+    @include media-breakpoint-down(md) {
+        margin-bottom: 1.7rem;
+        font-size: 2.6rem;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 1.4rem;
+        font-size: 2.4rem;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 2.2rem;
+    }
+}
+.principles-list-list{
+    list-style: none;
+    font-size: 1.7rem;
+    li {
+        margin: 1.5rem 0;
+        &::before {
+            content: "●";
+            color: $content-color4;
+            display: inline-block;
+            width: 2.5rem;
+            margin-left: -2.5rem;
+        }
+    }
+}
+
+#principles-list-button {
+    display: block;
+    width: 13rem;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    text-align: center;
+    color: $content-color4;
+    border: 0.1rem solid $content-color4;
+    border-radius: 0.25rem;
+
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+}
+/********** PROGRAM GRID **********/
+@import "static/scss/program_grid.scss";
+
+.program-lg {
+    margin-top: 5rem;
+    @include media-breakpoint-down(md) {
+        margin-top: 4rem;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-top: 3rem;
+    }
+    @include media-breakpoint-down(xs) {
+        display: none;
+    }
+}
+
+.program-sm {
+    display: none;
+    @include media-breakpoint-down(xs) {
+        margin-top: 2rem;
+        display: inherit;
+    }
+}
+/********** PLATFORM AND QUESTIONS LINKS **********/
+
+.platform-questions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.platform-questions-button {
+    color: $content-color1;
+    height: 27rem;
+    width: 42rem;
+    border: 2rem solid lighten($secondary-color, 20%);
+    text-align: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    @include media-breakpoint-down(lg) {
+        height: 23rem;
+        width: 38rem;
+    }
+    @include media-breakpoint-down(md) {
+        border-width: 1.5rem;
+        height: 20rem;
+        width: 28rem;
+    }
+    @include media-breakpoint-down(sm) {
+        height: 20rem;
+        width: 22rem;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 2rem 0;
+        height: 20rem;
+        width: 90%;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: $primary-color;
+        border-color: $secondary-color;
+    }
+
+    h1 {
+        font-size: 3rem;
+        @include media-breakpoint-down(lg) {
+            font-size: 2.8rem;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 2.6rem;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: 2.4rem;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: 2.2rem;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{% load static %}
+<div class="container">
+    <footer>
+        <div class="sources">
+            <img class="sources-logo" src="{% static 'img/lpr_logo.png' %}" alt="lpr logo">
+            <small class="sources-small">&copy; 2019 Либертарианская Партия России</small>
+            <div class="sources-media">
+                <a href="https://vk.com/lpr_public"><i class="sources-media-icon fab fa-vk fa-lg"></i></a>
+                <a href="https://telegram.me/Libertarians"><i class="sources-media-icon fab fa-telegram-plane fa-lg"></i></a>
+                <a href="https://twitter.com/libertarian_rus"><i class="sources-media-icon fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.youtube.com/channel/UCWjEiMNZv4g3P9BWbrtMjyA"><i class="sources-media-icon fab fa-youtube fa-lg"></i></a>
+                <a href="https://www.instagram.com/libertarian_rus/"><i class="sources-media-icon fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.facebook.com/libertarian.ru"><i class="sources-media-icon fab fa-facebook-f fa-lg"></i></a>
+            </div>
+        </div>
+
+        <form class="subscribe form-group" action="index.html" method="post">
+                <label class="h3 subscribe-label" for="subscribe-input">Получайте последние новости!</label>
+                <input type="email" class="form-control" id="subscribe-input" placeholder="Введите ваш email">
+                <button class="subscribe-button" type="submit" name="button">Подписаться</button>
+        </form>
+
+        <div class="other">
+            <h3>Разное</h3>
+            <ul class="footer-list">
+                <li><a class="footer-list-element" href="#">Отделения</a></li>
+                <li><a class="footer-list-element" href="#">Атрибутика</a></li>
+                <li><a class="footer-list-element" href="#">Полезные ссылки</a></li>
+            </ul>
+        </div>
+
+        <div class="projects">
+            <h3>Проекты</h3>
+            <ul class="footer-list">
+                <li><a class="footer-list-element" href="#">Чтения Айн Рэнд</a></li>
+                <li><a class="footer-list-element" href="#">Чтения Адама Смита</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>

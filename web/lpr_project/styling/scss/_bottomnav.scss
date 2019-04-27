@@ -1,0 +1,94 @@
+.bottom-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.bottom-navigation-link {
+    font-size: 2rem;
+    color: $content-color5;
+    border: 0.1rem solid $content-color5;
+    border-radius: 1rem;
+    width: 43%;
+    margin: 3%;
+    padding: 1.5% 3%;
+    @include media-breakpoint-down(lg) {
+        font-size: 1.9rem;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 1.8rem;
+        width: 90%;
+    }
+    @include media-breakpoint-down(sm) {
+        padding: 3% 6%;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 1.8rem;
+        margin: 3% 0;
+    }
+    &:focus,&:hover {
+        color: $content-color5;
+        text-decoration: none;
+        .bottom-navigation-link-wrap {
+            color: $primary-color;
+
+            i {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.bottom-navigation-link-wrap {
+    line-height: 1.2;
+    color: $secondary-color;
+    font-size: 3.7rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    i {
+        margin: 0 0.5rem;
+    }
+    @include media-breakpoint-down(lg) {
+        font-size: 3.5rem;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 3.2rem;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 2.9rem;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 2.5rem;
+    }
+}
+
+.bottom-navigation-prev {
+    text-align: right;
+}
+
+.bottom-navigation-next {
+    text-align: left;
+}
+
+.bottom-navigation-next-content,
+.bottom-navigation-prev-content {
+    max-width: 70%;
+    margin: 0;
+    @include media-breakpoint-down(xs) {
+        max-width: 80%;
+    }
+}

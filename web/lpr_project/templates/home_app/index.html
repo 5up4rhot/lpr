@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'home_app/scss/index.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Главная - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+{% include 'partials/pagetitle.html' %}
+
+{% endblock %}

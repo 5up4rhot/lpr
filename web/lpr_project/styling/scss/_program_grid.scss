@@ -1,0 +1,92 @@
+$reform-colors: (
+    constitutional: #ff6f43,
+    justice: #263056,
+    social: #09A6E4,
+    economic: #7c1b58,
+    military: #9bc257,
+    fp: #2687a7
+);
+
+.program {
+    display: grid;
+    grid-template: 25rem 25rem / 33.33% 33.33% 33.33%;
+    @include media-breakpoint-down(md) {
+        grid-template: 20rem 20rem 20rem / 50% 50%;
+    }
+    @include media-breakpoint-down(xs) {
+        grid-template: repeat(6, 17rem) / 100%;
+    }
+}
+
+.program-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: rgba(255,255,255,0.9);
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-family: $title-font;
+    font-weight: bold;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    &:hover {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+        z-index: 1;
+        text-decoration: none;
+        color: #fff;
+        -webkit-box-shadow: 0 0 1.5rem 0 rgba(0,0,0,0.38);
+        box-shadow: 0 0 1.5rem 0 rgba(0,0,0,0.38);
+    }
+    @include media-breakpoint-down(lg) {
+        font-size: 1.8rem;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 1.7rem;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 1.8rem;
+    }
+}
+
+.program-box-sm {
+    @include media-breakpoint-down(xs) {
+        width: 100vw;
+        height: 35vh;
+    }
+}
+
+.program-box-wrapper {
+    text-align: center;
+
+    p {
+        margin: 0 2rem;
+        @include media-breakpoint-down(xs) {
+            margin: 0 6rem;
+        }
+        @media (max-width: 360px){
+            margin: 0 3rem;
+        }
+    }
+}
+
+.program-box-icon {
+    margin-bottom: 2.5rem;
+}
+@each $reform-name, $reform-color in $reform-colors {
+    ##{$reform-name} {
+        background-color: $reform-color;
+
+        &:focus,
+        &:hover {
+            background-color: lighten($reform-color, 13%);
+        }
+    }
+}

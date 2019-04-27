@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'people_app/scss/structure_list.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Лица - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+
+<!-- Structure menu -->
+{% include 'people_app/_structure_menu.html' %}
+
+
+
+<section class="structures">
+    <div class="container">
+        {% for structure in structures %}
+        <div class="basic-card-container">
+            <div class="basic-card">
+                <h1 class="basic-card-name card-title" href="{{ structure.get_absolute_url }}">{{ structure.name }}</h1>
+                <p class="basic-card-info">{{structure.description | truncatewords:10}}</p>
+                <p class="basic-card-contacts">{{structure.email}}</p>
+            </div>
+            {% for person in structure.personnel.all %}
+            <div class="basic-card">
+                <img class="basic-card-image" src="{% get_media_prefix %}{{ person.photo }}">
+                <div class="basic-card-body">
+                    <h2 class="basic-card-name">{{person.first_name}} {{person.second_name}}</h2>
+                    <p class="basic-card-info">{{person.position}}<br>{{person.city.alternate_names}}<br>{{person.birth_date}}</p>
+                    <p class="basic-card-contacts">Телеграм: {{person.public_telegram}}<br>{{person.public_email}}<br>{{person.public_phone_number}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+{% endblock %}

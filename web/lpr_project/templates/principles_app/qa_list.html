@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'principles_app/scss/qa_list.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Вопросы и ответы - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<!-- Principles menu -->
+{% include 'principles_app/_principles_menu.html' %}
+
+
+{% regroup qa_list_all by get_subject_display as qa_list_defined_subj %}
+
+<div class="container">
+    <div class="narrower">
+        {% for qa_list in qa_list_defined_subj %}
+        <h1 class="narrower-title">{{ qa_list.grouper }}</h1>
+        {% for qa in qa_list.list %}
+        <p class="qa-question">{{ qa.question }} <i class="fas fa-question"></i></p>
+        <p class="qa-answer">{{ qa.answer }}</p>
+        {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
+
+<!-- Bottomnav -->
+<section class="bottomnav">
+    <div class="container">
+        <div class="bottom-navigation">
+            <a href="{% url 'principles_app:platform' %}" class="bottom-navigation-link bottom-navigation-prev shadow">
+                <p>Предыдущее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <i class="fas fa-arrow-left"></i>
+                    <p class="bottom-navigation-prev-content">Платформа партии</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

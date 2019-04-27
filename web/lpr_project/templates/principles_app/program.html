@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'principles_app/scss/program.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>{{ title }} - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block bodyopentag %}
+<body data-spy="scroll" data-target="#reform-toc" data-offset="0">
+{% endblock %}
+
+{% block content %}
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<!-- Principles menu -->
+{% include 'principles_app/_principles_menu.html' %}
+
+<div class="container">
+    <section class="reform">
+        <h2 class="reform-header">{{ title }}</h2>
+        <div id="reform-toc" class="list-group">
+            {% for reform in reforms %}
+            <a class="list-group-item list-group-item-action" href="#item{{ reform.pk }}">{{ reform.subheader }}</a>
+            {% empty %}
+            <h1>no reforms yet</h1>
+            {% endfor %}
+        </div>
+        <div id="reform-cont">
+            {% for reform in reforms %}
+            <div class="reform-cont-single">
+                <h2 class="reform-subheader" id="item{{ reform.pk }}">{{ reform.subheader }}</h2>
+                <a class="reform-toclink" href="#reform-toc">Содержание</a>
+                <div class="reform-cont-wrap">{{ reform.content|safe }}</div>
+            </div>
+            {% empty %}
+            <h1>no reforms yet</h1>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+<!-- Program grid -->
+{% include 'partials/program_grid.html' %}
+
+<!-- Bottomnav -->
+<section class="bottomnav">
+    <div class="container">
+        <div class="bottom-navigation">
+            <a href="{% url 'principles_app:declaration' %}" class="bottom-navigation-link bottom-navigation-prev shadow">
+                <p>Предыдущее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <i class="fas fa-arrow-left"></i>
+                    <p class="bottom-navigation-prev-content">Декларация о принципах</p>
+                </div>
+            </a>
+            <a href="{% url 'principles_app:platform' %}" class="bottom-navigation-link bottom-navigation-next shadow">
+                <p>Следующее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <p class="bottom-navigation-next-content">Платформа партии</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

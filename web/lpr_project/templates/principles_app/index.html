@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'principles_app/scss/index.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Наши принципы - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<!-- Principles menu -->
+{% include 'principles_app/_principles_menu.html' %}
+
+<section class="about">
+    <div class="container">
+        <div class="narrower">
+            <h2 class="narrower-title">Что такое либертартарианство?</h2>
+            <p class="narrower-content">Либертарианство - политическая и правовая философия, согласно которой человек принадлежит только самому себе и свободен распоряжаться собой и своим имуществом любыми способами, не наносящими прямого ущерба
+                другим людям и их
+                имуществу. Ни другие индивиды, ни коллективы (включая государство) не вправе препятствовать человеку в его свободной ненасильственной деятельности.</p>
+            <p class="narrower-content">Либертарианская партия России ставит своей целью проведение в России реформ, направленных на воплощение либертарианских принципов в общественной жизни.</p>
+        </div>
+    </div>
+</section>
+
+<section class="principles-list">
+    <div class="container">
+        <h2 class="principles-list-title">Декларация о принципах</h2>
+        <ul class="principles-list-list">
+            {% for principle in principles_list %}
+            {% if forloop.counter < 5 %} <li>{{ principle.content }}
+                </li>
+                {% endif %}
+                {% endfor %}
+        </ul>
+        <ul class="collapse principles-list-list" id="collapseExample">
+            {% for principle in principles_list %}
+            {% if forloop.counter > 4 %}
+            <li>{{ principle.content }}</li>
+            {% endif %}
+            {% empty %}
+            <li>no principles</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a id="principles-list-button" data-text-swap="Скрыть" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Показать все</a>
+</section>
+
+
+<section class="about">
+    <div class="container">
+        <div class="narrower">
+            <h2 class="narrower-title">Программа партии</h2>
+            <p class="narrower-content">Наша Программа предлагает конкретные шаги для практического воплощения принципов и ценностей, изложенных в Платформе Либертарианской партии России. Она может быть реализована исключительно ненасильственными
+                методами, как то:</p>
+        </div>
+    </div>
+</section>
+
+{% include 'partials/program_grid.html' %}
+
+<div class="container">
+    <section class="platform-questions">
+            <a href="{% url 'principles_app:platform' %}" class="platform-questions-button" id="platform">
+                <h1>Платфорама партии</h1>
+            </a>
+            <a href="{% url 'principles_app:questions' %}" class="platform-questions-button" id="questions">
+                <h1>Ответы на популярные вопросы</h1>
+            </a>
+    </section>
+</div>
+
+{% endblock %}
+
+
+
+{% block js %}
+<script type="text/javascript">
+    var button = document.getElementById("principles-list-button");
+    button.addEventListener('click', function() {
+        if (button.getAttribute("data-text-swap") == button.innerHTML) {
+            button.innerHTML = button.getAttribute("data-text-original");
+        } else {
+            button.setAttribute("data-text-original", button.innerHTML);
+            button.innerHTML = button.getAttribute("data-text-swap");
+        }
+    }, false);
+</script>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'principles_app/scss/opinion_list.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Платформа - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<!-- Principles menu -->
+{% include 'principles_app/_principles_menu.html' %}
+
+<div class="container">
+        {% for opinion in opinions %}
+        <div class="opinion">
+            <h2 class="opinion-title">{{ opinion.subject }}</h2>
+            <div class="opinion-content">
+                {{ opinion.content|safe }}
+            </div>
+        </div>
+        {% empty %}
+        <h1>no opinions yet</h1>
+        {% endfor %}
+</div>
+
+
+<!-- Bottomnav -->
+<section class="bottomnav">
+    <div class="container">
+        <div class="bottom-navigation">
+            <a href="{% url 'principles_app:program' %}" class="bottom-navigation-link bottom-navigation-prev shadow">
+                <p>Предыдущее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <i class="fas fa-arrow-left"></i>
+                    <p class="bottom-navigation-prev-content">Программа партии</p>
+                </div>
+            </a>
+            <a href="{% url 'principles_app:questions' %}" class="bottom-navigation-link bottom-navigation-next shadow">
+                <p>Следующее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <p class="bottom-navigation-next-content">Вопросы и ответы</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

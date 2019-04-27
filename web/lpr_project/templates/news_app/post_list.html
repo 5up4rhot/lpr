@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'news_app/scss/post_list.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Новости - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+<!-- News -->
+{% for post in posts %}
+{% if post.image %}
+<div class="container">
+  <a href="{{ post.get_absolute_url }}" class="post-w-img">
+    <div class="post-img-wrapper">
+      <div  class="post-img" style="background-image: url('{% get_media_prefix %}{{ post.image }}')"></div>
+    </div>
+    <div class="post-wrapper-w-img">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <h4 class="post-description">{{ post.description }}</h4>
+      {% if post.updated %}
+          <p class="post-info">Обновлено {{ post.updatetime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
+      {% else %}
+          <p class="post-info">{{ post.publishtime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
+      {% endif %}
+    </div>
+  </a>
+</div>
+{% else %}
+<div class="container">
+  <a href="{{ post.get_absolute_url }}" class="post">
+    <div class="post-wrapper">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <h4 class="post-description">{{ post.description }}</h4>
+      {% if post.updated %}
+          <p class="post-info">Обновлено {{ post.updatetime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
+      {% else %}
+          <p class="post-info">{{ post.publishtime }}<span>{{ post.author.first_name }} {{ post.author.last_name }}</span></p>
+      {% endif %}
+    </div>
+  </a>
+</div>
+{% endif %}
+{% empty %}
+<h1>No posts yet</h1>
+{% endfor %}
+<!-- Pagination -->
+<div class="pagination-wrap">
+    <div class="container">
+        {% include 'partials/pagination.html' with page=page_obj %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-5">
+  <form method="post">
+    <div class="form-group">
+      {% csrf_token %}
+      {{ form.media }}
+      {{ form.as_p }}
+       <button type="submit" class="btn btn-lg btn-warning my-5">Обновить</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

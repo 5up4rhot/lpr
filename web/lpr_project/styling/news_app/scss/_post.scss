@@ -1,0 +1,91 @@
+.post-title {
+    color: $content-color2;
+    font-family: $title-font;
+    font-size: 3.5rem;
+    margin: 3rem 0;
+    line-height: 1.2;
+    @include media-breakpoint-down(lg) {
+        font-size: 3rem;
+        margin: 2.5rem 0;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 2.7rem;
+        margin: 2rem 0;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 2.3rem;
+        margin: 1.5rem 0;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 1.9rem;
+        margin: 1rem 0;
+    }
+}
+
+.post-description {
+    color: $content-color2;
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    @include media-breakpoint-down(lg) {
+        font-size: 1.8rem;
+        margin-bottom: 1.3rem;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 1.6rem;
+        margin-bottom: 1.1rem;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 0.9rem;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 1.4rem;
+        margin-bottom: 0.7rem;
+    }
+}
+
+.post-info {
+    color: $content-color5;
+    font-size: 1.4rem;
+    margin: 0 0 2rem;
+    @include media-breakpoint-down(lg) {
+        font-size: 1.3rem;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 1.2rem;
+    }
+    @include media-breakpoint-down(xs) {
+        font-size: 1.1rem;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+        margin-left: 2rem;
+        &:hover, &:focus{
+            color: $secondary-color;
+        }
+    }
+}
+
+.post-img {
+    width: auto;
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 2rem;
+    @include media-breakpoint-down(lg) {
+        height: 40vh;
+    }
+    @include media-breakpoint-down(md) {
+        height: 30vh;
+    }
+}
+
+.post-body {
+    line-height:1.8;
+    color: $content-color3;
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}

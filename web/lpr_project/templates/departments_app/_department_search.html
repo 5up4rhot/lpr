@@ -1,0 +1,9 @@
+<form class="departments-form" method="GET"  action="{% url 'departments_app:department_list' %}">
+    <div class="departments-search">
+        <input class="form-control department-search-input" type="search" name="region" value="{{ request.GET.region }}" placeholder="Регион, область..." aria-label="Search">
+        <button class="btn department-search-button" type="submit" value="Search">Найти</button>
+    </div>
+    {% for result in results %}
+        <a class="department-search-result" href="{{ result.get_absolute_url }}">{{ result }}</a>
+    {% endfor %}
+</form>

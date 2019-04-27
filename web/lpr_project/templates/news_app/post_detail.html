@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'news_app/scss/post_detail.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>{{ post.title }} - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+<section class="container">
+    <div class="post">
+        <h2 class="post-title">{{ post.title }}</h2>
+        <h4 class="post-description">{{ post.description }}</h4>
+        {% if post.updated %}
+        <p class="post-info">Обновлено {{ post.updatetime }}<a href="{% url 'news_app:user_post_list' post.author.pk %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></p>
+        {% else %}
+        <p class="post-info">{{ post.publishtime }}<a href="{% url 'news_app:user_post_list' post.author.pk %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></p>
+        {% endif %}
+        {% if post.image %}
+        <div class="post-img" style="background-image: url('{% get_media_prefix %}{{ post.image }}')" alt="post image"></div>
+        {% endif %}
+        <hr>
+        <div class="post-body">{{ post.body|safe }}</div>
+        <hr>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,68 @@
+.pagination-wrap{
+    margin: 6rem 0 10rem;
+    @include media-breakpoint-down(md) {
+        margin: 4rem 0 8rem;
+    }
+    @include media-breakpoint-down(sm) {
+        margin: 3rem 0 6rem;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 2rem 0 4rem;
+    }
+}
+
+.custom-link {
+    padding: 1.5rem 2.5rem;
+    font-size: 2rem;
+    @include media-breakpoint-down(md) {
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+    }
+    @include media-breakpoint-down(sm) {
+        padding: 0.7rem 1.7rem;
+        font-size: 1.6rem;
+    }
+    @include media-breakpoint-down(xs) {
+        padding: 0.6rem 1.6rem;
+        font-size: 1.5rem;
+    }
+    color: $content-color3;
+
+    &:hover {
+        color: $content-color3;
+    }
+
+    &:focus {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+}
+
+.custom-previous::before {
+    content: "Предыдущая";
+    @include media-breakpoint-down(sm) {
+        content: "\00ab";
+    }
+}
+
+.custom-next::before {
+    content: "Следующая";
+    @include media-breakpoint-down(sm) {
+        content: "\00bb";
+    }
+}
+
+.custom-item.active .custom-link {
+    background-color: $content-color3;
+    border-color: $content-color3;
+}
+
+.custom-item:first-child .custom-link {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.custom-item:last-child .custom-link {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

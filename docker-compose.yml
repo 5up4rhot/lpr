@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: ./web
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./web/lpr_project:/lpr_project
+    depends_on:
+    - db
+  db:
+    image: postgres:11.2

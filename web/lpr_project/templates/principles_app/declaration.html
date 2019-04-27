@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block css %}
+<!-- Custom css -->
+<link rel="stylesheet" href="{% sass_src 'principles_app/scss/declaration.scss' %}">
+{% endblock %}
+
+{% block head %}
+<title>Декларация о принципах - Либертарианская Партия России</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Pagetitle -->
+{% include 'partials/pagetitle.html' %}
+
+<!-- Principles menu -->
+{% include 'principles_app/_principles_menu.html' %}
+
+<div class="container">
+    <section class="declaration">
+        <ul class="declaration-list">
+            {% for principle in principles %}
+            <li>{{ principle.content }}</li>
+            {% empty %}
+            <li>No declaration yet</li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+
+<!-- Navigation links -->
+<section class="bottomnav">
+    <div class="container">
+        <div class="bottom-navigation">
+            <a href="{% url 'principles_app:program' %}" class="bottom-navigation-link bottom-navigation-next shadow">
+                <p>Следующее</p>
+                <div class="bottom-navigation-link-wrap">
+                    <p class="bottom-navigation-next-content">Программа партии</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
