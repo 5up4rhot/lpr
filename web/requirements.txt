@@ -6,3 +6,4 @@ django-sass-processor==0.7.2
 django-cities-light==3.5
 python-slugify==3.0
 psycopg2>=2.7,<3.0
+dj-database-url
