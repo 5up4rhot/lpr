@@ -132,6 +132,7 @@ USE_TZ = False
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'sass_processor.finders.CssFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 ]
 
 
