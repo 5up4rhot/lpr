@@ -27,7 +27,7 @@ def post_detail(request, year, month, day, slug_url):
 class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = 'posts'
-    paginate_by = 3
+    paginate_by = 10
     template_name = 'news_app/post_list.html'
 
 

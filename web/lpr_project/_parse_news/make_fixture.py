@@ -10,7 +10,7 @@ import os
 def get_file_path(url,timestamp):
     ext = url.split('.')[-1].lower()
     filename = '{}-{}-{}_{}.{}'.format(timestamp.strftime('%Y'),timestamp.strftime('%m'), timestamp.strftime('%d'), uuid.uuid4(), ext)
-    media_path = 'media/news/'+filename
+    media_path = 'news/'+filename
     return media_path
 
 
@@ -18,15 +18,15 @@ def save_image(url,timestamp_iso):
     r = requests.get(url)
     timestamp = datetime.strptime(timestamp_iso, "%Y-%m-%dT%H:%M:%S%z")
     media_path = get_file_path(url,timestamp)
-    full_path = "/lpr_project/"+media_path
+    full_path = "/lpr_project/media/"+media_path
     with open(full_path, "wb+") as outfile:
         outfile.write(r.content)
-        print("OKEY")
+        print("image saved: "+full_path)
     return media_path
 
 
 def main():
-    os.makedirs("/lpr_project/media/news/")
+    os.makedirs("/lpr_project/media/news/", exist_ok=True)
     with open('articles_data.json') as file:
         data = json.load(file)
     fixture_data = []
@@ -43,12 +43,13 @@ def main():
         entry['fields']['author'] = 1
         entry['fields']['body'] = article['content']
         entry['fields']['publishtime'] = article['datetime']
+        entry['fields']['createtime'] = article['datetime']
+        entry['fields']['updated'] = False
         entry['fields']['status'] = 'published'
         fixture_data.append(entry)
         pk_count += 1
 
-    os.makedirs("news_app/fixtures/")
-    with open("news_app/fixtures/articles_fixture.json", "w") as outfile:
+    with open("/lpr_project/fixtures/news.json", "w") as outfile:
         json.dump(fixture_data, outfile, ensure_ascii=False, indent=4)
 
 
