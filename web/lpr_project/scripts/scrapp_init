@@ -1,0 +1,6 @@
+#!/bin/bash
+pip install requests bs4
+python parse_articles.py
+python make_fixture.py
+cd ..
+python manage.py loaddata articles_fixture.json

@@ -1,27 +1,32 @@
 import json
 import requests
 import uuid
-import os
 from slugify import slugify
 from datetime import datetime
+import os
+
+
 
 def get_file_path(url,timestamp):
-    ext = url.split('.')[-1]
-    filename = '{}.{}'.format(uuid.uuid4(), ext)
-    media_path = '/media/news/images/{}/{}/{}'.format(timestamp.strftime('%Y'), timestamp.strftime('%m'), timestamp.strftime('%d'), filename)
-    full_path = os.path.abspath(os.path.join(__file__, "..", media_path))
-    t = (media_path, full_path)
-    return t
+    ext = url.split('.')[-1].lower()
+    filename = '{}-{}-{}_{}.{}'.format(timestamp.strftime('%Y'),timestamp.strftime('%m'), timestamp.strftime('%d'), uuid.uuid4(), ext)
+    media_path = 'media/news/'+filename
+    return media_path
+
 
 def save_image(url,timestamp_iso):
     r = requests.get(url)
     timestamp = datetime.strptime(timestamp_iso, "%Y-%m-%dT%H:%M:%S%z")
-    t = get_file_path(url,timestamp)
-    open(t[1], 'wb').write(r.content)
-    return t[0]
+    media_path = get_file_path(url,timestamp)
+    full_path = "/lpr_project/"+media_path
+    with open(full_path, "wb+") as outfile:
+        outfile.write(r.content)
+        print("OKEY")
+    return media_path
 
 
 def main():
+    os.makedirs("/lpr_project/media/news/")
     with open('articles_data.json') as file:
         data = json.load(file)
     fixture_data = []
@@ -42,7 +47,8 @@ def main():
         fixture_data.append(entry)
         pk_count += 1
 
-    with open("articles_fixture.json", "w") as outfile:
+    os.makedirs("news_app/fixtures/")
+    with open("news_app/fixtures/articles_fixture.json", "w") as outfile:
         json.dump(fixture_data, outfile, ensure_ascii=False, indent=4)
 
 
