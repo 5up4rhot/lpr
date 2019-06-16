@@ -1,0 +1,138 @@
+[
+    {
+        "model": "people_app.profile",
+        "pk": 1,
+        "fields": {
+            "first_name":"Сергей",
+            "second_name":"Бойко",
+            "position":"Председатель",
+            "public_email":"s.boiko@libertarian-party.ru",
+            "public_telegram":"tg://resolve?domain=dsboiko",
+            "public_phone_number":"+7 916 127-43-41",
+            "photo": "/media/people/boiko.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 2,
+        "fields": {
+            "first_name":"Кирилл",
+            "second_name":"Самодуров",
+            "position":"Заместитель председателя",
+            "public_email":"samodurov@libertarian-party.ru",
+            "public_telegram":"tg://resolve?domain=kir_sam",
+            "public_phone_number":"+7 926 416-02-89",
+            "photo": "/media/people/samodurov.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 3,
+        "fields": {
+            "first_name":"Алексей",
+            "second_name":"Овсиенко",
+            "position":"Ответственный секретарь",
+            "public_email":"secretary@libertarian-party.ru",
+            "public_telegram":"tg://resolve?domain=Ergilion",
+            "photo": "/media/people/ovsienko.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 4,
+        "fields": {
+            "first_name":"Дмитрий",
+            "second_name":"Нескоромный",
+            "public_email":"akater@libertarian-party.ru",
+            "photo": "/media/people/akater.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 5,
+        "fields": {
+            "first_name":"Евгений",
+            "second_name":"Калёнов",
+            "public_telegram":"tg://resolve?domain=kalyonov",
+            "public_email":"kalyonov@libertarian-party.ru",
+            "photo": "/media/people/kalyonov.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 6,
+        "fields": {
+            "first_name":"Михаил",
+            "second_name":"Светов",
+            "public_telegram":"tg://resolve?domain=mr_libertarian",
+            "photo": "/media/people/svetov.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 7,
+        "fields": {
+            "first_name":"Юрий",
+            "second_name":"Ноздрин",
+            "photo": "/media/people/nozdrin.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 8,
+        "fields": {
+            "first_name":"Владимир",
+            "second_name":"Осенин",
+            "public_telegram":"tg://resolve?domain=osenin",
+            "public_email":"osenin@libertarian-party.ru",
+            "photo": "/media/people/osenin.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 9,
+        "fields": {
+            "first_name":"Николай",
+            "second_name":"Прохоров",
+            "photo": "/media/people/prohorov.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 10,
+        "fields": {
+            "first_name":"Дмитрий",
+            "second_name":"Максимов",
+            "position":"Председатель",
+            "public_telegram":"tg://resolve?domain=Maximov",
+            "photo": "/media/people/maximov.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 11,
+        "fields": {
+            "first_name":"Анна",
+            "second_name":"Кузнецова",
+            "photo": "/media/people/kuznetsova.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 12,
+        "fields": {
+            "first_name":"Вера",
+            "second_name":"Кичанова",
+            "photo": "/media/people/kichanova.jpg"
+        }
+    },
+    {
+        "model": "people_app.profile",
+        "pk": 13,
+        "fields": {
+            "first_name":"Максим",
+            "second_name":"Тюленин",
+            "photo": "/media/people/tyulenin.jpg"
+        }
+    },
+]
