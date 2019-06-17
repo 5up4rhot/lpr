@@ -41,7 +41,7 @@ def parse_one_article_inner(article):
     return clear_content
 
 def get_count(soup):
-    count = soup.find('ul', class_='pager-next').find_all('li')[0].get_text()
+    count = soup.find('ul', class_='pager-next').find_all('li')[-1].get_text()
     return count
 
 

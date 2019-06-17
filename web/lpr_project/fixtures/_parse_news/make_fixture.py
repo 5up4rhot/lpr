@@ -4,6 +4,7 @@ import uuid
 from slugify import slugify
 from datetime import datetime
 import os
+import random
 
 
 
@@ -40,7 +41,7 @@ def main():
         entry['fields']['description'] = article['description']
         entry['fields']['image'] = save_image(article['image'],article['datetime'])
         entry['fields']['slug'] = slugify(article['title'])
-        entry['fields']['author'] = 1
+        entry['fields']['author'] = random.randint(1,4)
         entry['fields']['body'] = article['content']
         entry['fields']['publishtime'] = article['datetime']
         entry['fields']['createtime'] = article['datetime']

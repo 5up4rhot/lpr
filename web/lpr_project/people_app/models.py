@@ -30,7 +30,7 @@ class Profile(models.Model):
     brief_info = models.TextField(verbose_name='Краткие данные',
                                   max_length=500, blank=True, null=True)
     public_phone_number = models.CharField(
-        verbose_name='Публичный номер телефона', max_length=12, blank=True, null=True)
+        verbose_name='Публичный номер телефона', max_length=20, blank=True, null=True)
     public_email = models.EmailField(verbose_name='Публичный email',
                                      max_length=100, blank=True, null=True)
     public_telegram = models.URLField(verbose_name='Публичный telegram', blank=True, null=True)
