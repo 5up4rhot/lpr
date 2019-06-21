@@ -1,0 +1,74 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$LilyxJTGgwdE$NFLsBnKkmN7HrXY3txp9IstJttMSmT59Ur+QbPnUrw0=",
+        "last_login": "2019-06-17T20:48:51",
+        "is_superuser": true,
+        "username": "maxim",
+        "first_name": "\u0410\u043d\u0434\u0440\u0435\u0439",
+        "last_name": "\u0410\u043d\u0434\u0440\u0435\u0435\u0432",
+        "email": "***REMOVED***",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-06-17T20:48:01",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$5DcxrVXKyu3O$ZnuRtQi7uiCVNNxvAL4vGeFbjzXaLvW4zE21zboeJvA=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "boris",
+        "first_name": "\u0411\u043e\u0440\u0438\u0441",
+        "last_name": "\u0411\u043e\u0440\u0438\u0441\u043e\u0432",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-06-17T20:52:07",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$4wyXf4bCqa8B$lX21Ay3agInQRrSPiFyxzL/DrhL+Jq6kaTlp1d72MVI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "sergey",
+        "first_name": "\u0421\u0435\u0440\u0433\u0435\u0439",
+        "last_name": "\u0421\u0435\u0440\u0433\u0435\u0435\u0432",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-06-17T20:52:54",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$SSbedVcsJSa4$TMIc4AYNVkNAjKhSFsZ4zzRghXapL46go8HlKWTqY+4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "danil",
+        "first_name": "\u0414\u0430\u043d\u0438\u043b",
+        "last_name": "\u0414\u0430\u043d\u0438\u043b\u043e\u0432",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-06-17T20:53:54",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

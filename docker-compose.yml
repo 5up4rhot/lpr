@@ -4,15 +4,14 @@ services:
   web:
     build: ./web
     restart: always
-    user: 1000:1024
-    command: python manage.py runserver 0.0.0.0:8000
+    user: 1000:1000
+    command: bash -c "python wait-for-postgres.py && python manage.py runserver"
     ports:
     - "8000:8000"
     volumes:
     - ./web/lpr_project:/lpr_project
     environment:
       DATABASE_URL: postgres://postgres@db/postgres
-    restart: on-failure
     depends_on:
     - db
   db:

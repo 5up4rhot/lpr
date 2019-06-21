@@ -12,7 +12,7 @@ class Principle(models.Model):
 class Opinion(models.Model):
 
     subject = models.CharField(
-        max_length=100, verbose_name='Предмет обсуждения', help_text="Enter subject of Opinion")
+        max_length=300, verbose_name='Предмет обсуждения', help_text="Enter subject of Opinion")
     content = RichTextField(verbose_name='Точка зрения', help_text="Enter content for Opinion")
 
 

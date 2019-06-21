@@ -9,7 +9,7 @@
             "public_email":"s.boiko@libertarian-party.ru",
             "public_telegram":"tg://resolve?domain=dsboiko",
             "public_phone_number":"+7 916 127-43-41",
-            "photo": "/media/people/boiko.jpg"
+            "photo": "people/boiko.jpg"
         }
     },
     {
@@ -22,7 +22,7 @@
             "public_email":"samodurov@libertarian-party.ru",
             "public_telegram":"tg://resolve?domain=kir_sam",
             "public_phone_number":"+7 926 416-02-89",
-            "photo": "/media/people/samodurov.jpg"
+            "photo": "people/samodurov.jpg"
         }
     },
     {
@@ -34,7 +34,7 @@
             "position":"Ответственный секретарь",
             "public_email":"secretary@libertarian-party.ru",
             "public_telegram":"tg://resolve?domain=Ergilion",
-            "photo": "/media/people/ovsienko.jpg"
+            "photo": "people/ovsienko.jpg"
         }
     },
     {
@@ -44,7 +44,7 @@
             "first_name":"Дмитрий",
             "second_name":"Нескоромный",
             "public_email":"akater@libertarian-party.ru",
-            "photo": "/media/people/akater.jpg"
+            "photo": "people/akater.jpg"
         }
     },
     {
@@ -55,7 +55,7 @@
             "second_name":"Калёнов",
             "public_telegram":"tg://resolve?domain=kalyonov",
             "public_email":"kalyonov@libertarian-party.ru",
-            "photo": "/media/people/kalyonov.jpg"
+            "photo": "people/kalyonov.jpg"
         }
     },
     {
@@ -65,7 +65,7 @@
             "first_name":"Михаил",
             "second_name":"Светов",
             "public_telegram":"tg://resolve?domain=mr_libertarian",
-            "photo": "/media/people/svetov.jpg"
+            "photo": "people/svetov.jpg"
         }
     },
     {
@@ -74,7 +74,7 @@
         "fields": {
             "first_name":"Юрий",
             "second_name":"Ноздрин",
-            "photo": "/media/people/nozdrin.jpg"
+            "photo": "people/nozdrin.jpg"
         }
     },
     {
@@ -85,7 +85,7 @@
             "second_name":"Осенин",
             "public_telegram":"tg://resolve?domain=osenin",
             "public_email":"osenin@libertarian-party.ru",
-            "photo": "/media/people/osenin.jpg"
+            "photo": "people/osenin.jpg"
         }
     },
     {
@@ -94,7 +94,7 @@
         "fields": {
             "first_name":"Николай",
             "second_name":"Прохоров",
-            "photo": "/media/people/prohorov.jpg"
+            "photo": "people/prohorov.jpg"
         }
     },
     {
@@ -105,7 +105,7 @@
             "second_name":"Максимов",
             "position":"Председатель",
             "public_telegram":"tg://resolve?domain=Maximov",
-            "photo": "/media/people/maximov.jpg"
+            "photo": "people/maximov.jpg"
         }
     },
     {
@@ -114,7 +114,7 @@
         "fields": {
             "first_name":"Анна",
             "second_name":"Кузнецова",
-            "photo": "/media/people/kuznetsova.jpg"
+            "photo": "people/kuznetsova.jpg"
         }
     },
     {
@@ -123,7 +123,7 @@
         "fields": {
             "first_name":"Вера",
             "second_name":"Кичанова",
-            "photo": "/media/people/kichanova.jpg"
+            "photo": "people/kichanova.jpg"
         }
     },
     {
@@ -132,7 +132,7 @@
         "fields": {
             "first_name":"Максим",
             "second_name":"Тюленин",
-            "photo": "/media/people/tyulenin.jpg"
+            "photo": "people/tyulenin.jpg"
         }
     }
 ]

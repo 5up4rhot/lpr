@@ -1,0 +1,35 @@
+[
+    {
+        "model": "people_app.structure",
+        "pk": 1,
+        "fields": {
+            "slug":"federal-committee",
+            "name":"Федеральный комитет",
+            "description":"основной руководящий орган, управляющий партией между съездами.",
+            "email":"fk@libertarian-party.ru",
+            "personnel": [1,2,3,4,5,6.7,8,9]
+        }
+    },
+    {
+        "model": "people_app.structure",
+        "pk": 2,
+        "fields": {
+            "slug":"ckrk",
+            "name":"Центральная контрольно-ревизионная комиссия",
+            "description":"контролирует соблюдение устава, исполнение решений руководящих органов партии, а также контролирует финансовую, хозяйственную деятельность партии и её региональных отделений.",
+            "email":"ckrk@libertarian-party.ru",
+            "personnel": [10,11]
+        }
+    },
+    {
+        "model": "people_app.structure",
+        "pk": 3,
+        "fields": {
+            "slug":"ethics-committee",
+            "name":"Этический комитет",
+            "description":"орган для апелляции при исключении из партии, отказе во вступлении, а также необоснованных решений Федерального комитета партии, включая председателя.",
+            "email":"arbitration@libertarian-party.ru",
+            "personnel": [12,13]
+        }
+    }
+]
