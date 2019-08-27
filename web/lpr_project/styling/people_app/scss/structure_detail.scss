@@ -1,4 +1,4 @@
-@import "static/scss/base.scss";
+@import "../../scss/base.scss";
 
 /********** PAGETITLE **********/
 $pagetitle-content: "Лица партии";
@@ -7,13 +7,13 @@ $pagetitle-color: #fff;
 $pagetitle-background-color: $primary-color;
 // $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
 $pagetitle-background-size: contain;
-@import "static/scss/pagetitle";
+@import "../../scss/pagetitle";
 
 /********** MENU LINKS **********/
-@import "static/scss/topper_menu";
+@import "../../scss/topper_menu";
 
 /********** STRUCTURES **********/
-@import "static/scss/narrower";
+@import "../../scss/narrower";
 .structure-description, .structure-personnel{
     margin-bottom: 6rem;
     @include media-breakpoint-down(lg) {
@@ -30,4 +30,4 @@ $pagetitle-background-size: contain;
     }
 }
 /********** CARDS **********/
-@import "static/scss/cards";
+@import "../../scss/cards";

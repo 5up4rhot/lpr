@@ -9,7 +9,7 @@ urlpatterns = [
          views.post_detail, name='post_detail'),
     path('author/<int:pk>', views.AuthorPostListView.as_view(), name='user_post_list'),
 
-    # for workers
+    # for staff
     path('profile', views.ProfilePostListView.as_view(), name='profile_post_list'),
     path('profile/<int:pk>', views.ProfilePostDetailView.as_view(), name='profile_post_preview'),
     path('profile/create', views.CreatePostView.as_view(), name='create_post'),

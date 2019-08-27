@@ -42,7 +42,7 @@ class AuthorPostListView(ListView):
         return Post.published.filter(author__pk=pk).order_by('-publishtime')
 
 
-# for aurhors:
+# for staff:
 class ProfilePostListView(LoginRequiredMixin, ListView):
     model = Post
     context_object_name = 'current_user_posts'
@@ -65,7 +65,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
     template_name = 'news_app/post_create.html'
     model = Post
     fields = ['title', 'description', 'image', 'body', 'status', 'updated']
-    success_url = reverse_lazy('news_app:current_user_post_list')
+    success_url = reverse_lazy('news_app:profile_post_list')
 
     def form_valid(self, form):
         """If the form is valid, save the associated model."""
@@ -79,7 +79,7 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
     template_name = 'news_app/post_update.html'
     model = Post
     fields = ['title', 'description', 'image', 'body', 'status', 'updated']
-    success_url = reverse_lazy('news_app:current_user_post_list')
+    success_url = reverse_lazy('news_app:profile_post_list')
 
     def get_queryset(self):
         return Post.objects.filter(author__id=self.request.user.id)
@@ -88,7 +88,7 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
 class DeletePostView(LoginRequiredMixin, DeleteView):
     template_name = 'news_app/post_delete.html'
     model = Post
-    success_url = reverse_lazy('news_app:current_user_post_list')
+    success_url = reverse_lazy('news_app:profile_post_list')
 
     def get_queryset(self):
         return Post.objects.filter(author__id=self.request.user.id)

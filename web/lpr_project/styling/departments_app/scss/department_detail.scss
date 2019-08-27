@@ -1,4 +1,4 @@
-@import "static/scss/base.scss";
+@import "../../scss/base.scss";
 
 /********** PAGETITLE **********/
 $pagetitle-content: "Отделения";
@@ -7,10 +7,10 @@ $pagetitle-color: #fff;
 $pagetitle-background-color: $primary-color;
 // $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
 $pagetitle-background-size: contain;
-@import "static/scss/pagetitle";
+@import "../../scss/pagetitle";
 
 /********** PEOPLE CARDS **********/
-@import "static/scss/cards";
+@import "../../scss/cards";
 
 /********** MARGIN **********/
 

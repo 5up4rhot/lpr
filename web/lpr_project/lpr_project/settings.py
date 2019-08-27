@@ -137,13 +137,14 @@ STATICFILES_FINDERS = [
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') # ckeditor files goes here after collectstic, so we need it before deployment
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'styling'),
 ]
 
-SASS_PROCESSOR_ROOT = STATIC_ROOT
+SASS_PROCESSOR_ROOT = STATIC_ROOT #online compiled css and css.map goes here
+SASS_PROCESSOR_AUTO_INCLUDE = False #we dont need any scss or css from static_root folder
 
 # MEDIA FILES SETTINGS
 MEDIA_URL = '/media/'

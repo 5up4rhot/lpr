@@ -1,15 +1,15 @@
-@import "static/scss/base.scss";
+@import "../../scss/base.scss";
 
 /********** PAGETITLE **********/
 $pagetitle-content: "Новости";
 $pagetitle-height: 40%;
 $pagetitle-color: #fff;
 $pagetitle-background-color: $primary-color;
-$pagetitle-background-image: "/static/news_app/img/newspaper.jpg";
-@import "static/scss/pagetitle";
+$pagetitle-background-image: "../img/newspaper.jpg";
+@import "../../scss/pagetitle";
 
 /********** POST LIST **********/
 @import "postcolumn";
 
 /********** PAGINATION **********/
-@import "static/scss/pagination";
+@import "../../scss/pagination";

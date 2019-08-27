@@ -1,14 +1,14 @@
-@import "static/scss/base.scss";
+@import "../../scss/base.scss";
 /********** PAGETITLE **********/
 $pagetitle-content: "Программа ЛПР";
 $pagetitle-height: 40%;
 $pagetitle-color: #fff;
 $pagetitle-background-color: $primary-color;
-$pagetitle-background-image: "/static/principles_app/img/pero.webp";
-@import "static/scss/pagetitle";
+$pagetitle-background-image: "../img/pero.webp";
+@import "../../scss/pagetitle";
 
 /********** MENU LINKS **********/
-@import "static/scss/topper_menu";
+@import "../../scss/topper_menu";
 
 /********** DISCLAMER **********/
 .disclaimer{
@@ -17,7 +17,7 @@ $pagetitle-background-image: "/static/principles_app/img/pero.webp";
     line-height: 1.5;
 }
 /********** PROGRAM GRID **********/
-@import "static/scss/program_grid.scss";
+@import "../../scss/program_grid.scss";
 
 .program-lg {
     margin-top: 5rem;
@@ -52,7 +52,7 @@ $pagetitle-background-image: "/static/principles_app/img/pero.webp";
 }
 
 /********** BOTTOMNAV **********/
-@import "static/scss/bottomnav";
+@import "../../scss/bottomnav";
 .bottomnav{
     margin: 7rem 0 ;
     @include media-breakpoint-down(lg) {
