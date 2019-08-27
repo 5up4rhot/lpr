@@ -8,6 +8,7 @@ connection_down = True
 
 while connection_down:
     try:
+        time.sleep(1)
         conn = psycopg2.connect(database_url)
         cursor = conn.cursor()
         cursor.execute("SELECT version();")
@@ -16,4 +17,3 @@ while connection_down:
         connection_down = False
     except (Exception, psycopg2.Error) as error :
         print ("Error while connecting to PostgreSQL", error)
-        time.sleep(1)

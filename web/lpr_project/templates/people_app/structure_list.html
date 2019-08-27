@@ -36,8 +36,13 @@
                 <img class="basic-card-image" src="{% get_media_prefix %}{{ person.photo }}">
                 <div class="basic-card-body">
                     <h2 class="basic-card-name">{{person.first_name}} {{person.second_name}}</h2>
-                    <p class="basic-card-info">{{person.position}}<br>{{person.city.alternate_names}}<br>{{person.birth_date}}</p>
-                    <p class="basic-card-contacts">Телеграм: {{person.public_telegram}}<br>{{person.public_email}}<br>{{person.public_phone_number}}</p>
+                    {% if person.position %}
+                    <p class="basic-card-info">{{person.position}}</p>
+                    {% endif %}
+                    <p class="basic-card-contacts">
+                      {% if person.public_telegram %}Телеграм: {{person.public_telegram}} {% endif %}
+                      {% if person.public_email %}<br>{{person.public_email}} {% endif %}
+                      {% if person.public_phone_number %}<br>{{person.public_phone_number}}</p>{% endif %}
                 </div>
             </div>
             {% endfor %}

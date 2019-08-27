@@ -88,14 +88,14 @@
         max-width: 100%;
         height: auto;
     }
-    margin: 5rem 0;
+    margin: 0 0 10rem;
     @include media-breakpoint-down(lg) {
-        margin: 4rem 0;
+        margin: 0 0 8rem;
     }
     @include media-breakpoint-down(md) {
-        margin: 3rem 0;
+        margin: 0 0 6rem;
     }
     @include media-breakpoint-down(xs) {
-        margin: 2rem 0;
+        margin: 0 0 4rem;
     }
 }

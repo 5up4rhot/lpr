@@ -12,7 +12,6 @@ def department_logo_directory_path(instance, filename):
 
 class Department(models.Model):
     slug = models.SlugField(max_length=40, blank=True, null=True)
-    county = models.ForeignKey(Country, verbose_name='Страна', on_delete=models.CASCADE)
     region = models.ForeignKey(Region, verbose_name='Регион', on_delete=models.CASCADE)
     city = models.ForeignKey(City, verbose_name='Город',
                              on_delete=models.CASCADE, blank=True, null=True)
