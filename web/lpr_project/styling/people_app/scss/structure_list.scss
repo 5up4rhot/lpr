@@ -5,8 +5,9 @@ $pagetitle-content: "Лица партии";
 $pagetitle-height: 40%;
 $pagetitle-color: #fff;
 $pagetitle-background-color: $primary-color;
-// $pagetitle-background-image: "/static/principles_app/img/ancap.svg";
+$pagetitle-background-image: "../img/person.png" !default;
 $pagetitle-background-size: contain;
+$pagetitle-background-repeat: repeat;
 @import "../../scss/pagetitle";
 
 /********** MENU LINKS **********/

@@ -5,6 +5,7 @@ $pagetitle-border-color: #fff !default;
 $pagetitle-background-color: #fff !default;
 $pagetitle-background-image: "/static/home_app/img/bird.svg" !default;
 $pagetitle-background-size: cover !default;
+$pagetitle-background-repeat: no-repeat !default;
 
 html, body{
   height: 100%;
@@ -16,7 +17,7 @@ html, body{
     height: $pagetitle-height;
     width: auto;
     border: 3rem solid $pagetitle-border-color;
-    background-repeat: no-repeat;
+    background-repeat: $pagetitle-background-repeat;
     background-position: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;

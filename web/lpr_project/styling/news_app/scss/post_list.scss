@@ -5,7 +5,9 @@ $pagetitle-content: "Новости";
 $pagetitle-height: 40%;
 $pagetitle-color: #fff;
 $pagetitle-background-color: $primary-color;
-$pagetitle-background-image: "../img/newspaper.jpg";
+$pagetitle-background-image: "../img/news.png" !default;
+$pagetitle-background-size: contain;
+$pagetitle-background-repeat: repeat;
 @import "../../scss/pagetitle";
 
 /********** POST LIST **********/
