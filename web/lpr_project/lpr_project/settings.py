@@ -49,8 +49,6 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     # django-sass-processor
     'sass_processor',
-    # django-cities-light
-    'cities_light',
 ]
 
 MIDDLEWARE = [
@@ -148,12 +146,6 @@ SASS_PROCESSOR_AUTO_INCLUDE = False #we dont need any scss or css from static_ro
 # MEDIA FILES SETTINGS
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# DJANGO-CITIES-LIGHT SETTINGS
-CITIES_LIGHT_TRANSLATION_LANGUAGES = ['ru', 'en']
-CITIES_LIGHT_INCLUDE_COUNTRIES = ['RU']
-CITIES_LIGHT_INCLUDE_CITY_TYPES = ['PPL', 'PPLA', 'PPLA2', 'PPLA3',
-                                   'PPLA4', 'PPLC', 'PPLF', 'PPLG', 'PPLL', 'PPLR', 'PPLS', 'STLMT', ]
 
 # CKEDITOR SETTINGS
 CKEDITOR_UPLOAD_PATH = 'news/images/'

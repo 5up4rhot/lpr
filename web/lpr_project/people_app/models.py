@@ -2,7 +2,6 @@ from django.db import models
 from django.urls import reverse
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
-from cities_light.models import Country, Region, City
 from slugify import slugify
 
 
@@ -15,12 +14,6 @@ class Profile(models.Model):
     photo = models.ImageField(verbose_name='Фотография',
                               upload_to=profile_photo_directory_path, blank=True, null=True)
     bio = RichTextField(verbose_name='Биография', blank=True, null=True)
-    county = models.ForeignKey(Country, verbose_name='Страна',
-                               on_delete=models.CASCADE, blank=True, null=True)
-    region = models.ForeignKey(Region, verbose_name='Регион',
-                               on_delete=models.CASCADE, blank=True, null=True)
-    city = models.ForeignKey(City, verbose_name='Город',
-                             on_delete=models.CASCADE, blank=True, null=True)
     birth_date = models.DateField(verbose_name='Дата рождения', null=True, blank=True)
     first_name = models.CharField(verbose_name='Имя', max_length=50, blank=True)
     second_name = models.CharField(verbose_name='Фамилия', max_length=70, blank=True)
