@@ -7,8 +7,8 @@ database_url = os.environ["DATABASE_URL"]
 connection_down = True
 
 while connection_down:
+    time.sleep(1)
     try:
-        time.sleep(1)
         conn = psycopg2.connect(database_url)
         cursor = conn.cursor()
         cursor.execute("SELECT version();")

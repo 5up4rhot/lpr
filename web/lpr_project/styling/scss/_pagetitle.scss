@@ -6,6 +6,7 @@ $pagetitle-background-color: #fff !default;
 $pagetitle-background-image: "/static/home_app/img/bird.svg" !default;
 $pagetitle-background-size: cover !default;
 $pagetitle-background-repeat: no-repeat !default;
+$pagetitle-background-image-style: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url($pagetitle-background-image) !default;
 
 html, body{
   height: 100%;
@@ -27,7 +28,7 @@ html, body{
             align-items: center;
     background-size: $pagetitle-background-size;
     background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4)) ), url($pagetitle-background-image);
-    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url($pagetitle-background-image);
+    background-image: $pagetitle-background-image-style;
     @include media-breakpoint-down(xl) {
         border-width: 2.5rem;
     }
