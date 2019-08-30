@@ -16,8 +16,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
-DEBUG = int(os.environ.get('DEBUG', default=1))
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = int(os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'libertarian-party.herokuapp.com']
 
@@ -204,6 +204,3 @@ CKEDITOR_CONFIGS = {
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/news/profile'
-
-# TESTING EMAIL PASSWORD RESET
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
