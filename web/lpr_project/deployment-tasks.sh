@@ -11,4 +11,4 @@ python manage.py makemigrations accounts_app news_app people_app principles_app
 python manage.py migrate
 
 #populating database
-./fixtures/apply_all.sh
+python manage.py loaddata fixtures/users.json fixtures/reforms_ready.json fixtures/qa.json fixtures/principles.json fixtures/people.json fixtures/opinions.json fixtures/news.json fixtures/structures.json
