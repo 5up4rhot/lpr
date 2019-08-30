@@ -137,7 +137,7 @@ STATICFILES_FINDERS = [
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') # ckeditor files goes here after collectstic, so we need it before deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/') # ckeditor files goes here after collectstic, so we need it before deployment
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'styling'),

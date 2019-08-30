@@ -2,7 +2,7 @@
 
 # collect static files
 python manage.py compilescss
-python manage.py collectstatic --dry-run --noinput --ignore=*.scss
+python manage.py collectstatic --noinput --ignore=*.scss
 python manage.py compilescss --delete-files
 
 #migrations
