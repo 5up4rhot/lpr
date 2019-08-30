@@ -2,4 +2,4 @@ build:
   docker:
     lpr_web_prod: ./web/Dockerfile
 run:
-  lpr_web_prod: gunicorn lpr_project.wsgi:application --bind 0.0.0.0:$PORT
+  lpr_web_prod: python manage.py runserver 0.0.0.0:$PORT #gunicorn lpr_project.wsgi:application --bind 0.0.0.0:$PORT
