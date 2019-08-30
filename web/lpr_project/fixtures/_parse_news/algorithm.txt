@@ -1,4 +1,0 @@
-login as root to install packages (pip install requests beautifulsoup4)
-set executable permissions (chmod u+x make_fixture.py parse_articles.py)
-(python parse_articles.py)
-(python make_fixture.py)
