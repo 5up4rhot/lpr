@@ -20,9 +20,9 @@ COPY . /lpr_web_prod/
 WORKDIR /lpr_web_prod/lpr_project/
 
 # collect static files
-# RUN python manage.py compilescss
-# RUN python manage.py collectstatic --noinput --ignore=*.scss
-# RUN python manage.py compilescss --delete-files
+RUN python manage.py compilescss
+RUN python manage.py collectstatic --noinput --ignore=*.scss
+RUN python manage.py compilescss --delete-files
 
 # add and run as non-root user
 # RUN adduser -uid 1000 myuser
