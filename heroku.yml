@@ -1,0 +1,12 @@
+build:
+  docker:
+    lpr_web_prod: ./web/Dockerfile
+run:
+  lpr_web_prod: gunicorn lpr_project.wsgi:application --bind 0.0.0.0:$PORT
+release:
+  image: lpr_web_prod
+  command:
+    - python manage.py compilescss
+    - python manage.py collectstatic --noinput --ignore=*.scss
+    - python manage.py compilescss --delete-files
+    - python manage.py migrate

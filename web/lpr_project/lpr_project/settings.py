@@ -26,8 +26,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
 DEBUG = int(os.environ.get('DEBUG', default=1))
 
-
-# SECURITY WARNING: allowed hosts all now!
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'libertarian-party.herokuapp.com']
 
 
@@ -91,8 +89,15 @@ WSGI_APPLICATION = 'lpr_project.wsgi.application'
 
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
+DATABASE_URL = os.environ.get('DATABASE_URL')
+db_from_env = dj_database_url.config(default=DATABASE_URL, conn_max_age=500, ssl_require=True)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
