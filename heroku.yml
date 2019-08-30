@@ -1,5 +1,11 @@
 build:
   docker:
-    web: ./web/Dockerfile
+    web: ./web/Dockerfile\
+
 run:
   web: gunicorn lpr_project.wsgi:application --bind 0.0.0.0:$PORT
+
+release:
+  image: web
+  command:
+    - ./deployment-tasks.sh
